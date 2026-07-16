@@ -1,0 +1,14 @@
+# Dependencies & build output
+node_modules/
+dist/
+
+# Saved-page asset dumps (images/css/fonts) - bulky and redundant across
+# pages; only the .htm files themselves are needed as parser source data.
+old/**/*_files/
+
+# Local/machine-specific tool config
+.claude/settings.local.json
+
+# OS cruft
+.DS_Store
+Thumbs.db

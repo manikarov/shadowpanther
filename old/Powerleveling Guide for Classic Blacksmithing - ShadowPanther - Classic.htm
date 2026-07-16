@@ -1,0 +1,734 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">@layer {
+html {
+    background-color: var(--darkreader-background-ffffff, #181a1b) !important;
+}
+html {
+    color-scheme: dark !important;
+}
+iframe {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: var(--darkreader-background-ffffff, #181a1b);
+}
+html, body {
+    border-color: var(--darkreader-border-4c4c4c, #736b5e);
+    color: var(--darkreader-text-000000, #e8e6e3);
+}
+a {
+    color: var(--darkreader-text-0040ff, #3391ff);
+}
+table {
+    border-color: var(--darkreader-border-808080, #545b5e);
+}
+mark {
+    color: var(--darkreader-text-000000, #e8e6e3);
+}
+::placeholder {
+    color: var(--darkreader-text-a9a9a9, #b2aba1);
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: var(--darkreader-background-faffbd, #404400) !important;
+    color: var(--darkreader-text-000000, #e8e6e3) !important;
+}
+::selection {
+    background-color: var(--darkreader-background-0060d4, #004daa) !important;
+    color: var(--darkreader-text-ffffff, #e8e6e3) !important;
+}
+::-moz-selection {
+    background-color: var(--darkreader-background-0060d4, #004daa) !important;
+    color: var(--darkreader-text-ffffff, #e8e6e3) !important;
+}
+}</style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, img.Wirisformula, a[data-testid="headerMediumLogo"]>svg, .d2l-navigation-link-image-container, .d2l-iframe-loading-container, div.mc-ip-hide[style*="background: rgb(255, 255, 255) !important"], [style*="color: rgb(0, 0, 1) !important;"] {
+    filter: invert(100%) hue-rotate(180deg) contrast(90%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}
+[data-darkreader-inline-bg] {
+  background: var(--darkreader-inline-bg) !important;
+}
+[data-darkreader-inline-border-short] {
+  border: var(--darkreader-inline-border-short) !important;
+}
+[data-darkreader-inline-border-bottom-short] {
+  border-bottom: var(--darkreader-inline-border-bottom-short) !important;
+}
+[data-darkreader-inline-border-left-short] {
+  border-left: var(--darkreader-inline-border-left-short) !important;
+}
+[data-darkreader-inline-border-right-short] {
+  border-right: var(--darkreader-inline-border-right-short) !important;
+}
+[data-darkreader-inline-border-top-short] {
+  border-top: var(--darkreader-inline-border-top-short) !important;
+}
+[data-darkreader-inline-invert] {
+    filter: invert(100%) hue-rotate(180deg);
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: var(--darkreader-background-ffffff, #181a1b);
+   --darkreader-neutral-text: var(--darkreader-text-000000, #e8e6e3);
+   --darkreader-selection-background: var(--darkreader-background-0060d4, #004daa);
+   --darkreader-selection-text: var(--darkreader-text-ffffff, #e8e6e3);
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style>
+<title>Powerleveling Guide for Classic Blacksmithing - ShadowPanther - Classic</title>
+<meta name="description" content="World of Warcraft Rogue Info - Charts, Articles, Guides &amp; more!">
+<meta name="keywords" content="rogue,rogues,rogue charts,rogue gear,rogue armor,rogue weapons,rogue specs,rogue builds,rogue twink,rogue leveling">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" href="https://shadowpanther.net/classic/favicon.ico">
+<link rel="apple-touch-icon" href="https://shadowpanther.net/classic/apple-touch-icon.png">
+<link rel="stylesheet" href="Powerleveling%20Guide%20for%20Classic%20Blacksmithing%20-%20ShadowPanther%20-%20Classic_files/c_xD6p.css" type="text/css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="545e875d3df745068b4b474a9762b165"><style class="darkreader darkreader--override" media="screen">.jfk-bubble.gtx-bubble {
+    background-color: white !important;
+}
+.vimvixen-hint {
+    background-color: var(--darkreader-background-ffd76e, #684b00) !important;
+    border-color: var(--darkreader-background-c59d00, #9e7e00) !important;
+    color: var(--darkreader-text-302505, #d7d4cf) !important;
+}
+#vimvixen-console-frame {
+    color-scheme: light !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: var(--darkreader-background-add8e6, #1b4958) !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: var(--darkreader-background-cfecf5, #0f3a47) !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: var(--darkreader-background-f5f5f5, #1e2021) !important;
+}
+.tou-uknfeu {
+    background-color: var(--darkreader-background-faedda, #432c09) !important;
+}
+.tou-6i3zyv {
+    background-color: var(--darkreader-background-85c3d8, #245d70) !important;
+}
+div.mermaid-viewer-control-panel .btn {
+    background-color: var(--darkreader-neutral-background);
+    fill: var(--darkreader-neutral-text);
+}
+svg g rect.er {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.er.entityBox {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.er.attributeBoxOdd {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.er.attributeBoxEven {
+    fill: var(--darkreader-selection-background);
+    fill-opacity: 0.8 !important;
+}
+svg rect.er.relationshipLabelBox {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g g.nodes rect,
+svg g g.nodes polygon {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.task {
+    fill: var(--darkreader-selection-background) !important;
+}
+svg line.messageLine0,
+svg line.messageLine1 {
+    stroke: var(--darkreader-neutral-text) !important;
+}
+div.mermaid .actor {
+    fill: var(--darkreader-neutral-background) !important;
+}
+mitid-authenticators-code-app > .code-app-container {
+    background-color: white !important;
+    padding-top: 1rem;
+}
+iframe#unpaywall[src$="unpaywall.html"] {
+    color-scheme: light !important;
+}
+select {
+    --darkreader-bg--form-control-background-color: rgba(22, 22, 22, 0) !important;
+}
+body#tumblr {
+    --darkreader-bg--secondary-accent: 31, 32, 34 !important;
+    --darkreader-bg--white: 23, 23, 23 !important;
+    --darkreader-text--black: 228, 224, 218 !important;
+}
+:host {
+    --d2l-border-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+    --d2l-button-icon-background-color-hover: var(--darkreader-bg--d2l-color-gypsum) !important;
+    --d2l-color-ferrite: var(--darkreader-neutral-text) !important;
+    --d2l-color-sylvite: var(--darkreader-bg--d2l-color-sylvite) !important;
+    --d2l-dropdown-background-color: var(--darkreader-neutral-background) !important;
+    --d2l-dropdown-border-color: var(--darkreader-border--d2l-color-mica) !important;
+    --d2l-input-backgroud-color: var(--darkreader-neutral-background) !important;
+    --d2l-menu-border-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+    --d2l-tooltip-background-color: var(--darkreader-neutral-background) !important;
+    --d2l-tooltip-border-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+}
+:host([_floating]) .d2l-floating-buttons-container {
+    background-color: var(--darkreader-neutral-background) !important;
+    border-top-color: var(--darkreader-border--d2l-color-mica) !important;
+    opacity: 0.88 !important;
+}
+d2l-card {
+    background: var(--darkreader-neutral-background) !important;
+    border-color: var(--darkreader-border--d2l-color-gypsum) !important;
+}
+d2l-dropdown-content > div,
+d2l-menu-item {
+    background-color: var(--darkreader-neutral-background) !important;
+    border-radius: 10px !important;
+}
+d2l-empty-state-simple {
+    border-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+}
+.d2l-button-filter > ul > li > a.vui-button {
+    border-color: var(--darkreader-border--d2l-color-mica) !important;
+}
+.d2l-label-text:has(.d2l-button-subtle-content):hover,
+.d2l-label-text:has(.d2l-button-subtle-content):focus,
+.d2l-label-text:has(.d2l-button-subtle-content):active {
+    background-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+}
+.d2l-navigation-centerer {
+    color: inherit !important;
+}
+.d2l-tabs-layout {
+    border-color: var(--darkreader-border--d2l-color-gypsum) !important;
+}
+.d2l-input,
+.d2l-calendar-date,
+.d2l-htmleditor-container {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.d2l-collapsible-panel {
+    border: 1px solid var(--darkreader-border--d2l-color-mica) !important;
+    border-radius: 0.4rem !important;
+}
+.d2l-collapsible-panel-divider {
+    border-bottom: 1px solid var(--darkreader-border--d2l-color-mica) !important;
+}
+.d2l-w2d-flex {
+    border-bottom: 2px solid var(--darkreader-border--d2l-color-mica) !important;
+}
+.d2l-collapsible-panel scrolled,
+.d2l-collapsible-panel-header,
+.d2l-w2d-collection-fixed {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.d2l-loading-spinner-bg {
+    fill: var(--darkreader-bg--d2l-color-gypsum) !important;
+}
+.d2l-loading-spinner-bg-stroke {
+    stroke: var(--darkreader-border--d2l-color-mica) !important;
+}
+.d2l-loading-spinner-wrapper svg path,
+.d2l-loading-spinner-wrapper svg circle {
+    fill: var(--darkreader-neutral-background) !important;
+}
+.d2l-twopanelselector-side.d2l-twopanelselector-side-sep {
+    background: var(--darkreader-bg--d2l-color-mica) !important;
+}
+.d2l-le-TreeAccordionItem-anchor::before {
+    background: var(--darkreader-bg--d2l-color-corundum) !important;
+}
+table[class|="moz-header"] {
+    background: none;
+}
+*[style*="color: rgba(0,0,0,"]:not([style*="color: rgba(0,0,0,0)"]),
+*[style*="color: rgba(0, 0, 0,"]:not([style*="color: rgba(0, 0, 0, 0)"]),
+*[style*="color:#000"],
+*[style*="color:black"],
+*[style*="color:#282828"],
+*[style*="color:#444"],
+*[style*="color: #222222"] {
+    color: var(--darkreader-neutral-text) !important;
+}
+*[style*="background:#fff"],
+*[style*="background-color:#fff"],
+*[style*="background: #fff"] {
+    background: var(--darkreader-neutral-background) !important;
+}
+*[bgcolor="#F5F5F5"],
+*[style*="background-color: #F5F5F5"] {
+    background: var(--darkreader-background-f5f5f5, #1e2021) !important;
+}
+*[style*="background: #e6e6e6"] {
+    background: var(--darkreader-background-e6e6e6, #26292b) !important;
+}
+body[style*="background: rgb(255, 255, 255) !important"] *:not(a),
+.body[style*="background-color: rgb(254, 254, 254) !important"] *:not(a) {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+div[style*="www.gstatic.com/android/"] {
+    background: none !important;
+}
+*[style*="background:#f9f9f9"] {
+    background: var(--darkreader-background-f9f9f9, #1b1e1f) !important;
+}
+body.mediawiki.skin-vector #mw-page-base {
+    background-image: none !important;
+}
+.overflow-hidden .spinning-bg,
+.overflow-hidden .solid-bg {
+    background: transparent !important;
+}
+embed[type="application/pdf"] { filter: invert(100%) contrast(90%); }</style><link type="text/css" href="Powerleveling%20Guide%20for%20Classic%20Blacksmithing%20-%20ShadowPanther%20-%20Classic_files/universal_xD6p.css" rel="stylesheet"><style class="darkreader darkreader--sync" media="screen"></style></head>
+<body class="webp" data-wh-webp="true">
+<div id="wrapper">
+<div id="header">
+<div style="float:left;padding:2px 0 0 2px"><a href="https://shadowpanther.net/"><img src="Powerleveling%20Guide%20for%20Classic%20Blacksmithing%20-%20ShadowPanther%20-%20Classic_files/sp135_xD6p.png" width="90" height="90" alt="ShadowPanther - Classic" title="ShadowPanther - Classic"></a></div>
+<div style="float:left;padding-top:38px;font-size:175%;font-weight:550"><a href="https://shadowpanther.net/classic/" style="text-decoration: none; color: rgb(51, 51, 51); --darkreader-inline-color: var(--darkreader-text-333333, #c8c3bc);" data-darkreader-inline-color="">ShadowPanther - Classic</a></div>
+<div id="search">
+<div id="skip">
+<a href="#content">Skip to<br>Content</a>
+</div>
+<div style="padding-top:45px;float:right">
+</div>
+<!-- SiteSearch Google -->
+<form method="get" action="https://www.google.com/custom">
+<table class="t3" style="clear:right">
+<tbody><tr><td>
+<a href="https://www.google.com/">
+<img src="Powerleveling%20Guide%20for%20Classic%20Blacksmithing%20-%20ShadowPanther%20-%20Classic_files/Logo_25wht_xD6p.gif" width="75" height="25" alt="Google"></a>
+</td>
+<td>
+<input type="hidden" name="domains" value="shadowpanther.net">
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input type="text" name="q" size="15" maxlength="255" id="sbi">
+<label for="sbb" style="display: none">Submit search form</label>
+<input type="submit" name="sa" value="Search" id="sbb">
+</td>
+</tr>
+<tr>
+<td>
+<input type="radio" name="sitesearch" value="" id="ss0">
+<label for="ss0" title="Search the Web">Web</label></td>
+<td>
+<input type="radio" name="sitesearch" value="shadowpanther.net" checked="checked" id="ss1">
+<label for="ss1" title="Search ShadowPanther.net">ShadowPanther.net</label>
+<input type="hidden" name="client" value="pub-0745493857130025">
+<input type="hidden" name="forid" value="1">
+<input type="hidden" name="ie" value="UTF-8">
+<input type="hidden" name="oe" value="UTF-8">
+<input type="hidden" name="cof" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;LH:100;LW:100;L:https://shadowpanther.net/sp100.jpg;S:https://shadowpanther.net;LP:1;FORID:1">
+<input type="hidden" name="hl" value="en">
+</td></tr></tbody></table>
+</form>
+<!-- SiteSearch Google -->
+</div>
+</div>
+<table class="t2">
+<tbody><tr>
+<th colspan="6">World of Warcraft Classic Rogue Info - Charts, Articles, Guides &amp; more!</th>
+</tr>
+<tr>
+<td colspan="2"><b>PVP</b></td>
+<td><b>PVE</b></td>
+<td colspan="2"><b>Resources</b></td>
+<td><b>Miscellaneous</b></td>
+</tr>
+<tr>
+<td colspan="2"><a href="https://shadowpanther.net/classic/armor-pvp.htm">Armor</a></td>
+<td><a href="https://shadowpanther.net/classic/armor-pve.htm">Armor</a></td>
+<td colspan="2"><a href="https://shadowpanther.net/classic/armor-sets.htm">BiS Lists / Sets</a></td>
+<td><a href="https://shadowpanther.net/classic/questing.htm">Alliance Questing Guide</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="https://shadowpanther.net/classic/weapons-pvp.htm">Weapons</a></td>
+<td><a href="https://shadowpanther.net/classic/weapons-pve.htm">Weapons</a></td>
+<td colspan="2"><a href="https://shadowpanther.net/classic/twinkarmor.htm">Twink Armor</a></td>
+<td><a href="https://shadowpanther.net/classic/blacksmithing.htm">Blacksmithing Guide</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="https://shadowpanther.net/classic/daggers-pvp.htm">Daggers</a></td>
+<td><a href="https://shadowpanther.net/classic/daggers-pve.htm">Daggers</a></td>
+<td colspan="2"><a href="https://shadowpanther.net/classic/twinkweapons.htm">Twink Weapons</a></td>
+<td><a href="https://shadowpanther.net/classic/engineering.htm">Engineering Guide</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="https://shadowpanther.net/classic/fists-pvp.htm">Fists</a></td>
+<td><a href="https://shadowpanther.net/classic/fists-pve.htm">Fists</a></td>
+<td colspan="2"><a href="https://shadowpanther.net/classic/armor-sod.htm">SoD Armor</a></td>
+<td><a href="https://shadowpanther.net/classic/leatherworking.htm">Leatherworking Guide</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="https://shadowpanther.net/classic/maces-pvp.htm">Maces</a></td>
+<td><a href="https://shadowpanther.net/classic/maces-pve.htm">Maces</a></td>
+<td colspan="2"><a href="https://shadowpanther.net/classic/weapons-sod.htm">SoD Weapons</a></td>
+<td><a href="https://shadowpanther.net/classic/resistance.htm">Rogue Resistance Gear</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="https://shadowpanther.net/classic/swords-pvp.htm">Swords</a></td>
+<td><a href="https://shadowpanther.net/classic/swords-pve.htm">Swords</a></td>
+<td colspan="2"><a href="https://shadowpanther.net/classic/leveling.htm">Leveling Tips</a></td>
+<td><a href="https://shadowpanther.net/classic/roguechanges.htm">Rogue Patch Notes</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="https://shadowpanther.net/classic/enchantments-pvp.htm">Enchantments</a></td>
+<td><a href="https://shadowpanther.net/classic/enchantments-pve.htm">Enchantments</a></td>
+<td colspan="2"><a href="https://shadowpanther.net/classic/improve.htm">Rogue Buffs</a></td>
+<td><a href="https://shadowpanther.net/classic/more.htm">More Resources</a></td>
+</tr>
+<tr>
+<th colspan="2"><a href="https://shadowpanther.net/classic">Classic/HC/SoD</a></th>
+<th><a href="https://shadowpanther.net/tbc">TBC</a></th>
+<th><a href="https://shadowpanther.net/WotLK">WotLK</a></th>
+<th><a href="https://shadowpanther.net/Cata">Cata</a></th>
+<th>
+<div id="tran">
+<a href="https://goo.gl/4SRW"><img src="Powerleveling%20Guide%20for%20Classic%20Blacksmithing%20-%20ShadowPanther%20-%20Classic_files/f_xD6p.gif" width="25" height="15" alt="French" title="French"></a>
+<a href="https://goo.gl/kT3V"><img src="Powerleveling%20Guide%20for%20Classic%20Blacksmithing%20-%20ShadowPanther%20-%20Classic_files/g_xD6p.gif" width="25" height="15" alt="German" title="German"></a>
+<a href="https://goo.gl/V8Pm"><img src="Powerleveling%20Guide%20for%20Classic%20Blacksmithing%20-%20ShadowPanther%20-%20Classic_files/k_xD6p.gif" width="25" height="15" alt="Korean" title="Korean"></a>
+<a href="https://goo.gl/wUa1"><img src="Powerleveling%20Guide%20for%20Classic%20Blacksmithing%20-%20ShadowPanther%20-%20Classic_files/s_xD6p.gif" width="25" height="15" alt="Spanish" title="Spanish"></a>
+<a href="https://goo.gl/eSqE"><img src="Powerleveling%20Guide%20for%20Classic%20Blacksmithing%20-%20ShadowPanther%20-%20Classic_files/sc_xD6p.gif" width="25" height="15" alt="Simplified Chinese" title="Simplified Chinese"></a>
+<a href="https://goo.gl/1EYx"><img src="Powerleveling%20Guide%20for%20Classic%20Blacksmithing%20-%20ShadowPanther%20-%20Classic_files/tc_xD6p.gif" width="25" height="15" alt="Traditional Chinese" title="Traditional Chinese"></a>
+<a href="https://goo.gl/iE7j"><img src="Powerleveling%20Guide%20for%20Classic%20Blacksmithing%20-%20ShadowPanther%20-%20Classic_files/r_xD6p.gif" width="25" height="15" alt="Russian" title="Russian"></a>
+<a href="https://goo.gl/zEiX0"><img src="Powerleveling%20Guide%20for%20Classic%20Blacksmithing%20-%20ShadowPanther%20-%20Classic_files/b_xD6p.gif" width="25" height="15" alt="Brazilian Portuguese" title="Brazilian Portuguese"></a>
+<a href="https://goo.gl/Bolsh"><img src="Powerleveling%20Guide%20for%20Classic%20Blacksmithing%20-%20ShadowPanther%20-%20Classic_files/i_xD6p.gif" width="25" height="15" alt="Italian" title="Italian"></a>
+</div>
+</th>
+</tr>
+</tbody></table>
+<div id="content">
+<h1>Powerleveling Guide for Classic Blacksmithing</h1>
+<div id="article">
+<p style="margin:0">
+<i>This guide is based on previous work by Willhelm, Highlander and 
+Celaborn.  Much appreciation to them for their excellent Blacksmithing 
+guides.</i><br>
+<br>
+I've mapped out what I believe to be the best route to take in order to 
+minimize wasted time and gold when leveling your Blacksmithing 
+profession.<br>
+<br>
+This guide is based upon the following assumptions:<br>
+<br>
+<b>1.</b> You have reached level 60 (or are close to it) and want to powerlevel your Blacksmithing skill to 300 as quickly as possible.<br>
+<br>
+<b>2.</b> You are only interested in trainer recipes and/or recipes that can be obtained with minimal effort.<br>
+<br>
+<b>3.</b> You have an alt set aside to hold all of the materials you'll 
+need to level up your Blacksmithing.  I recommend sending mats to your 
+alt in the order provided below, and when you're ready, returning them 
+in reverse order.<br>
+<br>
+<b>4.</b> Whenever possible, you'll only want to craft items that are 
+Orange or Yellow difficulty, for maximum skill gain.  When required to 
+craft Yellow and/or Green difficulty items, I've adjusted the required 
+materials to account for less than 100% skill gain per item created.   
+I've also listed alternate recipes and materials in <span style="font-weight: bold; color: red; --darkreader-inline-color: var(--darkreader-text-ff0000, #ff1a1a);" data-darkreader-inline-color="">red</span> to give you additional options to consider.<br>
+<br>
+<span style="font-weight: bold; text-decoration: underline">Total Materials Needed to Get to 300 Blacksmithing</span><br>
+<br>
+Listed below are the materials you'll need and the order in which you 
+should craft items to get to 300 Blacksmithing as efficiently as 
+possible.  It's highly recommended that you farm some of these materials
+ yourself and/or purchase them from the auction house over a span of 
+several days, because your need for certain items (Iron/Steel Bars, 
+Solid Stone, Mithril Bars, Thorium Bars, etc.) will most likely surpass 
+the available supply on the AH at any given time.<br>
+<br>
+<a href="https://www.wowhead.com/classic/item=2835">Rough Stone</a> 260 <br>
+<a href="https://www.wowhead.com/classic/item=2836">Coarse Stone</a> 240 <br>
+<a href="https://www.wowhead.com/classic/item=2842">Silver Bar</a> 5 <br>
+<a href="https://www.wowhead.com/classic/item=2841">Bronze Bar</a> 115<br>
+<a href="https://www.wowhead.com/classic/item=2838">Heavy Stone</a> 300 <br>
+<a href="https://www.wowhead.com/classic/item=3577">Gold Bar</a> 21<br>
+<a href="https://www.wowhead.com/classic/item=3575">Iron Bar</a> 336<br>
+<a href="https://www.wowhead.com/classic/item=2605">Green Dye</a> 35 <br>
+<a href="https://www.wowhead.com/classic/item=3859">Steel Bar</a> 519<br>
+<a href="https://www.wowhead.com/classic/item=3466">Strong Flux</a> 16<br>
+<a href="https://www.wowhead.com/classic/item=1705">Lesser Moonstone</a> 12<br>
+<a href="https://www.wowhead.com/classic/item=4234">Heavy Leather</a> 28<br>
+<a href="https://www.wowhead.com/classic/item=7912">Solid Stone</a> 908 (Alternatively, buy up any cheap <a href="https://www.wowhead.com/classic/item=7966">Solid Grinding Stone</a> on the AH as a substitute for 4 <a href="https://www.wowhead.com/classic/item=7912">Solid Stone</a>, for use in making <a href="https://www.wowhead.com/classic/item=7969">Mithril Spurs</a>)<br>
+<a href="https://www.wowhead.com/classic/item=3860">Mithril Bar</a> 316<br>
+<a href="https://www.wowhead.com/classic/item=3864">Citrine</a> 4 <br>
+<a href="https://www.wowhead.com/classic/item=7971">Black Pearl</a> 2<br>
+<a href="https://www.wowhead.com/classic/item=1210">Shadowgem</a> 8<br>
+<a href="https://www.wowhead.com/classic/item=4304">Thick Leather</a> 4 <br>
+<a href="https://www.wowhead.com/classic/item=12365">Dense Stone</a> 30 <br>
+<a href="https://www.wowhead.com/classic/item=12359">Thorium Bar</a> 420<br>
+<br>
+<span style="font-weight: bold; text-decoration: underline">Recipes you should try to acquire before you start</span><br>
+<br>
+<a href="https://www.wowhead.com/classic/item=3853">Moonsteel Broadsword</a> (<a href="https://www.wowhead.com/classic/npc=2482">Zarena Cromwind</a>, Booty Bay) - Limited Supply (1)<br>
+<a href="https://www.wowhead.com/classic/item=3855">Massive Iron Axe</a> (<a href="https://www.wowhead.com/classic/npc=2483">Jaquilina Dramet</a>, Stranglethorn Vale - Alliance) / (<a href="https://www.wowhead.com/classic/npc=1146">Vharr</a>, Stranglethorn Vale - Horde) - Limited Supply (1)<br>
+<a href="https://www.wowhead.com/classic/item=7969">Mithril Spurs</a> (Random World Drop Recipe) - Check the AH for this one or you're going to have a *really* hard time leveling past 275<br>
+<br>
+<span style="font-weight: bold; text-decoration: underline">Step-by-Step: 0 to 300 Blacksmithing</span><br>
+<br>
+Listed below is a step-by-step route for powerleveling Blacksmithing using optimum recipes and expected quantities.<br>
+<br>
+Learn Apprentice Blacksmithing.<br>
+<br>
+</p>
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">1</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">15</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">35</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">55</td></tr></tbody></table>
+<b>1 - 25</b> <a href="https://www.wowhead.com/classic/item=2862">Rough Sharpening Stone</a> (1 <a href="https://www.wowhead.com/classic/item=2835">Rough Stone</a>) x 60 <br style="clear:left">
+<br>
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">25</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">45</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">65</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">85</td></tr></tbody></table>
+<b>26 - 65</b> <a href="https://www.wowhead.com/classic/item=3470">Rough Grinding Stone</a> (2 <a href="https://www.wowhead.com/classic/item=2835">Rough Stone</a>) x 100 (Make these until level 65. Save them until level 180)<br style="clear:left">
+<br>
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">65</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">65</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">72</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">80</td></tr></tbody></table>
+<b>66 - 75</b> <a href="https://www.wowhead.com/classic/item=2863">Coarse Sharpening Stone</a> (1 <a href="https://www.wowhead.com/classic/item=2836">Coarse Stone</a>) x 40 <br style="clear:left">
+<br>
+After level 75, learn Journeyman Blacksmithing from an Expert/Artisan Blacksmith and buy a Blacksmith Hammer.<br>
+<br>
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">75</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">75</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">87</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">100</td></tr></tbody></table>
+<b>76 - 100</b> <a href="https://www.wowhead.com/classic/item=3478">Coarse Grinding Stone</a> (2 <a href="https://www.wowhead.com/classic/item=2836">Coarse Stone</a>) x 100 (Make these until level 100. Save them until level 215)<br style="clear:left">
+<br>
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">100</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">105</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">107</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">110</td></tr></tbody></table>
+<b>101 - 105</b> <a href="https://www.wowhead.com/classic/item=6338">Silver Rod</a> (1 <a href="https://www.wowhead.com/classic/item=2842">Silver Bar</a>, 2 <a href="https://www.wowhead.com/classic/item=3470">Rough Grinding Stone)</a> x 5 <br style="clear:left">
+<br>
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">105</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">145</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">160</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">175</td></tr></tbody></table>
+<b>106 - 120</b> <a href="https://www.wowhead.com/classic/item=2865">Rough Bronze Leggings</a> (6 <a href="https://www.wowhead.com/classic/item=2841">Bronze Bar</a>) x 15<br style="clear:left">
+<br>
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">120</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">150</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">165</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">180</td></tr></tbody></table>
+<b>121 - 125</b> <a href="https://www.wowhead.com/classic/item=2868">Patterned Bronze Bracers</a> (5 <a href="https://www.wowhead.com/classic/item=2841">Bronze Bar</a>, 2 <a href="https://www.wowhead.com/classic/item=3478">Coarse Grinding Stone)</a> x 5 (Can also be used as an alternate for levels 141 - 150)<br style="clear:left">
+<br>
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">125</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">125</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">137</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">150</td></tr></tbody></table>
+<b>126 - 150</b> <a href="https://www.wowhead.com/classic/item=3486">Heavy Grinding Stone</a> (3 <a href="https://www.wowhead.com/classic/item=2838">Heavy Stone</a>) x 100 (Make these until level 150. Save them until level 250.)<br style="clear:left">
+<br>
+After level 150, learn Expert Blacksmithing from an Artisan Blacksmith.<br>
+<br>
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">150</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">155</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">157</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">160</td></tr></tbody></table>
+<b>151 - 155</b> <a href="https://www.wowhead.com/classic/item=11128">Golden Rod</a> (1 <a href="https://www.wowhead.com/classic/item=3577">Gold Bar</a>, 2 <a href="https://www.wowhead.com/classic/item=3478">Coarse Grinding Stone</a>) x 5 <br style="clear:left">
+<br>
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">155</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">180</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">192</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">205</td></tr></tbody></table>
+<b>156 - 185</b> <a href="https://www.wowhead.com/classic/item=3842">Green Iron Leggings</a> (8 <a href="https://www.wowhead.com/classic/item=3575">Iron Bar</a>, 1 <a href="https://www.wowhead.com/classic/item=3486">Heavy Grinding Stone</a>, 1 <a href="https://www.wowhead.com/classic/item=2605">Green Dye</a>) x 35 <br style="clear:left">
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">165</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">190</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">202</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">215</td></tr></tbody></table>
+<span style="color: red; --darkreader-inline-color: var(--darkreader-text-ff0000, #ff1a1a);" data-darkreader-inline-color="">(ALT) 166 - 190 <a href="https://www.wowhead.com/classic/item=6043">Iron Counterweight</a> (4 <a href="https://www.wowhead.com/classic/item=3575">Iron Bar</a>, 2 <a href="https://www.wowhead.com/classic/item=3478">Coarse Grinding Stone</a>, 1 <a href="https://www.wowhead.com/classic/item=1705">Lesser Moonstone</a>) x 5 (Check AH for recipe)</span><br style="clear:left">
+<br>
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">185</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">210</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">222</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">235</td></tr></tbody></table>
+<b>186 - 192</b> <a href="https://www.wowhead.com/classic/item=6040">Golden Scale Bracers</a> (5 <a href="https://www.wowhead.com/classic/item=3859">Steel Bar</a>, 2 <a href="https://www.wowhead.com/classic/item=3486">Heavy Grinding Stone</a>) x 7 <br>
+<br>
+Travel to Stranglethorn Vale / Booty Bay to complete the next few steps. Use the forge located in <a href="https://www.wowhead.com/classic/npc=2836">Brikk Keencraft's</a> room in Booty Bay.  A Bank/Mailbox is also available in Booty Bay.<br>
+<br>
+Get the limited supply recipes for <a href="https://www.wowhead.com/classic/item=3853">Moonsteel Broadsword</a> (<a href="https://www.wowhead.com/classic/npc=2482">Zarena Cromwind</a>, Booty Bay) and <a href="https://www.wowhead.com/classic/item=3855">Massive Iron Axe</a> (<a href="https://www.wowhead.com/classic/npc=2483">Jaquilina Dramet</a>, Stranglethorn Vale - Alliance) / (<a href="https://www.wowhead.com/classic/npc=1146">Vharr</a>, Stranglethorn Vale - Horde)<br style="clear:left">
+<br>
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">180</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">205</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">217</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">230</td></tr></tbody></table>
+<b>193 - 196</b> <a href="https://www.wowhead.com/classic/item=3853">Moonsteel Broadsword</a> (8 <a href="https://www.wowhead.com/classic/item=3859">Steel Bar</a>, 2 <a href="https://www.wowhead.com/classic/item=3466">Strong Flux</a>, 2 <a href="https://www.wowhead.com/classic/item=3486">Heavy Grinding Stone</a>, 3 <a href="https://www.wowhead.com/classic/item=1705">Lesser Moonstone</a>, 3 <a href="https://www.wowhead.com/classic/item=4234">Heavy Leather</a>) x 4 (Save for Weaponsmith quest)<br style="clear:left">
+<br>
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">185</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">210</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">222</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">235</td></tr></tbody></table>
+<b>197 - 200</b> <a href="https://www.wowhead.com/classic/item=3855">Massive Iron Axe</a> (14 <a href="https://www.wowhead.com/classic/item=3575">Iron Bar</a>, 2 <a href="https://www.wowhead.com/classic/item=3466">Strong Flux</a>, 2 <a href="https://www.wowhead.com/classic/item=3486">Heavy Grinding Stone</a>, 4 <a href="https://www.wowhead.com/classic/item=3577">Gold Bar</a>, 2 <a href="https://www.wowhead.com/classic/item=4234">Heavy Leather</a>) x 4 (Save for Weaponsmith quest)<br style="clear:left">
+<br>
+After level 200, learn Artisan Blacksmithing from <a href="https://www.wowhead.com/classic/npc=2836">Brikk Keencraft</a> in Booty Bay. He also provides level 200+ recipes. <br>
+<br>
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">200</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">200</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">205</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">210</td></tr></tbody></table>
+<b>201 - 210</b> <a href="https://www.wowhead.com/classic/item=7966">Solid Grinding Stone</a> (4 <a href="https://www.wowhead.com/classic/item=7912">Solid Stone</a>) x 227 (You will need most or all of these later - save them until level 300)<br style="clear:left">
+<br>
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">185</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">210</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">222</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">235</td></tr></tbody></table>
+<b>211 - 213</b> <a href="https://www.wowhead.com/classic/item=6040">Golden Scale Bracers</a> (5 <a href="https://www.wowhead.com/classic/item=3859">Steel Bar</a>, 2 <a href="https://www.wowhead.com/classic/item=3486">Heavy Grinding Stone</a>) x 12 (Make the minimum necessary to reach level 213)<br style="clear:left">
+<br>
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">210</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">235</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">247</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">260</td></tr></tbody></table>
+<b>214 - 215</b> <a href="https://www.wowhead.com/classic/item=7941">Heavy Mithril Axe</a> (12 <a href="https://www.wowhead.com/classic/item=3860">Mithril Bar</a>, 2 <a href="https://www.wowhead.com/classic/item=3864">Citrine</a>, 1 <a href="https://www.wowhead.com/classic/item=7966">Solid Grinding Stone</a>, 4 <a href="https://www.wowhead.com/classic/item=4234">Heavy Leather</a>) x 2 (Need for Weaponsmith quest)<br style="clear:left">
+<br>
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">215</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">235</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">245</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">255</td></tr></tbody></table>
+<b>216 - 233</b> <a href="https://www.wowhead.com/classic/item=7922">Steel Plate Helm</a> (14 <a href="https://www.wowhead.com/classic/item=3859">Steel Bar</a>, 1 <a href="https://www.wowhead.com/classic/item=7966">Solid Grinding Stone</a>) x 28<br style="clear:left">
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">215</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">235</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">245</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">255</td></tr></tbody></table>
+<span style="color: red; --darkreader-inline-color: var(--darkreader-text-ff0000, #ff1a1a);" data-darkreader-inline-color="">(ALT) 216 - 233 <a href="https://www.wowhead.com/classic/item=7924">Mithril Scale Bracers</a> (8 <a href="https://www.wowhead.com/classic/item=3860">Mithril Bar</a>) x 18 (Limited Supply Recipe from <a href="https://www.wowhead.com/classic/npc=8161">Harggan</a> in Hinterlands - Alliance / <a href="https://www.wowhead.com/classic/npc=8176">Gharash</a> in Swamp of Sorrows - Horde)</span><br style="clear:left">
+<br>
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">230</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">255</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">267</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">280</td></tr></tbody></table>
+<b>234 - 235</b> <a href="https://www.wowhead.com/classic/item=7945">Big Black Mace</a> (16 <a href="https://www.wowhead.com/classic/item=3860">Mithril Bar</a>, 1 <a href="https://www.wowhead.com/classic/item=7971">Black Pearl</a>, 4 <a href="https://www.wowhead.com/classic/item=1210">Shadowgem</a>, 1 <a href="https://www.wowhead.com/classic/item=7966">Solid Grinding Stone</a>, 2 <a href="https://www.wowhead.com/classic/item=4304">Thick Leather</a>) x 2 (Need for Weaponsmith quest)<br style="clear:left">
+<br>
+After level 235 (<a href="https://www.wowhead.com/classic/item=7945">Big Black Mace</a>), learn Weaponsmithing by turning in the weapons you crafted to <a href="https://www.wowhead.com/classic/npc=11145">Myolor Sunderfury</a> - Alliance, <a href="https://www.wowhead.com/classic/npc=11176">Krathok Moltenfist</a> - Horde<br>
+<br>
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">235</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">255</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">265</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">275</td></tr></tbody></table>
+<b>236 - 250</b> <a href="https://www.wowhead.com/classic/item=7969">Mithril Spurs</a> (4 <a href="https://www.wowhead.com/classic/item=3860">Mithril Bar</a>, 3 <a href="https://www.wowhead.com/classic/item=7966">Solid Grinding Stone</a>) x 15 (Get this recipe off the AH or you're going to have a *really* hard time leveling to 275)<br style="clear:left">
+<br>
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">230</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">250</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">260</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">270</td></tr></tbody></table>
+<span style="color: red; --darkreader-inline-color: var(--darkreader-text-ff0000, #ff1a1a);" data-darkreader-inline-color="">(ALT) 238 - 250 <a href="https://www.wowhead.com/classic/item=7931">Mithril Coif</a> (10 <a href="https://www.wowhead.com/classic/item=3860">Mithril Bar</a>, 6x <a href="https://www.wowhead.com/classic/item=4338">Mageweave Cloth</a>) x 15 (Only make these if you are unable to find the Mithril Spurs recipe)</span><br style="clear:left">
+<br>
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">250</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">255</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">257</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">260</td></tr></tbody></table>
+<b>251 - 260</b> <a href="https://www.wowhead.com/classic/item=12404">Dense Sharpening Stone</a> (1 <a href="https://www.wowhead.com/classic/item=12365">Dense Stone</a>) x 30 <br style="clear:left">
+<br>
+After level 265, turn in 30 <a href="https://www.wowhead.com/classic/item=12359">Thorium Bar</a> to <a href="https://www.wowhead.com/classic/npc=14567">Derotain Mudsipper</a> in Gadgetzan to get the Imperial Plate Boots/Bracers recipes.<br>
+<br>
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">235</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">255</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">265</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">275</td></tr></tbody></table>
+<b>261 - 275</b> <a href="https://www.wowhead.com/classic/item=7969">Mithril Spurs</a> (4 <a href="https://www.wowhead.com/classic/item=3860">Mithril Bar</a>, 3 <a href="https://www.wowhead.com/classic/item=7966">Solid Grinding Stone</a>) x 50<br style="clear:left">
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">270</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">290</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">300</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">310</td></tr></tbody></table>
+<span style="color: red; --darkreader-inline-color: var(--darkreader-text-ff0000, #ff1a1a);" data-darkreader-inline-color="">(ALT) 271 - 275 <a href="https://www.wowhead.com/classic/item=12425">Imperial Plate Bracers</a> (12 <a href="https://www.wowhead.com/classic/item=12359">Thorium Bar</a>) x 5</span><br style="clear:left">
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">270</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">290</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">300</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">310</td></tr></tbody></table>
+<b>276 - 295</b> <a href="https://www.wowhead.com/classic/item=12425">Imperial Plate Bracers</a> (12 <a href="https://www.wowhead.com/classic/item=12359">Thorium Bar</a>) x 25<br style="clear:left">
+<table style="float:left"><tbody><tr>
+<td style="width: 45px; color: orange; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffa500, #ffae1a);" data-darkreader-inline-color="">295</td>
+<td style="width: 45px; color: yellow; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-ffff00, #ffff1a);" data-darkreader-inline-color="">315</td>
+<td style="width: 45px; color: green; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-008000, #72ff72);" data-darkreader-inline-color="">325</td>
+<td style="width: 45px; color: gray; font-weight: bold; text-align: center; --darkreader-inline-color: var(--darkreader-text-808080, #988f81);" data-darkreader-inline-color="">335</td></tr></tbody></table>
+<b>296 - 300</b> <a href="https://www.wowhead.com/classic/item=12426">Imperial Plate Boots</a> (18 Thorium Bar) x 5<br>
+</div>
+</div>
+<div id="footer">
+<a href="#"><img src="Powerleveling%20Guide%20for%20Classic%20Blacksmithing%20-%20ShadowPanther%20-%20Classic_files/p_xD6p.png" width="180" height="90" alt="Return to the top" title="Return to the top"></a>
+Intellectual © 2024 ShadowPanther.net<br>
+World of Warcraft © 2024 Blizzard Entertainment<br>
+Data courtesy of Wowhead.com<br>
+<a href="https://shadowpanther.net/classic/contact.htm">CONTACT ME</a>
+</div>
+</div>
+<script type="text/javascript">const whTooltips = {colorLinks: false, iconizeLinks: false, renameLinks: false};</script>
+<script type="text/javascript" src="Powerleveling%20Guide%20for%20Classic%20Blacksmithing%20-%20ShadowPanther%20-%20Classic_files/power_xD6p.js"></script>
+
+</body></html>
