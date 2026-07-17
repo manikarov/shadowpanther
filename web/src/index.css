@@ -465,6 +465,12 @@ h2 {
   white-space: nowrap;
 }
 
+/* Sets a text column (Source, …) off from the preceding numeric block. */
+.data-table th.col-gap,
+.data-table td.col-gap {
+  padding-left: 28px;
+}
+
 .data-table thead th {
   font-family: var(--sans);
   font-size: 11px;

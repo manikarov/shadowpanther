@@ -8,7 +8,7 @@ export function Layout() {
     <>
       <header className="site-header">
         <NavLink to="/" className="brand">
-          <img src={asset("assets/panther_icon.png")} alt="" className="brand-logo" />
+          <img src={asset("assets/icons/panther_icon.png")} alt="" className="brand-logo" />
           <span className="wordmark">
             ShadowPanther <span>Classic</span>
           </span>

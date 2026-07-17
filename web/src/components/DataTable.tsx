@@ -27,6 +27,10 @@ interface DataTableProps<T> {
   columnGroups?: ColumnGroup[];
   numericColumns?: Set<string>;
   columnWidths?: Record<string, ColumnWidth>;
+  /** Column-group labels switched on from the start. */
+  defaultGroups?: string[];
+  /** Columns that get extra left padding to set them off from a numeric block. */
+  gapBefore?: Set<string>;
 }
 
 // Metadata-ish columns that stay visually muted regardless of value.
@@ -40,12 +44,15 @@ export function DataTable<T>({
   columnGroups,
   numericColumns,
   columnWidths,
+  defaultGroups,
+  gapBefore,
 }: DataTableProps<T>) {
   const [sorting, setSorting] = useState<SortingState>(initialSort ?? []);
   const [globalFilter, setGlobalFilter] = useState("");
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
-  // Groups start collapsed - "unnecessary" columns only appear once a chip is switched on.
-  const [activeGroups, setActiveGroups] = useState<Set<string>>(new Set());
+  // Most groups start collapsed - "unnecessary" columns only appear once a chip
+  // is switched on; a chart may opt some groups (e.g. Damage) on from the start.
+  const [activeGroups, setActiveGroups] = useState<Set<string>>(new Set(defaultGroups));
 
   const columnVisibility = useMemo<VisibilityState>(() => {
     const visibility: VisibilityState = {};
@@ -158,6 +165,7 @@ export function DataTable<T>({
                         header.column.getCanSort() && "sortable",
                         isNum && "num",
                         width && `col-${width}`,
+                        gapBefore?.has(header.column.id) && "col-gap",
                       ]
                         .filter(Boolean)
                         .join(" ")}
@@ -185,7 +193,12 @@ export function DataTable<T>({
                   return (
                     <td
                       key={cell.id}
-                      className={[isDim && "dim", isNum && "num", width && `col-${width}`]
+                      className={[
+                        isDim && "dim",
+                        isNum && "num",
+                        width && `col-${width}`,
+                        gapBefore?.has(cell.column.id) && "col-gap",
+                      ]
                         .filter(Boolean)
                         .join(" ")}
                     >

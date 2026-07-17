@@ -19,7 +19,18 @@ export interface ChartConfig {
   /** Column whose presence backs the "only items with X" row filter checkbox. */
   specialColumn?: string;
   columnGroups: ColumnGroups;
+  /** Column groups switched on from the start (e.g. show Damage by default). */
+  defaultGroups?: string[];
+  /** Metric columns pinned to a narrow width so paired values (AEP/MAEP) sit close together. */
+  tightColumns?: string[];
+  /** Columns that get extra breathing room on their left edge, to separate a numeric block from text. */
+  gapBefore?: string[];
 }
+
+// The AEP/MAEP(/TAEP) headline metrics – kept narrow and grouped tightly, with a
+// gap before the text column that follows them.
+const weaponMetrics = ["AEP", "MAEP"];
+const aepMetrics = ["AEP", "MAEP", "TAEP"];
 
 // Shared by Weapons/Daggers/Fists/Maces/Swords - they're all the same parser schema.
 const weaponColumnGroups: ColumnGroups = {
@@ -57,48 +68,30 @@ const enchantmentColumnGroups: ColumnGroups = {
   ],
 };
 
+// Common layout for all melee-weapon charts: show Damage by default, keep the
+// AEP/MAEP pair tight, and set off the Source column.
+const weaponLayout = {
+  specialColumn: "Special",
+  columnGroups: weaponColumnGroups,
+  defaultGroups: ["Damage"],
+  tightColumns: weaponMetrics,
+  gapBefore: ["Source"],
+} satisfies Partial<ChartConfig>;
+
 export const CHARTS: ChartConfig[] = [
-  {
-    path: "weapons",
-    label: "Weapons",
-    dataUrl: asset("data/weapons.json"),
-    specialColumn: "Special",
-    columnGroups: weaponColumnGroups,
-  },
-  {
-    path: "daggers",
-    label: "Daggers",
-    dataUrl: asset("data/daggers.json"),
-    specialColumn: "Special",
-    columnGroups: weaponColumnGroups,
-  },
-  {
-    path: "fists",
-    label: "Fists",
-    dataUrl: asset("data/fists.json"),
-    specialColumn: "Special",
-    columnGroups: weaponColumnGroups,
-  },
-  {
-    path: "maces",
-    label: "Maces",
-    dataUrl: asset("data/maces.json"),
-    specialColumn: "Special",
-    columnGroups: weaponColumnGroups,
-  },
-  {
-    path: "swords",
-    label: "Swords",
-    dataUrl: asset("data/swords.json"),
-    specialColumn: "Special",
-    columnGroups: weaponColumnGroups,
-  },
+  { path: "weapons", label: "Weapons", dataUrl: asset("data/weapons.json"), ...weaponLayout },
+  { path: "daggers", label: "Daggers", dataUrl: asset("data/daggers.json"), ...weaponLayout },
+  { path: "fists", label: "Fists", dataUrl: asset("data/fists.json"), ...weaponLayout },
+  { path: "maces", label: "Maces", dataUrl: asset("data/maces.json"), ...weaponLayout },
+  { path: "swords", label: "Swords", dataUrl: asset("data/swords.json"), ...weaponLayout },
   {
     path: "armor",
     label: "Armor",
     dataUrl: asset("data/armor.json"),
     specialColumn: "Special",
     columnGroups: armorColumnGroups,
+    tightColumns: aepMetrics,
+    gapBefore: ["Source"],
   },
   {
     path: "enchantments",
@@ -106,5 +99,7 @@ export const CHARTS: ChartConfig[] = [
     dataUrl: asset("data/enchantments.json"),
     specialColumn: "Other Effect",
     columnGroups: enchantmentColumnGroups,
+    tightColumns: aepMetrics,
+    gapBefore: ["Other Effect"],
   },
 ];

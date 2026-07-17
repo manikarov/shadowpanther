@@ -49,10 +49,17 @@ function numericColumnIds(rows: ItemRecord[]): Set<string> {
 // one-letter columns (H, T, B) and long ones (Source, Special) to the same
 // width, wrapping short values mid-character. Size each column by how long
 // its actual content gets instead, so only genuinely long text columns wrap.
-function columnWidths(rows: ItemRecord[]): Record<string, ColumnWidth> {
+function columnWidths(rows: ItemRecord[], tight?: string[]): Record<string, ColumnWidth> {
   const keys = Object.keys(rows[0]).filter((k) => !META_KEYS.has(k));
+  const tightSet = new Set(tight);
   const widths: Record<string, ColumnWidth> = {};
   for (const key of keys) {
+    if (tightSet.has(key)) {
+      // Headline metrics (AEP/MAEP…) stay narrow so paired values read together
+      // instead of drifting apart across a wide column.
+      widths[key] = "narrow";
+      continue;
+    }
     const maxLen = Math.max(key.length, ...rows.map((r) => formatCell(r[key]).length));
     widths[key] = maxLen <= 3 ? "narrow" : maxLen <= 6 ? "medium" : "wide";
   }
@@ -89,9 +96,11 @@ export function ChartPage({ config }: { config: ChartConfig }) {
             data={rows}
             columns={buildColumns(rows)}
             numericColumns={numericColumnIds(rows)}
-            columnWidths={columnWidths(rows)}
+            columnWidths={columnWidths(rows, config.tightColumns)}
             initialSort={[{ id: "AEP", desc: true }]}
             columnGroups={config.columnGroups.groups}
+            defaultGroups={config.defaultGroups}
+            gapBefore={config.gapBefore ? new Set(config.gapBefore) : undefined}
             hasValueFilters={
               config.specialColumn
                 ? [{ columnId: config.specialColumn, label: `Only with ${config.specialColumn}` }]
