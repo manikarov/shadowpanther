@@ -1,12 +1,10 @@
 import { Link } from "react-router-dom";
 import { CategoryIcon } from "../components/icons";
 import { CHARTS } from "../config/charts";
+import { GUIDES } from "../config/guides";
 import { asset } from "../lib/asset";
 
-const GUIDES = [
-  "Blacksmithing Guide",
-  "Leatherworking Guide",
-  "Engineering Guide",
+const SOON_GUIDES = [
   "Alliance Questing Guide",
   "Rogue Resistance Gear",
   "Rogue Patch Notes",
@@ -33,9 +31,14 @@ export function HomePage() {
       </section>
 
       <section className="guides">
-        <h2>Guides</h2>
+        <h2>Powerleveling Guides</h2>
         <ul className="guide-list">
           {GUIDES.map((g) => (
+            <li key={g.path} className="guide-item">
+              <Link to={`/${g.path}`}>{g.label}</Link>
+            </li>
+          ))}
+          {SOON_GUIDES.map((g) => (
             <li key={g} className="guide-item soon" title="Coming soon">
               {g}
             </li>

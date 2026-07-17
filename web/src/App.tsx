@@ -1,7 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { CHARTS } from "./config/charts";
+import { GUIDES } from "./config/guides";
 import { ChartPage } from "./pages/ChartPage";
+import { GuidePage } from "./pages/GuidePage";
 import { HomePage } from "./pages/HomePage";
 
 // Strip the trailing slash from Vite's BASE_URL ("/shadowpanther/" -> "/shadowpanther",
@@ -16,6 +18,9 @@ function App() {
           <Route index element={<HomePage />} />
           {CHARTS.map((config) => (
             <Route key={config.path} path={config.path} element={<ChartPage config={config} />} />
+          ))}
+          {GUIDES.map((config) => (
+            <Route key={config.path} path={config.path} element={<GuidePage config={config} />} />
           ))}
         </Route>
       </Routes>

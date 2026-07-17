@@ -596,3 +596,134 @@ h2 {
   letter-spacing: 0.04em;
   margin-top: 2px;
 }
+
+/* --- nav separator (charts | guides) --- */
+
+.nav-sep {
+  width: 1px;
+  align-self: stretch;
+  margin: 4px 6px;
+  background: var(--border);
+}
+
+/* --- guides list on the home page --- */
+
+.guide-item a {
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.guide-item:hover a {
+  color: var(--gold-bright);
+}
+
+/* --- powerleveling guide page --- */
+
+.page h1 .cap {
+  font-family: var(--mono);
+  font-size: 0.5em;
+  letter-spacing: 0.08em;
+  color: var(--gold-dim);
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+.material-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.material-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 5px 13px;
+  font-size: 13px;
+}
+
+.material-chip a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.material-chip a:hover {
+  color: var(--gold-bright);
+  text-decoration: underline;
+}
+
+.material-chip b {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* The route table wraps freely (unlike the fixed-width chart tables) - the
+   materials/notes columns hold sentences, so let them flow and wrap. */
+.guide-table td {
+  vertical-align: top;
+  white-space: normal;
+}
+
+.guide-table .col-range {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--gold-dim);
+  white-space: nowrap;
+}
+
+.guide-table .col-craft {
+  font-family: var(--sans);
+}
+
+.guide-table .craft-link {
+  color: var(--gold-bright);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.guide-table .craft-link:hover {
+  text-decoration: underline;
+}
+
+.guide-table .col-qty {
+  font-family: var(--mono);
+  color: var(--text-dim);
+}
+
+.guide-table .col-mats {
+  font-family: var(--sans);
+  color: var(--text-dim);
+  font-size: 13px;
+}
+
+.guide-table .col-note {
+  font-family: var(--sans);
+  color: var(--text-faint);
+  font-size: 12.5px;
+}
+
+/* Milestone rows ("After level 75, learn Journeyman...") span the whole table. */
+.guide-table .milestone-row td {
+  font-family: var(--serif);
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  color: var(--gold);
+  background: rgba(201, 162, 39, 0.05);
+  border-bottom: 1px solid var(--border);
+}
+
+.guide-table .milestone-row td::before {
+  content: "◆ ";
+  color: var(--gold-dim);
+  font-size: 9px;
+  vertical-align: middle;
+}

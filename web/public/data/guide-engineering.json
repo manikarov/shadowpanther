@@ -1,0 +1,488 @@
+{
+  "profession": "Engineering",
+  "skillCap": 300,
+  "materials": [
+    {
+      "name": "Rough Stone",
+      "qty": 37,
+      "itemId": 2835,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=2835"
+    },
+    {
+      "name": "Linen Cloth",
+      "qty": 14,
+      "itemId": 2589,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=2589"
+    },
+    {
+      "name": "Copper Bar",
+      "qty": 58,
+      "itemId": 2840,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=2840"
+    },
+    {
+      "name": "Coarse Stone",
+      "qty": 136,
+      "itemId": 2836,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=2836"
+    },
+    {
+      "name": "Bronze Bar",
+      "qty": 72,
+      "itemId": 2841,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=2841"
+    },
+    {
+      "name": "Heavy Stone",
+      "qty": 33,
+      "itemId": 2838,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=2838"
+    },
+    {
+      "name": "Medium Leather",
+      "qty": 15,
+      "itemId": 2319,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=2319"
+    },
+    {
+      "name": "Wool Cloth",
+      "qty": 100,
+      "itemId": 2592,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=2592"
+    },
+    {
+      "name": "Solid Stone",
+      "qty": 260,
+      "itemId": 7912,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=7912"
+    },
+    {
+      "name": "Mithril Bar",
+      "qty": 151,
+      "itemId": 3860,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=3860"
+    },
+    {
+      "name": "Mageweave Cloth",
+      "qty": 15,
+      "itemId": 4338,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=4338"
+    },
+    {
+      "name": "Dense Stone",
+      "qty": 80,
+      "itemId": 12365,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=12365"
+    },
+    {
+      "name": "Thorium Bar",
+      "qty": 117,
+      "itemId": 12359,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=12359"
+    },
+    {
+      "name": "Runecloth",
+      "qty": 27,
+      "itemId": 14047,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=14047"
+    }
+  ],
+  "steps": [
+    {
+      "range": "",
+      "craft": "",
+      "craftId": null,
+      "craftUrl": null,
+      "qty": null,
+      "materials": "",
+      "note": "Learn Apprentice Engineering (Trainer.)"
+    },
+    {
+      "range": "1 - 20",
+      "craft": "Rough Blasting Powder",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=3918",
+      "qty": 20,
+      "materials": "20 Rough Stone",
+      "note": "Save until 90."
+    },
+    {
+      "range": "21 - 30",
+      "craft": "Rough Blasting Powder",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=3918",
+      "qty": 17,
+      "materials": "17 Rough Stone",
+      "note": "Save until 90."
+    },
+    {
+      "range": "31 - 53",
+      "craft": "Handful of Copper Bolts",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=3922",
+      "qty": 29,
+      "materials": "29 Copper Bar",
+      "note": "Save until 170."
+    },
+    {
+      "range": "",
+      "craft": "",
+      "craftId": null,
+      "craftUrl": null,
+      "qty": null,
+      "materials": "",
+      "note": "Learn Journeyman Engineering (Trainer.)"
+    },
+    {
+      "range": "54 - 64",
+      "craft": "Copper Tube",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=3924",
+      "qty": 11,
+      "materials": "22 Copper Bar, 11 Weak Flux",
+      "note": "Save until 155."
+    },
+    {
+      "range": "65 - 75",
+      "craft": "Rough Boomstick",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=3925",
+      "qty": 11,
+      "materials": "11 Copper Tube, 11 Handful of Copper Bolts, 11 Wooden Stock",
+      "note": ""
+    },
+    {
+      "range": "76 - 95",
+      "craft": "Coarse Blasting Powder",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=3929",
+      "qty": 136,
+      "materials": "136 Coarse Stone",
+      "note": "Save until 170."
+    },
+    {
+      "range": "96 - 100",
+      "craft": "Copper Modulator",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=3926",
+      "qty": 7,
+      "materials": "14 Handful of Copper Bolts, 7 Copper Bar, 14 Linen Cloth",
+      "note": "Save until 185."
+    },
+    {
+      "range": "101 - 105",
+      "craft": "EZ-Thro Dynamite (1-3)",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=8339",
+      "qty": 5,
+      "materials": "20 Coarse Blasting Powder, 5 Wool Cloth",
+      "note": "AH schematic."
+    },
+    {
+      "range": "106 - 110",
+      "craft": "EZ-Thro Dynamite (1-3)",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=8339",
+      "qty": 5,
+      "materials": "20 Coarse Blasting Powder, 5 Wool Cloth",
+      "note": "AH schematic."
+    },
+    {
+      "range": "111 - 115",
+      "craft": "EZ-Thro Dynamite (1-3)",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=8339",
+      "qty": 5,
+      "materials": "20 Coarse Blasting Powder, 5 Wool Cloth",
+      "note": "AH schematic."
+    },
+    {
+      "range": "116 - 120",
+      "craft": "EZ-Thro Dynamite (1-3)",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=8339",
+      "qty": 7,
+      "materials": "28 Coarse Blasting Powder, 7 Wool Cloth",
+      "note": "AH schematic."
+    },
+    {
+      "range": "121 - 125",
+      "craft": "EZ-Thro Dynamite (1-3)",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=8339",
+      "qty": 12,
+      "materials": "48 Coarse Blasting Powder, 12 Wool Cloth",
+      "note": "AH schematic."
+    },
+    {
+      "range": "",
+      "craft": "",
+      "craftId": null,
+      "craftUrl": null,
+      "qty": null,
+      "materials": "",
+      "note": "Learn Expert Engineering (Trainer.)"
+    },
+    {
+      "range": "126 - 140",
+      "craft": "Heavy Blasting Powder",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=3945",
+      "qty": 33,
+      "materials": "33 Heavy Stone",
+      "note": "Save until 235."
+    },
+    {
+      "range": "141 - 150",
+      "craft": "Whirling Bronze Gizmo",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=3942",
+      "qty": 21,
+      "materials": "42 Bronze Bar, 21 Wool Cloth",
+      "note": "Save until 200."
+    },
+    {
+      "range": "151 - 160",
+      "craft": "Bronze Framework",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=3953",
+      "qty": 15,
+      "materials": "30 Bronze Bar, 15 Medium Leather, 15 Wool Cloth",
+      "note": "Save until 240."
+    },
+    {
+      "range": "161 - 165",
+      "craft": "Explosive Sheep",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=3955",
+      "qty": 5,
+      "materials": "10 Heavy Blasting Powder, 5 Whirling Bronze Gizmo, 5 Bronze Framewk, 10 Wool Cloth",
+      "note": ""
+    },
+    {
+      "range": "166 - 170",
+      "craft": "Explosive Sheep",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=3955",
+      "qty": 5,
+      "materials": "10 Heavy Blasting Powder, 5 Whirling Bronze Gizmo, 5 Bronze Framewk, 10 Wool Cloth",
+      "note": ""
+    },
+    {
+      "range": "171 - 175",
+      "craft": "Explosive Sheep",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=3955",
+      "qty": 5,
+      "materials": "10 Heavy Blasting Powder, 5 Whirling Bronze Gizmo, 5 Bronze Framewk, 10 Wool Cloth",
+      "note": ""
+    },
+    {
+      "range": "176 - 195",
+      "craft": "Solid Blasting Powder",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=12585",
+      "qty": 130,
+      "materials": "260 Solid Stone",
+      "note": "Save until 285."
+    },
+    {
+      "range": "196 - 200",
+      "craft": "Mithril Tube",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=12589",
+      "qty": 7,
+      "materials": "21 Mithril Bar",
+      "note": "Save until 300."
+    },
+    {
+      "range": "",
+      "craft": "",
+      "craftId": null,
+      "craftUrl": null,
+      "qty": null,
+      "materials": "",
+      "note": "Learn Artisan Engineering (Trainer.)"
+    },
+    {
+      "range": "",
+      "craft": "",
+      "craftId": null,
+      "craftUrl": null,
+      "qty": null,
+      "materials": "",
+      "note": "Learn Gnomish Engineering"
+    },
+    {
+      "range": "",
+      "craft": "",
+      "craftId": null,
+      "craftUrl": null,
+      "qty": null,
+      "materials": "",
+      "note": "Learn Goblin Engineering"
+    },
+    {
+      "range": "201 - 205",
+      "craft": "Unstable Trigger",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=12591",
+      "qty": 7,
+      "materials": "7 Mithril Bar, 7 Solid Blasting Powder, 7 Mageweave Cloth",
+      "note": "Save until 285."
+    },
+    {
+      "range": "206 - 210",
+      "craft": "Unstable Trigger",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=12591",
+      "qty": 8,
+      "materials": "8 Mithril Bar, 8 Solid Blasting Powder, 8 Mageweave Cloth",
+      "note": "Save until 285."
+    },
+    {
+      "range": "211 - 215",
+      "craft": "Hi-Impact Mithril Slugs",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=12596",
+      "qty": 7,
+      "materials": "7 Mithril Bar, 7 Solid Blasting Powder",
+      "note": ""
+    },
+    {
+      "range": "216 - 220",
+      "craft": "Hi-Impact Mithril Slugs",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=12596",
+      "qty": 8,
+      "materials": "8 Mithril Bar, 8 Solid Blasting Powder",
+      "note": ""
+    },
+    {
+      "range": "221 - 225",
+      "craft": "Hi-Impact Mithril Slugs",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=12596",
+      "qty": 9,
+      "materials": "9 Mithril Bar, 9 Solid Blasting Powder",
+      "note": ""
+    },
+    {
+      "range": "226 - 230",
+      "craft": "Hi-Impact Mithril Slugs",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=12596",
+      "qty": 11,
+      "materials": "11 Mithril Bar, 11 Solid Blasting Powder",
+      "note": ""
+    },
+    {
+      "range": "231 - 235",
+      "craft": "Hi-Impact Mithril Slugs",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=12596",
+      "qty": 14,
+      "materials": "14 Mithril Bar, 14 Solid Blasting Powder",
+      "note": ""
+    },
+    {
+      "range": "236 - 240",
+      "craft": "Hi-Impact Mithril Slugs",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=12596",
+      "qty": 20,
+      "materials": "20 Mithril Bar, 20 Solid Blasting Powder",
+      "note": ""
+    },
+    {
+      "range": "241 - 245",
+      "craft": "Hi-Impact Mithril Slugs",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=12596",
+      "qty": 32,
+      "materials": "32 Mithril Bar, 32 Solid Blasting Powder",
+      "note": ""
+    },
+    {
+      "range": "246 - 250",
+      "craft": "Mithril Gyro-Shot",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=12621",
+      "qty": 7,
+      "materials": "14 Mithril Bar, 14 Solid Blasting Powder",
+      "note": ""
+    },
+    {
+      "range": "251 - 260",
+      "craft": "Dense Blasting Powder",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=19788",
+      "qty": 40,
+      "materials": "80 Dense Stone",
+      "note": "Save until 300."
+    },
+    {
+      "range": "261 - 270",
+      "craft": "Thorium Widget",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=19791",
+      "qty": 10,
+      "materials": "30 Thorium Bar, 10 Runecloth",
+      "note": "Save until 300."
+    },
+    {
+      "range": "271 - 275",
+      "craft": "Thorium Widget",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=19791",
+      "qty": 5,
+      "materials": "15 Thorium Bar, 5 Runecloth",
+      "note": "Save until 300."
+    },
+    {
+      "range": "276 - 280",
+      "craft": "Thorium Widget",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=19791",
+      "qty": 5,
+      "materials": "15 Thorium Bar, 5 Runecloth",
+      "note": "Save until 300."
+    },
+    {
+      "range": "281 - 285",
+      "craft": "Thorium Widget",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=19791",
+      "qty": 7,
+      "materials": "21 Thorium Bar, 7 Runecloth",
+      "note": "Save until 300."
+    },
+    {
+      "range": "286 - 290",
+      "craft": "Thorium Shells",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=19800",
+      "qty": 5,
+      "materials": "10 Thorium Bar, 5 Dense Blasting Powder",
+      "note": ""
+    },
+    {
+      "range": "291 - 295",
+      "craft": "Thorium Shells",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=19800",
+      "qty": 5,
+      "materials": "10 Thorium Bar, 5 Dense Blasting Powder",
+      "note": ""
+    },
+    {
+      "range": "296 - 300",
+      "craft": "Thorium Shells",
+      "craftId": null,
+      "craftUrl": "https://www.wowhead.com/classic/spell=19800",
+      "qty": 8,
+      "materials": "16 Thorium Bar, 8 Dense Blasting Powder",
+      "note": ""
+    }
+  ]
+}

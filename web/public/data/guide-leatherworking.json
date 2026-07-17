@@ -1,0 +1,473 @@
+{
+  "profession": "Leatherworking",
+  "skillCap": 300,
+  "materials": [
+    {
+      "name": "Light Leather",
+      "qty": null,
+      "itemId": 2318,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=2318"
+    },
+    {
+      "name": "Thick Leather",
+      "qty": null,
+      "itemId": 4304,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=4304#created-by"
+    },
+    {
+      "name": "Rugged Leather",
+      "qty": null,
+      "itemId": 8170,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=8170"
+    },
+    {
+      "name": "Light Leather",
+      "qty": 275,
+      "itemId": 2318,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=2318"
+    },
+    {
+      "name": "Light Hide",
+      "qty": 20,
+      "itemId": 783,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=783#skinned-from"
+    },
+    {
+      "name": "Medium Hide",
+      "qty": 25,
+      "itemId": 4232,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=4232#skinned-from"
+    },
+    {
+      "name": "Heavy Hide",
+      "qty": 20,
+      "itemId": 4235,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=4235#skinned-from"
+    },
+    {
+      "name": "Heavy Leather",
+      "qty": 220,
+      "itemId": 4234,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=4234#created-by"
+    },
+    {
+      "name": "Thick Leather",
+      "qty": 539,
+      "itemId": 4304,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=4304#created-by"
+    },
+    {
+      "name": "Rugged Leather",
+      "qty": 360,
+      "itemId": 8170,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=8170"
+    },
+    {
+      "name": "Deviate Scale Cloak",
+      "qty": null,
+      "itemId": 6474,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=6474#comments"
+    },
+    {
+      "name": "Kalldan Felmoon",
+      "qty": 1,
+      "itemId": null,
+      "wowheadUrl": "https://www.wowhead.com/classic/npc=5783#comments"
+    },
+    {
+      "name": "Fine Leather Boots",
+      "qty": null,
+      "itemId": 2406,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=2406#comments"
+    },
+    {
+      "name": "Raptor Hide Belt",
+      "qty": null,
+      "itemId": 13288,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=13288#comments"
+    },
+    {
+      "name": "Androd Fadran",
+      "qty": 1,
+      "itemId": null,
+      "wowheadUrl": "https://www.wowhead.com/classic/npc=2816"
+    },
+    {
+      "name": "Raptor Hide Harness",
+      "qty": null,
+      "itemId": 13287,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=13287#comments"
+    },
+    {
+      "name": "Tunkk",
+      "qty": 1,
+      "itemId": null,
+      "wowheadUrl": "https://www.wowhead.com/classic/npc=2819"
+    },
+    {
+      "name": "Wicked Leather Gauntlets",
+      "qty": null,
+      "itemId": 15725,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=15725#comments"
+    },
+    {
+      "name": "Leonard Porter",
+      "qty": null,
+      "itemId": null,
+      "wowheadUrl": "https://www.wowhead.com/classic/npc=12942#comments"
+    },
+    {
+      "name": "Werg Thickblade",
+      "qty": 1,
+      "itemId": null,
+      "wowheadUrl": "https://www.wowhead.com/classic/npc=12943#comments"
+    },
+    {
+      "name": "Heavy Scorpid Bracers",
+      "qty": null,
+      "itemId": 15724,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=15724#comments"
+    },
+    {
+      "name": "Zannok Hidepiercer",
+      "qty": 1,
+      "itemId": null,
+      "wowheadUrl": "https://www.wowhead.com/classic/npc=12956#comments"
+    }
+  ],
+  "steps": [
+    {
+      "range": "1 - 35",
+      "craft": "Light Armor Kit",
+      "craftId": 2304,
+      "craftUrl": "https://www.wowhead.com/classic/item=2304#created-by",
+      "qty": 35,
+      "materials": "1 Light Leather",
+      "note": ""
+    },
+    {
+      "range": "1 - 35",
+      "craft": "Light Leather",
+      "craftId": null,
+      "craftUrl": null,
+      "qty": 45,
+      "materials": "3 Ruined Leather Scraps",
+      "note": "(Alternative)"
+    },
+    {
+      "range": "36 - 55",
+      "craft": "Cured Light Hide",
+      "craftId": 4231,
+      "craftUrl": "https://www.wowhead.com/classic/item=4231",
+      "qty": 20,
+      "materials": "1 Light Hide, 1 Salt",
+      "note": ""
+    },
+    {
+      "range": "36 - 55",
+      "craft": "Small Leather Ammo Pouch",
+      "craftId": null,
+      "craftUrl": null,
+      "qty": 20,
+      "materials": "3 Light Leather, 4 Coarse Thread",
+      "note": "(Alternative)"
+    },
+    {
+      "range": "56 - 85",
+      "craft": "Embossed Leather Gloves",
+      "craftId": 4239,
+      "craftUrl": "https://www.wowhead.com/classic/item=4239",
+      "qty": 30,
+      "materials": "3 Light Leather, 2 Coarse Thread",
+      "note": ""
+    },
+    {
+      "range": "",
+      "craft": "",
+      "craftId": null,
+      "craftUrl": null,
+      "qty": null,
+      "materials": "",
+      "note": "After level 75, learn Journeyman Leatherworking from your Leatherworking Trainer."
+    },
+    {
+      "range": "86 - 110",
+      "craft": "Fine Leather Belt",
+      "craftId": 4246,
+      "craftUrl": "https://www.wowhead.com/classic/item=4246",
+      "qty": 25,
+      "materials": "6 Light Leather, 2 Coarse thread",
+      "note": "Save these for later"
+    },
+    {
+      "range": "90 - 110",
+      "craft": "Deviate Scale Cloak",
+      "craftId": null,
+      "craftUrl": null,
+      "qty": 20,
+      "materials": "4 Deviate Scale, 1 Cured Light Hide, 1 Fine Thread",
+      "note": "(Alternative) Kalldan Felmoon, outside Wailing Caverns"
+    },
+    {
+      "range": "111 - 125",
+      "craft": "Cured Medium Hide",
+      "craftId": 4233,
+      "craftUrl": "https://www.wowhead.com/classic/item=4233",
+      "qty": 25,
+      "materials": "1 Medium Hide, 1 Salt",
+      "note": "Save these for later"
+    },
+    {
+      "range": "111 - 125",
+      "craft": "Fine Leather Boots",
+      "craftId": null,
+      "craftUrl": null,
+      "qty": 15,
+      "materials": "7 Light Leather, 2 Coarse Thread",
+      "note": "(Alternative) Check AH for the World Drop recipe"
+    },
+    {
+      "range": "111 - 125",
+      "craft": "Dark Leather Boots",
+      "craftId": null,
+      "craftUrl": null,
+      "qty": 15,
+      "materials": "4 Medium Leather, 2 Fine Thread, 1 Gray Dye",
+      "note": "(Alternative)"
+    },
+    {
+      "range": "126 - 150",
+      "craft": "Dark Leather Belt",
+      "craftId": 4249,
+      "craftUrl": "https://www.wowhead.com/classic/item=4249",
+      "qty": 25,
+      "materials": "1 Fine Leather Belt, 1 Cured Medium Hide, 2 Fine Thread, 1 Gray Dye",
+      "note": ""
+    },
+    {
+      "range": "126 - 150",
+      "craft": "Nimble Leather Gloves",
+      "craftId": null,
+      "craftUrl": null,
+      "qty": 25,
+      "materials": "1 Elixir of Minor Agility, 6 Medium Leather, 1 Fine Thread",
+      "note": "(Alternative)"
+    },
+    {
+      "range": "",
+      "craft": "",
+      "craftId": null,
+      "craftUrl": null,
+      "qty": null,
+      "materials": "",
+      "note": "After level 150, learn Expert Leatherworking from your Leatherworking Trainer."
+    },
+    {
+      "range": "151 - 165",
+      "craft": "Cured Heavy Hide",
+      "craftId": 4236,
+      "craftUrl": "https://www.wowhead.com/classic/item=4236",
+      "qty": 20,
+      "materials": "1 Heavy Hide, 3 Salt",
+      "note": "Save for later"
+    },
+    {
+      "range": "151 - 165",
+      "craft": "Hillman's Cloak",
+      "craftId": null,
+      "craftUrl": null,
+      "qty": 15,
+      "materials": "5 Heavy Leather, 2 Fine Thread",
+      "note": "(Alternative)"
+    },
+    {
+      "range": "166 - 180",
+      "craft": "Hillman's Cloak",
+      "craftId": 3719,
+      "craftUrl": "https://www.wowhead.com/classic/item=3719",
+      "qty": 20,
+      "materials": "5 Heavy Leather, 2 Fine Thread",
+      "note": ""
+    },
+    {
+      "range": "181 - 190",
+      "craft": "Barbaric Shoulders",
+      "craftId": 5964,
+      "craftUrl": "https://www.wowhead.com/classic/item=5964",
+      "qty": 10,
+      "materials": "8 Heavy Leather, 1 Cured Heavy Hide, 2 Fine Thread",
+      "note": ""
+    },
+    {
+      "range": "181 - 190",
+      "craft": "Raptor Hide Belt",
+      "craftId": null,
+      "craftUrl": null,
+      "qty": 10,
+      "materials": "Alliance",
+      "note": "(Alternative) Androd Fadran, Arathi Highlands - Alliance) / ( Tunkk, Arathi Highlands - Horde"
+    },
+    {
+      "range": "186 - 190",
+      "craft": "Dusky Bracers",
+      "craftId": null,
+      "craftUrl": null,
+      "qty": 5,
+      "materials": "16 Heavy Leather, 1 Black Dye, 2 Silken Thread",
+      "note": "(Alternative)"
+    },
+    {
+      "range": "191 - 200",
+      "craft": "Guardian Gloves",
+      "craftId": 5966,
+      "craftUrl": "https://www.wowhead.com/classic/item=5966",
+      "qty": 10,
+      "materials": "4 Heavy Leather, 1 Cured Heavy Hide, 1 Silken Thread",
+      "note": ""
+    },
+    {
+      "range": "",
+      "craft": "",
+      "craftId": null,
+      "craftUrl": null,
+      "qty": null,
+      "materials": "",
+      "note": "After level 200, learn Artisan Leatherworking from your Leatherworking Trainer."
+    },
+    {
+      "range": "201 - 220",
+      "craft": "Thick Armor Kit",
+      "craftId": 8173,
+      "craftUrl": "https://www.wowhead.com/classic/item=8173#created-by",
+      "qty": 20,
+      "materials": "5 Thick Leather, 1 Silken Thread",
+      "note": ""
+    },
+    {
+      "range": "221 - 239",
+      "craft": "Nightscape Headband",
+      "craftId": 8176,
+      "craftUrl": "https://www.wowhead.com/classic/item=8176",
+      "qty": 25,
+      "materials": "5 Thick Leather, 2 Silken Thread",
+      "note": ""
+    },
+    {
+      "range": "",
+      "craft": "",
+      "craftId": null,
+      "craftUrl": null,
+      "qty": null,
+      "materials": "",
+      "note": "After level 225, you have the option to learn a Leatherworking Specialization. Elemental Leatherworking"
+    },
+    {
+      "range": "",
+      "craft": "",
+      "craftId": null,
+      "craftUrl": null,
+      "qty": null,
+      "materials": "",
+      "note": "is the preferred specialization for Rogues although I don't list any"
+    },
+    {
+      "range": "",
+      "craft": "",
+      "craftId": null,
+      "craftUrl": null,
+      "qty": null,
+      "materials": "",
+      "note": "Elemental Leatherworking recipes in this guide. To specialize into"
+    },
+    {
+      "range": "",
+      "craft": "",
+      "craftId": null,
+      "craftUrl": null,
+      "qty": null,
+      "materials": "",
+      "note": "Elemental Leatherworking, you'll need to complete a simple quest"
+    },
+    {
+      "range": "",
+      "craft": "",
+      "craftId": null,
+      "craftUrl": null,
+      "qty": null,
+      "materials": "",
+      "note": "requiring you to deliver 2 Heart of Fire, 2 Globe of Water, 2 Core of Earth and 2 Breath of Wind to Sarah Tanner in Searing Gorge."
+    },
+    {
+      "range": "240 - 250",
+      "craft": "Nightscape Pants",
+      "craftId": 8193,
+      "craftUrl": "https://www.wowhead.com/classic/item=8193",
+      "qty": 11,
+      "materials": "14 Thick Leather, 4 Silken Thread",
+      "note": ""
+    },
+    {
+      "range": "251 - 260",
+      "craft": "Nightscape Boots",
+      "craftId": 8197,
+      "craftUrl": "https://www.wowhead.com/classic/item=8197",
+      "qty": 10,
+      "materials": "16 Thick Leather, 2 Silken Thread",
+      "note": ""
+    },
+    {
+      "range": "251 - 260",
+      "craft": "Rugged Armor Kit",
+      "craftId": null,
+      "craftUrl": null,
+      "qty": 10,
+      "materials": "5 Rugged Leather",
+      "note": "(Alternative)"
+    },
+    {
+      "range": "261 - 265",
+      "craft": "Wicked Leather Gauntlets",
+      "craftId": 15083,
+      "craftUrl": "https://www.wowhead.com/classic/item=15083",
+      "qty": 5,
+      "materials": "8 Rugged Leather, 1 Black Dye, 1 Rune Thread",
+      "note": "Leonard Porter, Western Plaguelands - Alliance) / (Werg Thickblade, Tirisfal Glades - Horde"
+    },
+    {
+      "range": "261 - 265",
+      "craft": "Heavy Scorpid Bracers",
+      "craftId": null,
+      "craftUrl": null,
+      "qty": 5,
+      "materials": "4 Rugged Leather, 4 Heavy Scorpid Scale, 1 Rune Thread",
+      "note": "(Alternative) Zannok Hidepiercer, Silithus"
+    },
+    {
+      "range": "266 - 290",
+      "craft": "Wicked Leather Bracers",
+      "craftId": 15084,
+      "craftUrl": "https://www.wowhead.com/classic/item=15084",
+      "qty": 25,
+      "materials": "8 Rugged Leather, 1 Black Dye, 1 Rune Thread",
+      "note": ""
+    },
+    {
+      "range": "266 - 290",
+      "craft": "Heavy Scorpid Bracers",
+      "craftId": null,
+      "craftUrl": null,
+      "qty": 30,
+      "materials": "4 Rugged Leather, 4 Heavy Scorpid Scale, 1 Rune Thread",
+      "note": "(Alternative) Zannok Hidepiercer, Silithus"
+    },
+    {
+      "range": "291 - 300",
+      "craft": "Wicked Leather Headband",
+      "craftId": 15086,
+      "craftUrl": "https://www.wowhead.com/classic/item=15086",
+      "qty": 10,
+      "materials": "12 Rugged Leather, 1 Black Dye, 1 Rune Thread",
+      "note": ""
+    }
+  ]
+}
