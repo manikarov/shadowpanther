@@ -104,15 +104,15 @@ export function DataTable<T>({
             <SearchIcon />
             <input
               type="text"
-              placeholder="Suchen…"
+              placeholder="Search…"
               value={globalFilter}
               onChange={(e) => setGlobalFilter(e.target.value)}
             />
           </div>
-          <span className="count">{rowCount} Einträge</span>
+          <span className="count">{rowCount} items</span>
         </div>
         <div className="filters">
-          {columnGroups && columnGroups.length > 0 && <span className="flabel">Spalten</span>}
+          {columnGroups && columnGroups.length > 0 && <span className="flabel">Columns</span>}
           {columnGroups?.map((group) => (
             <button
               key={group.label}
@@ -197,7 +197,7 @@ export function DataTable<T>({
             ))}
           </tbody>
         </table>
-        {rowCount === 0 && <p className="empty">Keine Treffer.</p>}
+        {rowCount === 0 && <p className="empty">No matches.</p>}
       </div>
     </div>
   );

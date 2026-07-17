@@ -15,7 +15,10 @@ export function HomePage() {
   return (
     <div>
       <section className="hero">
-        <h1>ShadowPanther</h1>
+        <div className="hero-title">
+          <img src="/assets/panther_icon.png" alt="" className="hero-logo" />
+          <h1>ShadowPanther</h1>
+        </div>
         <p>World of Warcraft Classic Rogue Info — Charts, Guides &amp; more.</p>
       </section>
 

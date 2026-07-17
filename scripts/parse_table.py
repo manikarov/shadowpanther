@@ -49,6 +49,18 @@ def cell_value(td):
     return text
 
 
+# The site never used the "blue"/"orange" CSS keywords for rarity - it used
+# raw rgb() values for those two tiers instead, inconsistently across pages.
+# "windowtext"/"black" are Excel's default (no color override = common/poor,
+# same as no color at all), so they normalize to None like the unset case.
+COLOR_ALIASES = {
+    "rgb(51, 102, 255)": "blue",
+    "rgb(255, 102, 0)": "orange",
+    "windowtext": None,
+    "black": None,
+}
+
+
 def parse_name_cell(td):
     """Extract weapon/item name, wowhead item id/url, and rarity color from the first cell."""
     link = td.find("a")
@@ -66,6 +78,8 @@ def parse_name_cell(td):
         m = re.search(r"color:\s*([^;]+)", span["style"])
         if m:
             color = m.group(1).strip()
+    if color in COLOR_ALIASES:
+        color = COLOR_ALIASES[color]
     return name, item_id, wowhead_url, color
 
 

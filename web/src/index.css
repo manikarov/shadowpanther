@@ -1,17 +1,21 @@
 :root {
-  --bg: #0f1115;
-  --bg-panel: #171a21;
-  --bg-panel-2: #1d212b;
-  --border: #2a2e38;
-  --border-soft: #22252e;
-  --text: #e4dfcf;
-  --text-dim: #9a9ca5;
-  --text-faint: #5e6068;
-  --accent: #ff8c1a;
+  --bg: #080b12;
+  --bg-panel: #0e131f;
+  --bg-panel-2: #161b28;
+  --border: #33301f;
+  --border-soft: #201e15;
+  --text: #e6ddc8;
+  --text-dim: #98937f;
+  --text-faint: #625f52;
+  --gold: #c9a227;
+  --gold-bright: #e6c866;
+  --gold-dim: #7a6420;
+  --accent: var(--gold);
   --legendary: #ff8c1a;
   --epic: #b26cff;
   --rare: #3fa1ff;
   --uncommon: #4ade6e;
+  --gold-gradient: linear-gradient(180deg, #f2dc94 0%, #d7ad3c 55%, #b8891f 100%);
 
   --serif: "Cinzel", serif;
   --sans: "Inter", system-ui, "Segoe UI", Roboto, sans-serif;
@@ -24,6 +28,27 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 50% -200px, rgba(201, 162, 39, 0.06), transparent 70%),
+    var(--bg);
+  min-height: 100vh;
+}
+
+/* Reusable gold-gradient text used for the wordmark and page headings.
+   The padding + line-height keep ascenders/descenders from being clipped by
+   the text-sized background box (a known background-clip: text gotcha). */
+.gold-text,
+.wordmark,
+.hero h1 {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
+  padding-block: 0.08em;
 }
 
 * {
@@ -51,62 +76,106 @@ main {
   gap: 12px;
   padding: 18px 24px;
   border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(201, 162, 39, 0.05), transparent);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .wordmark {
   font-family: var(--serif);
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
-  color: var(--text);
   text-decoration: none;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .wordmark span {
-  color: var(--accent);
   font-weight: 500;
+  letter-spacing: 0.16em;
+  font-size: 0.7em;
 }
 
 .site-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px;
+  gap: 2px;
 }
 
 .site-nav a {
-  padding: 6px 10px;
+  padding: 6px 12px;
   border-radius: 4px;
   color: var(--text-dim);
   text-decoration: none;
   font-size: 14px;
+  transition: color 0.15s, background 0.15s;
 }
 
 .site-nav a:hover {
-  color: var(--text);
-  background: var(--bg-panel);
+  color: var(--gold-bright);
+  background: rgba(201, 162, 39, 0.08);
 }
 
 .site-nav a.active {
-  color: var(--accent);
+  color: var(--gold);
 }
 
 .hero {
-  max-width: 700px;
+  max-width: 820px;
   margin: 0 auto;
   text-align: center;
-  padding: 48px 0 40px;
+  padding: 44px 0;
+}
+
+.hero-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin-bottom: 14px;
+}
+
+.hero-logo {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  filter: drop-shadow(0 6px 22px rgba(201, 162, 39, 0.22));
 }
 
 .hero h1 {
-  font-size: 42px;
-  color: var(--text);
-  margin: 0 0 10px;
+  font-size: 46px;
+  margin: 0;
+  letter-spacing: 0.02em;
 }
 
+/* Diamond ornament flanking the hero subtitle, echoing the mockup's dividers. */
 .hero p {
   margin: 0;
   color: var(--text-dim);
   font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hero p::before,
+.hero p::after {
+  content: "◆";
+  color: var(--gold-dim);
+  font-size: 9px;
 }
 
 .category-grid {
@@ -122,30 +191,45 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 10px;
-  padding: 24px 12px;
-  background: var(--bg-panel);
-  border: 1px solid var(--border);
-  border-radius: 8px;
   color: var(--text);
-  font-weight: 600;
-  font-size: 13px;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.06em;
   text-decoration: none;
   text-align: center;
-  transition: border-color 0.15s, transform 0.15s;
+  transition: transform 0.15s;
+}
+
+/* The painted panel image is the card's frame; a soft gold glow appears on hover. */
+.category-icon-img {
+  width: 100%;
+  max-width: 132px;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.5));
+  transition: filter 0.15s;
 }
 
 .category-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
+.category-card:hover .category-icon-img {
+  filter: drop-shadow(0 6px 16px rgba(201, 162, 39, 0.28));
+}
+
+.category-card:hover {
+  color: var(--gold-bright);
+}
+
+/* SVG fallback icon (used only if a panel image is missing). */
 .category-icon {
   display: flex;
   width: 34px;
   height: 34px;
-  color: var(--accent);
+  color: var(--gold);
 }
 
 .category-icon svg {
@@ -161,7 +245,12 @@ main {
 .guides h2 {
   text-align: center;
   border-bottom: none;
-  font-size: 16px;
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--gold);
+  text-transform: none;
 }
 
 .guide-list {
@@ -202,26 +291,25 @@ main {
   font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--gold-dim);
   margin: 0 0 10px;
 }
 
 h1 {
   font-family: var(--serif);
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 700;
   color: var(--text);
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
   margin: 0 0 24px;
 }
 
 h2 {
-  font-family: var(--mono);
-  font-size: 12px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-faint);
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--gold);
   border-bottom: 1px solid var(--border);
   padding-bottom: 8px;
   margin: 0 0 12px;
@@ -248,7 +336,7 @@ h2 {
   position: sticky;
   top: 0;
   z-index: 5;
-  background: rgba(15, 17, 21, 0.92);
+  background: rgba(8, 11, 18, 0.92);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--border);
   padding: 14px 0 12px;
@@ -294,7 +382,7 @@ h2 {
 }
 
 .search-box input:focus {
-  border-color: var(--rare);
+  border-color: var(--gold);
 }
 
 .search-box input::placeholder {
@@ -336,14 +424,14 @@ h2 {
 }
 
 .chip:hover {
-  border-color: var(--text-faint);
+  border-color: var(--gold-dim);
   color: var(--text);
 }
 
 .chip.on {
-  background: rgba(63, 161, 255, 0.12);
-  border-color: var(--rare);
-  color: var(--rare);
+  background: rgba(201, 162, 39, 0.12);
+  border-color: var(--gold);
+  color: var(--gold-bright);
 }
 
 /* --- table --- */
@@ -382,8 +470,8 @@ h2 {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--text-faint);
-  font-weight: 500;
+  color: var(--gold-dim);
+  font-weight: 600;
   border-bottom: 1px solid var(--border);
   user-select: none;
 }
@@ -393,13 +481,13 @@ h2 {
 }
 
 .data-table th.sortable:hover {
-  color: var(--text-dim);
+  color: var(--gold);
 }
 
 .data-table th .arrow {
   margin-left: 4px;
   font-size: 10px;
-  opacity: 0.6;
+  color: var(--gold);
 }
 
 .data-table tbody tr {
@@ -408,7 +496,7 @@ h2 {
 }
 
 .data-table tbody tr:hover {
-  background: var(--bg-panel);
+  background: rgba(201, 162, 39, 0.05);
 }
 
 .data-table tbody td {

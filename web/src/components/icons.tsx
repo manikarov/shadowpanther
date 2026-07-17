@@ -109,8 +109,13 @@ const ICONS: Record<string, () => React.JSX.Element> = {
   enchantments: EnchantmentsIcon,
 };
 
+// Painted gold panel icons (cropped from the category-icons sheet). The SVG
+// line icons above stay as a fallback if an image is ever missing.
 export function CategoryIcon({ path }: { path: string }) {
   const Icon = ICONS[path] ?? PlaceholderIcon;
+  if (ICONS[path]) {
+    return <img className="category-icon-img" src={`/assets/icons/${path}.png`} alt="" />;
+  }
   return (
     <span className="category-icon">
       <Icon />

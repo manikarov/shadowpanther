@@ -94,7 +94,7 @@ export function ChartPage({ config }: { config: ChartConfig }) {
             columnGroups={config.columnGroups.groups}
             hasValueFilters={
               config.specialColumn
-                ? [{ columnId: config.specialColumn, label: `Nur mit ${config.specialColumn}` }]
+                ? [{ columnId: config.specialColumn, label: `Only with ${config.specialColumn}` }]
                 : undefined
             }
           />

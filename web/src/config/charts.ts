@@ -23,35 +23,35 @@ export interface ChartConfig {
 const weaponColumnGroups: ColumnGroups = {
   always: ["Source", "Lvl", "AEP", "MAEP", "DPS"],
   groups: [
-    { label: "Herkunft", columns: ["Loc", "P", "Info"] },
-    { label: "Grundwerte", columns: ["H", "T", "B", "Sp"] },
-    { label: "Attribute", columns: ["Agi", "Sta", "Str", "AP", "Sk"] },
-    { label: "Trefferwerte", columns: ["Crit", "Hit"] },
-    { label: "Schaden", columns: ["Min", "Max", "Avg"] },
-    { label: "Sonderwerte", columns: ["PVP", "PVE", "Special"] },
+    { label: "Origin", columns: ["Loc", "P", "Info"] },
+    { label: "Base Stats", columns: ["H", "T", "B", "Sp"] },
+    { label: "Attributes", columns: ["Agi", "Sta", "Str", "AP", "Sk"] },
+    { label: "Hit Values", columns: ["Crit", "Hit"] },
+    { label: "Damage", columns: ["Min", "Max", "Avg"] },
+    { label: "Special Values", columns: ["PVP", "PVE", "Special"] },
   ],
 };
 
 const armorColumnGroups: ColumnGroups = {
   always: ["Source", "Lvl", "AEP", "MAEP", "TAEP"],
   groups: [
-    { label: "Herkunft", columns: ["Loc", "P", "Info", "Set"] },
-    { label: "Grundwerte", columns: ["Arm", "B"] },
-    { label: "Attribute", columns: ["Agi", "Sta", "Str", "AP"] },
-    { label: "Trefferwerte", columns: ["Cri", "Hit", "Par", "Dod", "Def"] },
-    { label: "Resistenzen", columns: ["Ar", "Fi", "Fr", "Na", "Sh"] },
-    { label: "Sonderwerte", columns: ["H/5", "PVP", "PVE", "Tank", "Special"] },
+    { label: "Origin", columns: ["Loc", "P", "Info", "Set"] },
+    { label: "Base Stats", columns: ["Arm", "B"] },
+    { label: "Attributes", columns: ["Agi", "Sta", "Str", "AP"] },
+    { label: "Hit Values", columns: ["Cri", "Hit", "Par", "Dod", "Def"] },
+    { label: "Resistances", columns: ["Ar", "Fi", "Fr", "Na", "Sh"] },
+    { label: "Special Values", columns: ["H/5", "PVP", "PVE", "Tank", "Special"] },
   ],
 };
 
 const enchantmentColumnGroups: ColumnGroups = {
   always: ["AEP", "MAEP", "TAEP", "Other Effect"],
   groups: [
-    { label: "Herstellung", columns: ["P", "COMPONENTS"] },
-    { label: "Attribute", columns: ["Arm", "Agi", "Sta", "Str", "AP"] },
-    { label: "Trefferwerte", columns: ["Cri", "Dod", "Def"] },
-    { label: "Resistenzen", columns: ["Ar", "Fi", "Fr", "Na", "Sh"] },
-    { label: "Sonderwerte", columns: ["HP", "PVP", "PVE", "Tank"] },
+    { label: "Crafting", columns: ["P", "COMPONENTS"] },
+    { label: "Attributes", columns: ["Arm", "Agi", "Sta", "Str", "AP"] },
+    { label: "Hit Values", columns: ["Cri", "Dod", "Def"] },
+    { label: "Resistances", columns: ["Ar", "Fi", "Fr", "Na", "Sh"] },
+    { label: "Special Values", columns: ["HP", "PVP", "PVE", "Tank"] },
   ],
 };
 
