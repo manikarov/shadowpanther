@@ -434,6 +434,37 @@ h2 {
   color: var(--gold-bright);
 }
 
+/* Divider between the column-toggle chips and the row-filter chips. */
+.filter-sep {
+  width: 1px;
+  align-self: stretch;
+  margin: 2px 3px;
+  background: var(--border);
+}
+
+/* Row filters ("Only with…") behave differently from the column toggles - they
+   remove rows, not just add a column - so they're set apart: a funnel icon, a
+   dashed outline when off and a solid filled state when on. */
+.chip-rows {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-style: dashed;
+}
+
+.chip-rows svg {
+  width: 12px;
+  height: 12px;
+}
+
+.chip-rows.on,
+.chip-rows.on:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  border-style: solid;
+  color: var(--bg);
+}
+
 /* --- table --- */
 
 .data-table {

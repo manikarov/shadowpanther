@@ -18,10 +18,10 @@ const VALUE_LABELS: Record<string, Record<string, string>> = {
   H: { M: "Main-H", O: "One-H", F: "Off-H" },
 };
 
-function displayValue(key: string, value: CellValue): string {
+function displayValue(key: string, value: unknown): string {
   const map = VALUE_LABELS[key];
   if (map && typeof value === "string" && map[value]) return map[value];
-  return formatCell(value);
+  return formatCell(value as CellValue);
 }
 
 function buildColumns(rows: ItemRecord[]): ColumnDef<ItemRecord, any>[] {
@@ -120,6 +120,7 @@ export function ChartPage({ config }: { config: ChartConfig }) {
             defaultGroups={config.defaultGroups}
             gapBefore={config.gapBefore ? new Set(config.gapBefore) : undefined}
             descriptions={COLUMN_INFO}
+            formatValue={displayValue}
             hasValueFilters={
               config.specialColumn
                 ? [{ columnId: config.specialColumn, label: `Only with ${config.specialColumn}` }]

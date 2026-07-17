@@ -11,8 +11,9 @@ import {
 } from "@tanstack/react-table";
 import { useMemo, useState } from "react";
 import type { ColumnGroup } from "../config/charts";
+import { buildFieldMap, makeGlobalFilter } from "../lib/search";
 import type { ColumnWidth } from "../lib/table";
-import { SearchIcon } from "./icons";
+import { FilterIcon, SearchIcon } from "./icons";
 
 export interface HasValueFilter {
   columnId: string;
@@ -35,6 +36,8 @@ interface DataTableProps<T> {
   gapBefore?: Set<string>;
   /** Per-column hover explanations, keyed by column id. */
   descriptions?: Record<string, string>;
+  /** How a raw cell value reads on screen; used so text search matches the display. */
+  formatValue?: (columnId: string, value: unknown) => string;
 }
 
 // Metadata-ish columns that stay visually muted regardless of value.
@@ -52,6 +55,7 @@ export function DataTable<T>({
   defaultGroups,
   gapBefore,
   descriptions,
+  formatValue,
 }: DataTableProps<T>) {
   const [sorting, setSorting] = useState<SortingState>(initialSort ?? []);
   const [globalFilter, setGlobalFilter] = useState("");
@@ -69,10 +73,26 @@ export function DataTable<T>({
     return visibility;
   }, [columnGroups, activeGroups]);
 
+  // `field:value` search: resolve field names from column ids/headers and gate
+  // the scoring to the first column (see makeGlobalFilter).
+  const columnKey = columns.map((c) => c.id).join("|");
+  const globalFilterFn = useMemo(
+    () => {
+      const fieldMap = buildFieldMap(columns);
+      const firstColId = columns[0]?.id ?? "";
+      return makeGlobalFilter<T>(fieldMap, firstColId, formatValue);
+    },
+    // columns are rebuilt each render; key on their stable ids.
+    // formatValue is a stable module-level fn.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [columnKey],
+  );
+
   const table = useReactTable({
     data,
     columns,
     state: { sorting, globalFilter, columnFilters, columnVisibility },
+    globalFilterFn,
     onSortingChange: setSorting,
     onGlobalFilterChange: setGlobalFilter,
     onColumnFiltersChange: setColumnFilters,
@@ -117,7 +137,8 @@ export function DataTable<T>({
             <SearchIcon />
             <input
               type="text"
-              placeholder="Search…"
+              placeholder="Search… e.g. Lvl:>=40  Source:Naxx"
+              title="Search a column with field:value (e.g. Lvl:60, AEP:>400, Item:Cruel Barb). Plain text searches all columns."
               value={globalFilter}
               onChange={(e) => setGlobalFilter(e.target.value)}
             />
@@ -136,15 +157,23 @@ export function DataTable<T>({
               {group.label}
             </button>
           ))}
+          {hasValueFilters && hasValueFilters.length > 0 && (
+            <>
+              <span className="filter-sep" aria-hidden="true" />
+              <span className="flabel">Rows</span>
+            </>
+          )}
           {hasValueFilters?.map(({ columnId, label }) => (
             <button
               key={columnId}
               type="button"
-              className={`chip ${columnFilters.some((f) => f.id === columnId) ? "on" : ""}`}
+              className={`chip chip-rows ${columnFilters.some((f) => f.id === columnId) ? "on" : ""}`}
+              title="Row filter: hides rows without this value (not just a column toggle)"
               onClick={() =>
                 toggleHasValueFilter(columnId, !columnFilters.some((f) => f.id === columnId))
               }
             >
+              <FilterIcon />
               {label}
             </button>
           ))}

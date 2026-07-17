@@ -100,6 +100,21 @@ export function SearchIcon() {
   );
 }
 
+export function FilterIcon() {
+  return (
+    <svg
+      viewBox="0 0 20 20"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.6}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M3 5h14l-5 6v5l-4 2v-7z" />
+    </svg>
+  );
+}
+
 const ICONS: Record<string, () => React.JSX.Element> = {
   weapons: WeaponsIcon,
   daggers: DaggersIcon,
