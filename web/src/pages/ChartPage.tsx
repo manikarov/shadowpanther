@@ -83,6 +83,20 @@ function leftAlignedMetrics(tight?: string[]): Set<string> {
   return new Set((tight ?? []).slice(1));
 }
 
+const sectionId = (name: string) =>
+  name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+
+// Section keys are abbreviated ("MH Swords"); spell out the slot so the split is
+// self-explanatory and the off-hand table isn't mistaken for a duplicate.
+function sectionLabel(name: string): string {
+  return name.replace(/^MH /, "Main-Hand ").replace(/^OH /, "Off-Hand ");
+}
+
+const HAND_SPLIT_RE = /^(MH|OH) /;
+
 export function ChartPage({ config }: { config: ChartConfig }) {
   const [data, setData] = useState<ChartData | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -102,13 +116,32 @@ export function ChartPage({ config }: { config: ChartConfig }) {
   if (error) return <p className="error">Failed to load data: {error}</p>;
   if (!data) return <p className="loading">Loading…</p>;
 
+  const sections = Object.entries(data);
+  const hasHandSplit = sections.length > 1 && sections.some(([s]) => HAND_SPLIT_RE.test(s));
+
   return (
     <div className="page">
       <p className="eyebrow">ShadowPanther Classic</p>
       <h1>{config.label}</h1>
-      {Object.entries(data).map(([section, rows]) => (
-        <section key={section} className="chart-section">
-          <h2>{section}</h2>
+      {sections.length > 1 && (
+        <nav className="section-nav" aria-label="Jump to a table">
+          {sections.map(([section, rows]) => (
+            <a key={section} href={`#${sectionId(section)}`} className="section-pill">
+              {sectionLabel(section)}
+              <span className="section-pill-count">{rows.length}</span>
+            </a>
+          ))}
+        </nav>
+      )}
+      {hasHandSplit && (
+        <p className="section-note">
+          Each weapon is listed once per slot it can fill. The same weapon is worth less in the
+          off-hand, so its AEP/MAEP differ between the tables below.
+        </p>
+      )}
+      {sections.map(([section, rows]) => (
+        <section key={section} id={sectionId(section)} className="chart-section">
+          <h2>{sectionLabel(section)}</h2>
           <DataTable
             data={rows}
             columns={buildColumns(rows)}
