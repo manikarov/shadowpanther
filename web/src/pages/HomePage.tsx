@@ -10,6 +10,12 @@ const SOON_GUIDES = [
   "Rogue Patch Notes",
 ];
 
+// Home page tile order (nav keeps the CHARTS order); Swords sits second.
+const HOME_ORDER = ["weapons", "swords", "daggers", "fists", "maces", "armor", "enchantments"];
+const HOME_CHARTS = HOME_ORDER.map((path) => CHARTS.find((c) => c.path === path)).filter(
+  (c): c is (typeof CHARTS)[number] => Boolean(c),
+);
+
 export function HomePage() {
   return (
     <div>
@@ -22,7 +28,7 @@ export function HomePage() {
       </section>
 
       <section className="category-grid">
-        {CHARTS.map((c) => (
+        {HOME_CHARTS.map((c) => (
           <Link key={c.path} to={`/${c.path}`} className="category-card">
             <CategoryIcon path={c.path} />
             {c.label}

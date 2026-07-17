@@ -97,7 +97,8 @@ export function GuidePage({ config }: { config: GuideConfig }) {
 
       <section className="chart-section">
         <h2>Step-by-Step Route</h2>
-        <table className="data-table guide-table">
+        <div className="table-scroll">
+          <table className="data-table guide-table">
           <colgroup>
             <col style={{ width: "9%" }} />
             <col style={{ width: "5%" }} />
@@ -121,7 +122,8 @@ export function GuidePage({ config }: { config: GuideConfig }) {
               <StepRow key={i} step={step} />
             ))}
           </tbody>
-        </table>
+          </table>
+        </div>
       </section>
     </div>
   );

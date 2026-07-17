@@ -804,3 +804,163 @@ h2 {
   font-size: 9px;
   vertical-align: middle;
 }
+
+/* ============================================================
+   Responsive / tablet + mobile
+   ============================================================ */
+
+/* Wide tables scroll sideways instead of cramming into the viewport.
+   Harmless on desktop (the table is width:100% there, so nothing scrolls). */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* --- Tablet and down: tables use natural column widths + horizontal scroll,
+   with the Item/first column pinned. Above this width the fixed unit-based
+   layout has room to fit, so it stays. When only a few columns are on, the
+   table still fills 100% (min-width) and nothing scrolls. --- */
+@media (max-width: 1024px) {
+  /* chart tables */
+  .data-table:not(.guide-table) {
+    table-layout: auto;
+    width: max-content;
+    min-width: 100%;
+  }
+  .data-table:not(.guide-table) colgroup col {
+    width: auto !important;
+  }
+  .data-table:not(.guide-table) th,
+  .data-table:not(.guide-table) td {
+    white-space: nowrap;
+  }
+  .data-table:not(.guide-table) .col-wide {
+    white-space: normal;
+    max-width: 200px;
+  }
+  .data-table:not(.guide-table) th:first-child,
+  .data-table:not(.guide-table) td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background: var(--bg);
+    min-width: 168px;
+    max-width: 220px;
+    white-space: normal;
+    box-shadow: 1px 0 0 var(--border);
+  }
+  .data-table:not(.guide-table) thead th:first-child {
+    z-index: 3;
+  }
+
+  /* guide route table: also scrolls; keep the text columns from exploding */
+  .guide-table {
+    table-layout: auto;
+    width: max-content;
+    min-width: 100%;
+  }
+  .guide-table colgroup col {
+    width: auto !important;
+  }
+  .guide-table .col-mats,
+  .guide-table .col-note {
+    max-width: 260px;
+    white-space: normal;
+  }
+}
+
+/* --- Tablet chrome: trim the outer padding and wrap the category strip so the
+   tiles don't get squeezed thin. --- */
+@media (max-width: 900px) {
+  main {
+    padding: 16px;
+  }
+  .category-grid {
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+  }
+  /* 4 tiles per row (7 -> 4 + 3); the leftover last row sits centered. */
+  .category-card {
+    flex: 0 0 calc(25% - 10.5px);
+  }
+  .data-table:not(.guide-table) th:first-child,
+  .data-table:not(.guide-table) td:first-child {
+    min-width: 160px;
+    max-width: 200px;
+  }
+}
+
+/* --- Phone chrome: compact header/hero, tighter spacing, 3 tiles per row. --- */
+@media (max-width: 640px) {
+  main {
+    padding: 12px;
+  }
+
+  /* header */
+  .site-header {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+  .brand {
+    gap: 10px;
+  }
+  .brand-logo {
+    width: 38px;
+    height: 38px;
+  }
+  .wordmark {
+    font-size: 18px;
+  }
+  /* Nav hidden on phones; navigation happens via the home tiles (logo -> home). */
+  .site-nav {
+    display: none;
+  }
+
+  /* hero / home */
+  .hero {
+    padding: 26px 0;
+  }
+  .hero-title {
+    gap: 14px;
+    margin-bottom: 12px;
+  }
+  .hero-logo {
+    width: 60px;
+    height: 60px;
+  }
+  .hero h1 {
+    font-size: 30px;
+  }
+  .hero p {
+    font-size: 13px;
+    gap: 10px;
+  }
+
+  /* 3 tiles per row; a leftover last row (always 1 or 2 here) sits centered. */
+  .category-grid {
+    gap: 10px;
+    margin-bottom: 32px;
+    justify-content: center;
+  }
+  .category-card {
+    flex: 0 0 calc(33.333% - 7px);
+    font-size: 12px;
+    letter-spacing: 0.03em;
+  }
+
+  /* page headings */
+  .page h1 {
+    font-size: 30px;
+  }
+  .page h1 .cap {
+    font-size: 0.45em;
+  }
+
+  /* a touch narrower sticky column on the smallest screens */
+  .data-table:not(.guide-table) th:first-child,
+  .data-table:not(.guide-table) td:first-child {
+    min-width: 152px;
+    max-width: 188px;
+  }
+}
