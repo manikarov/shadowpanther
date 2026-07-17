@@ -345,15 +345,37 @@ GUIDES = [
 ]
 
 
+def apply_craft_id_overrides(data):
+    """Fill craftId/craftUrl for steps the source didn't link, from the ids that
+    scripts/resolve_craft_ids.py looked up on Wowhead (cached in craft-ids.json).
+    Keeps the icons working across re-parses without re-running the resolver."""
+    cache_file = OUT / "craft-ids.json"
+    if not cache_file.exists():
+        return 0
+    cache = json.loads(cache_file.read_text(encoding="utf-8"))
+    filled = 0
+    for step in data["steps"]:
+        name = step.get("craft")
+        if name and not step.get("craftId") and name in cache:
+            step["craftId"] = cache[name]["id"]
+            step["craftUrl"] = cache[name]["url"]
+            filled += 1
+    return filled
+
+
 def main():
     for filename, profession, cap, out in GUIDES:
         data = parse_prose_guide(OLD / filename, profession, cap)
+        filled = apply_craft_id_overrides(data)
         (OUT / out).write_text(json.dumps(data, indent=2), encoding="utf-8")
-        print(f"{profession}: {len(data['materials'])} mats, {len(data['steps'])} steps")
+        print(f"{profession}: {len(data['materials'])} mats, {len(data['steps'])} steps"
+              f" (+{filled} craft ids)")
 
     eng = parse_engineering(OLD / "Powerleveling Spreadsheet for Engineering.htm", 300)
+    filled = apply_craft_id_overrides(eng)
     (OUT / "guide-engineering.json").write_text(json.dumps(eng, indent=2), encoding="utf-8")
-    print(f"Engineering: {len(eng['materials'])} mats, {len(eng['steps'])} steps")
+    print(f"Engineering: {len(eng['materials'])} mats, {len(eng['steps'])} steps"
+          f" (+{filled} craft ids)")
 
 
 if __name__ == "__main__":

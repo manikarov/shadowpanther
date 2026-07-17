@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
 import type { GuideConfig } from "../config/guides";
+import { useItemIcon } from "../lib/icons";
+import { PLACEHOLDER_ICON } from "../lib/wow";
 import type { GuideData, GuideStep } from "../types";
 
 function StepRow({ step }: { step: GuideStep }) {
+  const iconUrl = useItemIcon(step.craftId);
+
   // A step with no craft is a milestone/instruction that spans the whole row.
   if (!step.craft) {
     return (
       <tr className="milestone-row">
-        <td colSpan={5}>{step.note}</td>
+        <td colSpan={6}>{step.note}</td>
       </tr>
     );
   }
@@ -23,6 +27,22 @@ function StepRow({ step }: { step: GuideStep }) {
   return (
     <tr>
       <td className="col-range">{step.range}</td>
+      <td className="col-icon">
+        <span className="guide-craft-icon">
+          <img
+            src={iconUrl ?? PLACEHOLDER_ICON}
+            alt=""
+            loading="lazy"
+            onError={(e) => {
+              const img = e.currentTarget;
+              if (!img.dataset.fallback) {
+                img.dataset.fallback = "1";
+                img.src = PLACEHOLDER_ICON;
+              }
+            }}
+          />
+        </span>
+      </td>
       <td className="col-craft">{craft}</td>
       <td className="col-qty num">{step.qty != null ? `×${step.qty}` : ""}</td>
       <td className="col-mats">{step.materials}</td>
@@ -79,15 +99,17 @@ export function GuidePage({ config }: { config: GuideConfig }) {
         <h2>Step-by-Step Route</h2>
         <table className="data-table guide-table">
           <colgroup>
-            <col style={{ width: "10%" }} />
-            <col style={{ width: "24%" }} />
+            <col style={{ width: "9%" }} />
+            <col style={{ width: "5%" }} />
+            <col style={{ width: "22%" }} />
             <col style={{ width: "7%" }} />
-            <col style={{ width: "30%" }} />
             <col style={{ width: "29%" }} />
+            <col style={{ width: "28%" }} />
           </colgroup>
           <thead>
             <tr>
               <th>Skill</th>
+              <th aria-label="Icon" />
               <th>Craft</th>
               <th className="num">Qty</th>
               <th>Materials</th>

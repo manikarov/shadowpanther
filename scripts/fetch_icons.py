@@ -27,9 +27,16 @@ HEADERS = {"User-Agent": "Mozilla/5.0 (ShadowPanther reskin icon fetch)"}
 def collect_item_ids() -> set[str]:
     ids: set[str] = set()
     for f in DATA.glob("*.json"):
-        if f.name.startswith("guide-") or f.name == "icons.json":
+        if f.name == "icons.json":
             continue
         data = json.loads(f.read_text(encoding="utf-8"))
+        if f.name.startswith("guide-"):
+            # Guides: the crafted item of each step (for the recipe icon column).
+            for step in data.get("steps", []):
+                if step.get("craftId"):
+                    ids.add(str(step["craftId"]))
+            continue
+        # Chart files: one item per row.
         for section in data.values():
             for row in section:
                 if row.get("itemId"):

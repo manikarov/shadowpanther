@@ -253,8 +253,8 @@
     {
       "range": "166 - 190",
       "craft": "Iron Counterweight",
-      "craftId": null,
-      "craftUrl": null,
+      "craftId": 6043,
+      "craftUrl": "https://www.wowhead.com/classic/item=6043",
       "qty": 5,
       "materials": "4 Iron Bar, 2 Coarse Grinding Stone, 1 Lesser Moonstone",
       "note": "(Alternative) Check AH for recipe"
@@ -352,8 +352,8 @@
     {
       "range": "216 - 233",
       "craft": "Mithril Scale Bracers",
-      "craftId": null,
-      "craftUrl": null,
+      "craftId": 7924,
+      "craftUrl": "https://www.wowhead.com/classic/item=7924",
       "qty": 18,
       "materials": "8 Mithril Bar",
       "note": "(Alternative) Limited Supply Recipe from Harggan in Hinterlands - Alliance / Gharash in Swamp of Sorrows - Horde"
@@ -388,8 +388,8 @@
     {
       "range": "238 - 250",
       "craft": "Mithril Coif",
-      "craftId": null,
-      "craftUrl": null,
+      "craftId": 7931,
+      "craftUrl": "https://www.wowhead.com/classic/item=7931",
       "qty": 15,
       "materials": "10 Mithril Bar, 6x Mageweave Cloth",
       "note": "(Alternative) Only make these if you are unable to find the Mithril Spurs recipe"
@@ -424,8 +424,8 @@
     {
       "range": "271 - 275",
       "craft": "Imperial Plate Bracers",
-      "craftId": null,
-      "craftUrl": null,
+      "craftId": 12425,
+      "craftUrl": "https://www.wowhead.com/classic/item=12425",
       "qty": 5,
       "materials": "12 Thorium Bar",
       "note": "(Alternative)"

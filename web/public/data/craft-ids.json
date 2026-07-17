@@ -1,0 +1,206 @@
+{
+  "Bronze Framework": {
+    "icon": "inv_gizmo_bronzeframework_01",
+    "id": 4382,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=4382"
+  },
+  "Coarse Blasting Powder": {
+    "icon": "inv_misc_dust_02",
+    "id": 4364,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=4364"
+  },
+  "Copper Modulator": {
+    "icon": "inv_gizmo_03",
+    "id": 4363,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=4363"
+  },
+  "Copper Tube": {
+    "icon": "inv_gizmo_pipe_02",
+    "id": 4361,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=4361"
+  },
+  "Dark Leather Boots": {
+    "icon": "inv_boots_05",
+    "id": 2315,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=2315"
+  },
+  "Dense Blasting Powder": {
+    "icon": "inv_misc_ammo_gunpowder_01",
+    "id": 15992,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=15992"
+  },
+  "Deviate Scale Cloak": {
+    "icon": "inv_misc_monsterscales_03",
+    "id": 7953,
+    "kind": "spell",
+    "url": "https://www.wowhead.com/classic/spell=7953"
+  },
+  "Dusky Bracers": {
+    "icon": "inv_bracer_07",
+    "id": 7378,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=7378"
+  },
+  "EZ-Thro Dynamite (1-3)": {
+    "icon": "inv_misc_bomb_06",
+    "id": 6714,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=6714"
+  },
+  "Explosive Sheep": {
+    "icon": "spell_nature_polymorph",
+    "id": 4384,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=4384"
+  },
+  "Fine Leather Boots": {
+    "icon": "inv_boots_06",
+    "id": 2158,
+    "kind": "spell",
+    "url": "https://www.wowhead.com/classic/spell=2158"
+  },
+  "Handful of Copper Bolts": {
+    "icon": "inv_misc_gear_06",
+    "id": 4359,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=4359"
+  },
+  "Heavy Blasting Powder": {
+    "icon": "classic_inv_misc_dust_06",
+    "id": 4377,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=4377"
+  },
+  "Heavy Scorpid Bracers": {
+    "icon": "inv_bracer_09",
+    "id": 15077,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=15077"
+  },
+  "Hi-Impact Mithril Slugs": {
+    "icon": "inv_ammo_bullet_01",
+    "id": 10512,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=10512"
+  },
+  "Hillman's Cloak": {
+    "icon": "inv_misc_cape_07",
+    "id": 3719,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=3719"
+  },
+  "Imperial Plate Bracers": {
+    "icon": "inv_bracer_19",
+    "id": 12425,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=12425"
+  },
+  "Iron Counterweight": {
+    "icon": "inv_misc_orb_01",
+    "id": 6043,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=6043"
+  },
+  "Light Leather": {
+    "icon": "inv_misc_leatherscrap_03",
+    "id": 2318,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=2318"
+  },
+  "Mithril Coif": {
+    "icon": "inv_helmet_35",
+    "id": 7931,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=7931"
+  },
+  "Mithril Gyro-Shot": {
+    "icon": "inv_ammo_bullet_01",
+    "id": 10513,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=10513"
+  },
+  "Mithril Scale Bracers": {
+    "icon": "inv_bracer_07",
+    "id": 7924,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=7924"
+  },
+  "Mithril Tube": {
+    "icon": "inv_musket_01",
+    "id": 10559,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=10559"
+  },
+  "Nimble Leather Gloves": {
+    "icon": "inv_gauntlets_05",
+    "id": 7285,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=7285"
+  },
+  "Raptor Hide Belt": {
+    "icon": "inv_belt_02",
+    "id": 4456,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=4456"
+  },
+  "Rough Blasting Powder": {
+    "icon": "inv_misc_dust_01",
+    "id": 4357,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=4357"
+  },
+  "Rough Boomstick": {
+    "icon": "inv_weapon_rifle_03",
+    "id": 4362,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=4362"
+  },
+  "Rugged Armor Kit": {
+    "icon": "inv_misc_armorkit_09",
+    "id": 15564,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=15564"
+  },
+  "Small Leather Ammo Pouch": {
+    "icon": "inv_misc_ammo_bullet_01",
+    "id": 7279,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=7279"
+  },
+  "Solid Blasting Powder": {
+    "icon": "inv_misc_powder_black",
+    "id": 10505,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=10505"
+  },
+  "Thorium Shells": {
+    "icon": "inv_ammo_bullet_03",
+    "id": 15997,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=15997"
+  },
+  "Thorium Widget": {
+    "icon": "inv_gizmo_04",
+    "id": 15994,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=15994"
+  },
+  "Unstable Trigger": {
+    "icon": "inv_battery_01",
+    "id": 10560,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=10560"
+  },
+  "Whirling Bronze Gizmo": {
+    "icon": "inv_gizmo_02",
+    "id": 4375,
+    "kind": "item",
+    "url": "https://www.wowhead.com/classic/item=4375"
+  }
+}
