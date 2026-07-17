@@ -3,10 +3,26 @@ import { useEffect, useState } from "react";
 import { DataTable } from "../components/DataTable";
 import { ItemName } from "../components/ItemName";
 import type { ChartConfig } from "../config/charts";
+import { COLUMN_INFO } from "../config/glossary";
 import { type ColumnWidth, formatCell, hasValueFilter, nullsLastSort } from "../lib/table";
-import type { ChartData, ItemRecord } from "../types";
+import type { CellValue, ChartData, ItemRecord } from "../types";
 
 const META_KEYS = new Set(["name", "itemId", "wowheadUrl", "rarityColor"]);
+
+// Spell out the terse single-letter headers that the original charts used.
+const HEADER_LABELS: Record<string, string> = { H: "Hand", T: "Type", B: "B/PoE" };
+
+// Expand coded cell values into readable labels (the header still keys tooltips
+// and glossary lookups by its original id).
+const VALUE_LABELS: Record<string, Record<string, string>> = {
+  H: { M: "Main-H", O: "One-H", F: "Off-H" },
+};
+
+function displayValue(key: string, value: CellValue): string {
+  const map = VALUE_LABELS[key];
+  if (map && typeof value === "string" && map[value]) return map[value];
+  return formatCell(value);
+}
 
 function buildColumns(rows: ItemRecord[]): ColumnDef<ItemRecord, any>[] {
   const dataKeys = Object.keys(rows[0]).filter((k) => !META_KEYS.has(k));
@@ -21,9 +37,9 @@ function buildColumns(rows: ItemRecord[]): ColumnDef<ItemRecord, any>[] {
 
   const dataColumns: ColumnDef<ItemRecord, any>[] = dataKeys.map((key) => ({
     id: key,
-    header: key,
+    header: HEADER_LABELS[key] ?? key,
     accessorFn: (row) => row[key],
-    cell: (info) => formatCell(info.getValue()),
+    cell: (info) => displayValue(key, info.getValue()),
     sortingFn: nullsLastSort,
     filterFn: hasValueFilter,
   }));
@@ -49,21 +65,22 @@ function numericColumnIds(rows: ItemRecord[]): Set<string> {
 // one-letter columns (H, T, B) and long ones (Source, Special) to the same
 // width, wrapping short values mid-character. Size each column by how long
 // its actual content gets instead, so only genuinely long text columns wrap.
-function columnWidths(rows: ItemRecord[], tight?: string[]): Record<string, ColumnWidth> {
+function columnWidths(rows: ItemRecord[]): Record<string, ColumnWidth> {
   const keys = Object.keys(rows[0]).filter((k) => !META_KEYS.has(k));
-  const tightSet = new Set(tight);
   const widths: Record<string, ColumnWidth> = {};
   for (const key of keys) {
-    if (tightSet.has(key)) {
-      // Headline metrics (AEP/MAEP…) stay narrow so paired values read together
-      // instead of drifting apart across a wide column.
-      widths[key] = "narrow";
-      continue;
-    }
-    const maxLen = Math.max(key.length, ...rows.map((r) => formatCell(r[key]).length));
+    const headerLen = (HEADER_LABELS[key] ?? key).length;
+    const maxLen = Math.max(headerLen, ...rows.map((r) => displayValue(key, r[key]).length));
     widths[key] = maxLen <= 3 ? "narrow" : maxLen <= 6 ? "medium" : "wide";
   }
   return widths;
+}
+
+// Within a metric cluster (AEP/MAEP…) the first column stays right-aligned and
+// the rest flip to left-aligned, so the numbers meet at the shared border and
+// read as a tight pair – without forcing a too-narrow width that overflows.
+function leftAlignedMetrics(tight?: string[]): Set<string> {
+  return new Set((tight ?? []).slice(1));
 }
 
 export function ChartPage({ config }: { config: ChartConfig }) {
@@ -96,11 +113,13 @@ export function ChartPage({ config }: { config: ChartConfig }) {
             data={rows}
             columns={buildColumns(rows)}
             numericColumns={numericColumnIds(rows)}
-            columnWidths={columnWidths(rows, config.tightColumns)}
+            leftAlign={leftAlignedMetrics(config.tightColumns)}
+            columnWidths={columnWidths(rows)}
             initialSort={[{ id: "AEP", desc: true }]}
             columnGroups={config.columnGroups.groups}
             defaultGroups={config.defaultGroups}
             gapBefore={config.gapBefore ? new Set(config.gapBefore) : undefined}
+            descriptions={COLUMN_INFO}
             hasValueFilters={
               config.specialColumn
                 ? [{ columnId: config.specialColumn, label: `Only with ${config.specialColumn}` }]

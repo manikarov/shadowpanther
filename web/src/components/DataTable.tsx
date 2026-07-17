@@ -26,11 +26,15 @@ interface DataTableProps<T> {
   hasValueFilters?: HasValueFilter[];
   columnGroups?: ColumnGroup[];
   numericColumns?: Set<string>;
+  /** Numeric columns forced left-aligned (e.g. MAEP, so it hugs AEP as a pair). */
+  leftAlign?: Set<string>;
   columnWidths?: Record<string, ColumnWidth>;
   /** Column-group labels switched on from the start. */
   defaultGroups?: string[];
   /** Columns that get extra left padding to set them off from a numeric block. */
   gapBefore?: Set<string>;
+  /** Per-column hover explanations, keyed by column id. */
+  descriptions?: Record<string, string>;
 }
 
 // Metadata-ish columns that stay visually muted regardless of value.
@@ -43,9 +47,11 @@ export function DataTable<T>({
   hasValueFilters,
   columnGroups,
   numericColumns,
+  leftAlign,
   columnWidths,
   defaultGroups,
   gapBefore,
+  descriptions,
 }: DataTableProps<T>) {
   const [sorting, setSorting] = useState<SortingState>(initialSort ?? []);
   const [globalFilter, setGlobalFilter] = useState("");
@@ -155,8 +161,10 @@ export function DataTable<T>({
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
-                  const isNum = numericColumns?.has(header.column.id);
+                  const isNum =
+                    numericColumns?.has(header.column.id) && !leftAlign?.has(header.column.id);
                   const width = columnWidths?.[header.column.id];
+                  const info = descriptions?.[header.column.id];
                   return (
                     <th
                       key={header.id}
@@ -166,14 +174,22 @@ export function DataTable<T>({
                         isNum && "num",
                         width && `col-${width}`,
                         gapBefore?.has(header.column.id) && "col-gap",
+                        info && "has-info",
                       ]
                         .filter(Boolean)
                         .join(" ")}
                     >
-                      {flexRender(header.column.columnDef.header, header.getContext())}
+                      <span className="th-label">
+                        {flexRender(header.column.columnDef.header, header.getContext())}
+                      </span>
                       {header.column.getCanSort() && (
                         <span className="arrow">
                           {{ asc: "▲", desc: "▼" }[header.column.getIsSorted() as string] ?? ""}
+                        </span>
+                      )}
+                      {info && (
+                        <span className="col-tip" role="tooltip">
+                          {info}
                         </span>
                       )}
                     </th>
@@ -188,7 +204,8 @@ export function DataTable<T>({
                 {row.getVisibleCells().map((cell) => {
                   const value = cell.getValue();
                   const isDim = value === null || ALWAYS_DIM_COLUMNS.has(cell.column.id);
-                  const isNum = numericColumns?.has(cell.column.id);
+                  const isNum =
+                    numericColumns?.has(cell.column.id) && !leftAlign?.has(cell.column.id);
                   const width = columnWidths?.[cell.column.id];
                   return (
                     <td
