@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { CategoryIcon } from "../components/icons";
-import { CHARTS } from "../config/charts";
+import { CHARTS_ORDERED } from "../config/charts";
 import { GUIDES } from "../config/guides";
 import { asset } from "../lib/asset";
 
@@ -10,11 +10,8 @@ const SOON_GUIDES = [
   "Rogue Patch Notes",
 ];
 
-// Home page tile order (nav keeps the CHARTS order); Swords sits second.
-const HOME_ORDER = ["weapons", "swords", "daggers", "fists", "maces", "armor", "enchantments"];
-const HOME_CHARTS = HOME_ORDER.map((path) => CHARTS.find((c) => c.path === path)).filter(
-  (c): c is (typeof CHARTS)[number] => Boolean(c),
-);
+// Shared display order (Swords sits second); used by the nav and these tiles.
+const HOME_CHARTS = CHARTS_ORDERED;
 
 export function HomePage() {
   return (

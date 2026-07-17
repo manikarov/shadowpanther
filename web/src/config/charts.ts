@@ -103,3 +103,9 @@ export const CHARTS: ChartConfig[] = [
     gapBefore: ["Other Effect"],
   },
 ];
+
+// Display order for the nav and home page (Swords promoted to second).
+const CHART_ORDER = ["weapons", "swords", "daggers", "fists", "maces", "armor", "enchantments"];
+export const CHARTS_ORDERED: ChartConfig[] = CHART_ORDER.map(
+  (path) => CHARTS.find((c) => c.path === path),
+).filter((c): c is ChartConfig => Boolean(c));

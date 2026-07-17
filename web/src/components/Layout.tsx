@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { CHARTS } from "../config/charts";
+import { CHARTS_ORDERED } from "../config/charts";
 import { GUIDES } from "../config/guides";
 import { asset } from "../lib/asset";
 
@@ -14,7 +14,7 @@ export function Layout() {
           </span>
         </NavLink>
         <nav className="site-nav">
-          {CHARTS.map((c) => (
+          {CHARTS_ORDERED.map((c) => (
             <NavLink key={c.path} to={`/${c.path}`}>
               {c.label}
             </NavLink>

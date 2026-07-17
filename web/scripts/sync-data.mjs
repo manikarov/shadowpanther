@@ -1,5 +1,7 @@
-// Copies parser output (../../data, ../../assets) into public/ so Vite can serve it.
-import { cpSync, mkdirSync } from "node:fs";
+// Copies parser output (../../data, ../../assets) into public/ so Vite can serve
+// it. public/data and public/assets are build artifacts (git-ignored); this runs
+// automatically via the predev/prebuild hooks so the served copy is never stale.
+import { cpSync, mkdirSync, rmSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
@@ -12,6 +14,8 @@ const jobs = [
 ];
 
 for (const [src, dest] of jobs) {
+  // Wipe first so files deleted from the source don't linger as orphans.
+  rmSync(dest, { recursive: true, force: true });
   mkdirSync(dest, { recursive: true });
   cpSync(src, dest, { recursive: true });
   console.log(`Synced ${src} -> ${dest}`);
