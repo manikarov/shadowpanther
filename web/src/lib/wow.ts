@@ -1,3 +1,5 @@
+import { asset } from "./asset";
+
 // WoW item quality colors (matches the game's own rarity color scheme).
 const RARITY: Record<string, { hex: string; label: string }> = {
   gray: { hex: "#9D9D9D", label: "Poor" },
@@ -20,4 +22,4 @@ export function rarityLabel(color: string | null | undefined): string {
 
 export const RARITY_LEGEND = [RARITY.orange, RARITY.purple, RARITY.blue, RARITY.green];
 
-export const PLACEHOLDER_ICON = "/assets/icon-placeholder.jpg";
+export const PLACEHOLDER_ICON = asset("assets/icon-placeholder.jpg");

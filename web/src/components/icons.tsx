@@ -1,5 +1,6 @@
 // Minimalist line-art icons for the category nav, one per chart type.
 // Stroke-only, single color (currentColor) so they inherit the card's text color.
+import { asset } from "../lib/asset";
 
 const common = {
   viewBox: "0 0 32 32",
@@ -114,7 +115,7 @@ const ICONS: Record<string, () => React.JSX.Element> = {
 export function CategoryIcon({ path }: { path: string }) {
   const Icon = ICONS[path] ?? PlaceholderIcon;
   if (ICONS[path]) {
-    return <img className="category-icon-img" src={`/assets/icons/${path}.png`} alt="" />;
+    return <img className="category-icon-img" src={asset(`assets/icons/${path}.png`)} alt="" />;
   }
   return (
     <span className="category-icon">

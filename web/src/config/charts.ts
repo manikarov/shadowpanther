@@ -1,3 +1,5 @@
+import { asset } from "../lib/asset";
+
 export interface ColumnGroup {
   label: string;
   columns: string[];
@@ -59,49 +61,49 @@ export const CHARTS: ChartConfig[] = [
   {
     path: "weapons",
     label: "Weapons",
-    dataUrl: "/data/weapons.json",
+    dataUrl: asset("data/weapons.json"),
     specialColumn: "Special",
     columnGroups: weaponColumnGroups,
   },
   {
     path: "daggers",
     label: "Daggers",
-    dataUrl: "/data/daggers.json",
+    dataUrl: asset("data/daggers.json"),
     specialColumn: "Special",
     columnGroups: weaponColumnGroups,
   },
   {
     path: "fists",
     label: "Fists",
-    dataUrl: "/data/fists.json",
+    dataUrl: asset("data/fists.json"),
     specialColumn: "Special",
     columnGroups: weaponColumnGroups,
   },
   {
     path: "maces",
     label: "Maces",
-    dataUrl: "/data/maces.json",
+    dataUrl: asset("data/maces.json"),
     specialColumn: "Special",
     columnGroups: weaponColumnGroups,
   },
   {
     path: "swords",
     label: "Swords",
-    dataUrl: "/data/swords.json",
+    dataUrl: asset("data/swords.json"),
     specialColumn: "Special",
     columnGroups: weaponColumnGroups,
   },
   {
     path: "armor",
     label: "Armor",
-    dataUrl: "/data/armor.json",
+    dataUrl: asset("data/armor.json"),
     specialColumn: "Special",
     columnGroups: armorColumnGroups,
   },
   {
     path: "enchantments",
     label: "Enchantments",
-    dataUrl: "/data/enchantments.json",
+    dataUrl: asset("data/enchantments.json"),
     specialColumn: "Other Effect",
     columnGroups: enchantmentColumnGroups,
   },

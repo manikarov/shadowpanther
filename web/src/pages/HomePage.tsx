@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { CategoryIcon } from "../components/icons";
 import { CHARTS } from "../config/charts";
+import { asset } from "../lib/asset";
 
 const GUIDES = [
   "Blacksmithing Guide",
@@ -16,7 +17,7 @@ export function HomePage() {
     <div>
       <section className="hero">
         <div className="hero-title">
-          <img src="/assets/panther_icon.png" alt="" className="hero-logo" />
+          <img src={asset("assets/panther_icon.png")} alt="" className="hero-logo" />
           <h1>ShadowPanther</h1>
         </div>
         <p>World of Warcraft Classic Rogue Info — Charts, Guides &amp; more.</p>

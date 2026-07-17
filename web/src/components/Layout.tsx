@@ -1,12 +1,13 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { CHARTS } from "../config/charts";
+import { asset } from "../lib/asset";
 
 export function Layout() {
   return (
     <>
       <header className="site-header">
         <NavLink to="/" className="brand">
-          <img src="/assets/panther_icon.png" alt="" className="brand-logo" />
+          <img src={asset("assets/panther_icon.png")} alt="" className="brand-logo" />
           <span className="wordmark">
             ShadowPanther <span>Classic</span>
           </span>
