@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { CHARTS } from "./config/charts";
 import { GUIDES } from "./config/guides";
+import { IconProvider } from "./lib/icons";
 import { ChartPage } from "./pages/ChartPage";
 import { GuidePage } from "./pages/GuidePage";
 import { HomePage } from "./pages/HomePage";
@@ -13,17 +14,19 @@ const basename = import.meta.env.BASE_URL.replace(/\/$/, "");
 function App() {
   return (
     <BrowserRouter basename={basename}>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route index element={<HomePage />} />
-          {CHARTS.map((config) => (
-            <Route key={config.path} path={config.path} element={<ChartPage config={config} />} />
-          ))}
-          {GUIDES.map((config) => (
-            <Route key={config.path} path={config.path} element={<GuidePage config={config} />} />
-          ))}
-        </Route>
-      </Routes>
+      <IconProvider>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route index element={<HomePage />} />
+            {CHARTS.map((config) => (
+              <Route key={config.path} path={config.path} element={<ChartPage config={config} />} />
+            ))}
+            {GUIDES.map((config) => (
+              <Route key={config.path} path={config.path} element={<GuidePage config={config} />} />
+            ))}
+          </Route>
+        </Routes>
+      </IconProvider>
     </BrowserRouter>
   );
 }
