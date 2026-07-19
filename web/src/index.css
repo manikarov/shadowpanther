@@ -1320,3 +1320,242 @@ h2 {
     max-width: none;
   }
 }
+
+/* --- talent trees --- */
+
+/* The trees define the page width: one card is 4 columns of 44px icons with
+   18px gaps, plus 12px padding and a 1px border per side; three of them sit in
+   a row with 22px gaps. Keep in sync with the metrics in TalentTree.tsx.
+   The order panel below inherits the same width, and the block is centred. */
+.talent-build {
+  --tree-card: calc(4 * 62px - 18px + 26px);
+  --build-width: calc(3 * var(--tree-card) + 2 * 22px);
+  width: min(100%, var(--build-width));
+  margin-inline: auto;
+}
+
+.talent-build-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.talent-build-spread {
+  font-family: var(--mono);
+  font-size: 15px;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+}
+
+.talent-trees {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 16px;
+}
+
+.talent-tree {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-panel);
+  padding: 12px;
+}
+
+.talent-tree-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.talent-tree-header h3 {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+}
+
+.talent-tree-points {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--gold);
+}
+
+/* The grid is positioned so talents and arrows can share one coordinate space. */
+.talent-grid {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+}
+
+.talent {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  border: 2px solid var(--border);
+  box-sizing: border-box;
+  display: block;
+  text-decoration: none;
+}
+
+.talent img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 2px;
+}
+
+/* Unspent talents stay legible but recede; spent ones pick up the gold accent. */
+.talent[data-state="empty"] img {
+  filter: grayscale(0.85) brightness(0.55);
+}
+
+.talent[data-state="partial"] {
+  border-color: var(--gold);
+}
+
+.talent[data-state="maxed"] {
+  border-color: var(--gold);
+  box-shadow: 0 0 7px rgba(200, 160, 70, 0.65);
+}
+
+.talent-points {
+  position: absolute;
+  right: -5px;
+  bottom: -7px;
+  min-width: 15px;
+  padding: 0 3px;
+  border-radius: 3px;
+  background: #0d0d0f;
+  border: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 10px;
+  line-height: 14px;
+  text-align: center;
+  color: var(--text-faint);
+}
+
+.talent[data-state="maxed"] .talent-points {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+.talent[data-state="partial"] .talent-points {
+  color: var(--text);
+}
+
+.talent-arrow {
+  position: absolute;
+  background: rgba(210, 175, 90, 0.55);
+  width: 2px;
+  pointer-events: none;
+}
+
+.talent-arrow[data-dir="right-down"] {
+  background: none;
+  border-left: 2px solid rgba(210, 175, 90, 0.55);
+  border-bottom: 2px solid rgba(210, 175, 90, 0.55);
+  border-bottom-left-radius: 3px;
+}
+
+.talent-build-link {
+  margin-top: 14px;
+  font-size: 13px;
+}
+
+@media (max-width: 640px) {
+  .talent-trees {
+    gap: 16px;
+  }
+}
+
+/* --- talent order --- */
+
+/* Panelled, multi-column list mirroring the in-game order: one row per point,
+   numbered by the character level it is spent at. */
+.talent-order {
+  margin-top: 26px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-panel);
+  padding: 16px 18px 18px;
+}
+
+.talent-order h3 {
+  font-family: var(--serif);
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  color: var(--gold);
+  margin: 0 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.talent-order-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  columns: 3;
+  column-gap: 36px;
+}
+
+.talent-order-list li {
+  break-inside: avoid;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 0;
+  white-space: nowrap;
+}
+
+.talent-order-level {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-faint);
+  min-width: 22px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.talent-order-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.talent-order-name {
+  font-size: 13.5px;
+  color: var(--gold-bright);
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.talent-order-name:hover {
+  text-decoration: underline;
+}
+
+.talent-order-rank {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--text-faint);
+  flex-shrink: 0;
+}
+
+@media (max-width: 1000px) {
+  .talent-order-list {
+    columns: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .talent-order-list {
+    columns: 1;
+  }
+}

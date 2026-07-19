@@ -1,0 +1,206 @@
+{
+  "13707": {
+    "description": "Increases your chance to get a critical strike with Fist Weapons by 1%.",
+    "name": "Fist Weapon Specialization"
+  },
+  "13709": {
+    "description": "Increases your skill with Maces by 1, and gives you a 1% chance to stun your target for 3 sec with a mace.",
+    "name": "Mace Specialization"
+  },
+  "13713": {
+    "description": "Increases your Parry chance by 1%.",
+    "name": "Deflection"
+  },
+  "13750": {
+    "description": "Increases your Energy regeneration rate by 100% for 15 sec.",
+    "name": "Adrenaline Rush"
+  },
+  "13790": {
+    "description": "Increases your Dodge chance by 4%.",
+    "name": "Lightning Reflexes"
+  },
+  "13792": {
+    "description": "Increases the effect duration of your Gouge ability by 1.5 sec.",
+    "name": "Improved Gouge"
+  },
+  "13807": {
+    "description": "Increases your chance to get a critical strike with Daggers by 5%.",
+    "name": "Dagger Specialization"
+  },
+  "13845": {
+    "description": "Increases your chance to hit with melee weapons by 5%.",
+    "name": "Precision"
+  },
+  "13852": {
+    "description": "Increases the damage done by your offhand weapon by 50%.",
+    "name": "Dual Wield Specialization"
+  },
+  "13863": {
+    "description": "Reduces the Energy cost of your Sinister Strike ability by 5.",
+    "name": "Improved Sinister Strike"
+  },
+  "13866": {
+    "description": "Increases the critical strike chance of your Backstab ability by 30%.",
+    "name": "Improved Backstab"
+  },
+  "13867": {
+    "description": "Gives your Kick ability a 100% chance to silence the target for 2 sec.",
+    "name": "Improved Kick"
+  },
+  "13872": {
+    "description": "Reduces the cooldown of your Sprint and Evasion abilities by 1.5 min.",
+    "name": "Endurance"
+  },
+  "13875": {
+    "description": "Gives a 100% chance to remove all movement impairing effects when you activate your Sprint ability.",
+    "name": "Improved Sprint"
+  },
+  "13877": {
+    "description": "Increases your attack speed by 20%. In addition, attacks strike an additional nearby opponent. Lasts 15 sec.",
+    "name": "Blade Flurry"
+  },
+  "13964": {
+    "description": "Gives you a 5% chance to get an extra attack on the same target after dealing damage with your Sword.",
+    "name": "Sword Specialization"
+  },
+  "13973": {
+    "description": "Reduces the chance enemies have to detect you while in Stealth mode. More effective than Master of Deception (Rank 4).",
+    "name": "Master of Deception"
+  },
+  "13980": {
+    "description": "Gives you a 75% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability.",
+    "name": "Initiative"
+  },
+  "13983": {
+    "description": "Gives you a 15% chance to add a combo point to your target after dodging their attack or fully resisting one of their spells.",
+    "name": "Setup"
+  },
+  "14065": {
+    "description": "Increases your speed while stealthed by 15% and reduces the cooldown of your Stealth ability by 5 sec.",
+    "name": "Camouflage"
+  },
+  "14066": {
+    "description": "Reduces the cooldown of your Vanish and Blind abilities by 1.5 min.",
+    "name": "Elusiveness"
+  },
+  "14075": {
+    "description": "Increases the damage dealt when striking from behind with your Backstab, Garrote, or Ambush abilities by 20%.",
+    "name": "Opportunity"
+  },
+  "14081": {
+    "description": "Increases the critical strike chance of your Ambush ability by 45%.",
+    "name": "Improved Ambush"
+  },
+  "14083": {
+    "description": "Reduces the Energy cost of your Cheap Shot and Garrote abilities by 20.",
+    "name": "Dirty Deeds"
+  },
+  "14095": {
+    "description": "Gives you a 90% chance to return to stealth mode after using your Sap ability.",
+    "name": "Improved Sap"
+  },
+  "14113": {
+    "description": "Increases the chance to apply poisons to your target by 2%.",
+    "name": "Improved Poisons"
+  },
+  "14137": {
+    "description": "Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Ghostly Strike, and Hemorrhage abilities by 30%.",
+    "name": "Lethality"
+  },
+  "14142": {
+    "description": "Increases your critical strike chance by 5%.",
+    "name": "Malice"
+  },
+  "14144": {
+    "description": "After killing an opponent that yields experience or honor, gives you a 20% increased critical strike chance on your next Sinister Strike, Backstab, Ambush, or Ghostly Strike. Lasts 20 sec.",
+    "name": "Remorseless Attacks"
+  },
+  "14159": {
+    "description": "Increases all damage caused against Humanoid, Giant, Beast and Dragonkin targets by 2%.",
+    "name": "Murder"
+  },
+  "14161": {
+    "description": "Gives your finishing moves a 60% chance to add a combo point to your target.",
+    "name": "Ruthlessness"
+  },
+  "14164": {
+    "description": "Increases the damage done by your Eviscerate ability by 15%.",
+    "name": "Improved Eviscerate"
+  },
+  "14167": {
+    "description": "Increases the duration of your Slice and Dice ability by 45%.",
+    "name": "Improved Slice and Dice"
+  },
+  "14169": {
+    "description": "Increases the armor reduced by your Expose Armor ability by 50%.",
+    "name": "Improved Expose Armor"
+  },
+  "14173": {
+    "description": "Causes your attacks to ignore 0 of your target's Armor and increases the damage dealt by your Rupture ability by 30%. The amount of Armor reduced increases with your level.",
+    "name": "Serrated Blades"
+  },
+  "14174": {
+    "description": "While affected by your Kidney Shot ability, the target receives an additional 3% damage from all sources.",
+    "name": "Improved Kidney Shot"
+  },
+  "14177": {
+    "description": "When activated, increases the critical strike chance of your next Sinister Strike, Backstab, Ambush, or Eviscerate by 100%.",
+    "name": "Cold Blood"
+  },
+  "14179": {
+    "description": "Your finishing moves have a 20% chance per combo point to restore 25 energy.",
+    "name": "Relentless Strikes"
+  },
+  "14183": {
+    "description": "When used, adds 2 combo points to your target. You must add to or use those combo points within 10 sec or the combo points are lost.",
+    "name": "Premeditation"
+  },
+  "14185": {
+    "description": "When activated, this ability immediately finishes the cooldown on your other Rogue abilities.",
+    "name": "Preparation"
+  },
+  "14186": {
+    "description": "Your critical strikes from abilities that add combo points have a 20% chance to add an additional combo point.",
+    "name": "Seal Fate"
+  },
+  "14251": {
+    "description": "A strike that becomes active after parrying an opponent's attack. This attack deals 150% weapon damage and disarms the target for 6 sec.",
+    "name": "Riposte"
+  },
+  "14278": {
+    "description": "A strike that deals 125% weapon damage and increases your chance to dodge by 15% for 7 sec. Awards 1 combo point.",
+    "name": "Ghostly Strike"
+  },
+  "14983": {
+    "description": "Increases your maximum Energy by 10.",
+    "name": "Vigor"
+  },
+  "16511": {
+    "description": "An instant strike that damages the opponent and causes the target to hemorrhage, increasing any Physical damage dealt to the target by up to 3. Lasts 30 charges or 15 sec. Awards 1 combo point.",
+    "name": "Hemorrhage"
+  },
+  "16513": {
+    "description": "Increases the damage dealt by your poisons by 4% and gives your poisons an additional 8% chance to resist dispel effects.",
+    "name": "Vile Poisons"
+  },
+  "18429": {
+    "description": "Increases the damage of your Sinister Strike and Eviscerate abilities by 6%.",
+    "name": "Aggression"
+  },
+  "30892": {
+    "description": "Reduces the chance you are critically hit by melee and ranged attacks by 1% and increases the threat reduction of your Feint ability by 10%.",
+    "name": "Sleight of Hand"
+  },
+  "30895": {
+    "description": "Increases your Stealth detection and reduces the chance you are hit by spells and ranged attacks by 4%. More effective than Heightened Senses (Rank 1).",
+    "name": "Heightened Senses"
+  },
+  "30902": {
+    "description": "Increases your Attack Power by 2%.",
+    "name": "Deadliness"
+  },
+  "30920": {
+    "description": "Increases your skill with Sword, Fist and Dagger weapons by 5.",
+    "name": "Weapon Expertise"
+  }
+}

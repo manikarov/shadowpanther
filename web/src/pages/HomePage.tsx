@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { CategoryIcon } from "../components/icons";
 import { CHARTS_ORDERED } from "../config/charts";
 import { GUIDES } from "../config/guides";
+import { TALENT_PAGES } from "../config/talents";
 import { asset } from "../lib/asset";
 
 const SOON_GUIDES = [
@@ -44,6 +45,17 @@ export function HomePage() {
           {SOON_GUIDES.map((g) => (
             <li key={g} className="guide-item soon" title="Coming soon">
               {g}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="guides">
+        <h2>Rogue Talents</h2>
+        <ul className="guide-list">
+          {TALENT_PAGES.map((t) => (
+            <li key={t.path} className="guide-item">
+              <Link to={`/${t.path}`}>{t.label}</Link>
             </li>
           ))}
         </ul>
