@@ -24,14 +24,23 @@ function displayValue(key: string, value: unknown): string {
   return formatCell(value as CellValue);
 }
 
-function buildColumns(rows: ItemRecord[]): ColumnDef<ItemRecord, any>[] {
+function buildColumns(
+  rows: ItemRecord[],
+  config: Pick<ChartConfig, "fallbackIcon" | "hideRarity">,
+): ColumnDef<ItemRecord, any>[] {
   const dataKeys = Object.keys(rows[0]).filter((k) => !META_KEYS.has(k));
 
   const nameColumn: ColumnDef<ItemRecord, any> = {
     id: "name",
     header: "Item",
     accessorFn: (row) => row.name,
-    cell: ({ row }) => <ItemName item={row.original} />,
+    cell: ({ row }) => (
+      <ItemName
+        item={row.original}
+        fallbackIcon={config.fallbackIcon}
+        showRarity={!config.hideRarity}
+      />
+    ),
     sortingFn: "alphanumeric",
   };
 
@@ -144,7 +153,7 @@ export function ChartPage({ config }: { config: ChartConfig }) {
           <h2>{sectionLabel(section)}</h2>
           <DataTable
             data={rows}
-            columns={buildColumns(rows)}
+            columns={buildColumns(rows, config)}
             numericColumns={numericColumnIds(rows)}
             leftAlign={leftAlignedMetrics(config.tightColumns)}
             columnWidths={columnWidths(rows)}

@@ -1,4 +1,5 @@
 import { asset } from "../lib/asset";
+import { ENCHANTING_ICON } from "../lib/wow";
 
 export interface ColumnGroup {
   label: string;
@@ -25,6 +26,10 @@ export interface ChartConfig {
   tightColumns?: string[];
   /** Columns that get extra breathing room on their left edge, to separate a numeric block from text. */
   gapBefore?: string[];
+  /** Icon for rows with no item of their own, instead of the generic placeholder. */
+  fallbackIcon?: string;
+  /** Drop the rarity frame and label for charts whose rows aren't items. */
+  hideRarity?: boolean;
 }
 
 // The AEP/MAEP(/TAEP) headline metrics – kept narrow and grouped tightly, with a
@@ -101,6 +106,8 @@ export const CHARTS: ChartConfig[] = [
     columnGroups: enchantmentColumnGroups,
     tightColumns: aepMetrics,
     gapBefore: ["Other Effect"],
+    fallbackIcon: ENCHANTING_ICON,
+    hideRarity: true,
   },
 ];
 

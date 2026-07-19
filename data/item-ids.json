@@ -1,0 +1,356 @@
+{
+  "Abyssal Leather Shoulders of Stri.": {
+    "icon": "inv_shoulder_08",
+    "id": 20689,
+    "matched": "Abyssal Leather Shoulders",
+    "url": "https://www.wowhead.com/classic/item=20689"
+  },
+  "Advr's Shoulders of the Monkey": {
+    "icon": "inv_shoulder_15",
+    "id": 10263,
+    "matched": "Adventurer's Shoulders",
+    "url": "https://www.wowhead.com/classic/item=10263"
+  },
+  "Amulet of Foul Warding": {
+    "icon": "inv_jewelry_necklace_12",
+    "id": 21702,
+    "matched": "Amulet of Foul Warding",
+    "url": "https://www.wowhead.com/classic/item=21702"
+  },
+  "Amulet of the Darkmoon": {
+    "icon": "inv_jewelry_necklace_14",
+    "id": 19491,
+    "matched": "Amulet of the Darkmoon",
+    "url": "https://www.wowhead.com/classic/item=19491"
+  },
+  "Barbed Choker": {
+    "icon": "inv_jewelry_necklace_ahnqiraj_02",
+    "id": 21664,
+    "matched": "Barbed Choker",
+    "url": "https://www.wowhead.com/classic/item=21664"
+  },
+  "Beads of Ogre Might": {
+    "icon": "inv_jewelry_amulet_05",
+    "id": 22150,
+    "matched": "Beads of Ogre Might",
+    "url": "https://www.wowhead.com/classic/item=22150"
+  },
+  "Blazefury Medallion": {
+    "icon": "inv_jewelry_talisman_01",
+    "id": 17111,
+    "matched": "Blazefury Medallion",
+    "url": "https://www.wowhead.com/classic/item=17111"
+  },
+  "Blood Guard's Leather Shoulders": {
+    "icon": "inv_shoulder_15",
+    "id": 220853,
+    "matched": "Blood Guard's Leather Shoulders",
+    "url": "https://www.wowhead.com/classic/item=220853"
+  },
+  "Bloodfang Spaulders": {
+    "icon": "inv_shoulder_23",
+    "id": 16832,
+    "matched": "Bloodfang Spaulders",
+    "url": "https://www.wowhead.com/classic/item=16832"
+  },
+  "Bonescythe Pauldrons": {
+    "icon": "inv_shoulder_29",
+    "id": 22479,
+    "matched": "Bonescythe Pauldrons",
+    "url": "https://www.wowhead.com/classic/item=22479"
+  },
+  "Champion's Leather Mantle": {
+    "icon": "inv_shoulder_14",
+    "id": 16507,
+    "matched": "Champion's Leather Mantle",
+    "url": "https://www.wowhead.com/classic/item=16507"
+  },
+  "Champion's Leather Shoulders": {
+    "icon": "inv_shoulder_14",
+    "id": 23258,
+    "matched": "Champion's Leather Shoulders",
+    "url": "https://www.wowhead.com/classic/item=23258"
+  },
+  "Chitinous Shoulderguards": {
+    "icon": "inv_shoulder_29",
+    "id": 21474,
+    "matched": "Chitinous Shoulderguards",
+    "url": "https://www.wowhead.com/classic/item=21474"
+  },
+  "Choker of the Shifting Sands": {
+    "icon": "inv_jewelry_necklace_ahnqiraj_03",
+    "id": 21505,
+    "matched": "Choker of the Shifting Sands",
+    "url": "https://www.wowhead.com/classic/item=21505"
+  },
+  "Dark Warder's Pauldrons": {
+    "icon": "inv_shoulder_07",
+    "id": 22241,
+    "matched": "Dark Warder's Pauldrons",
+    "url": "https://www.wowhead.com/classic/item=22241"
+  },
+  "Darkmantle Spaulders": {
+    "icon": "inv_shoulder_07",
+    "id": 22008,
+    "matched": "Darkmantle Spaulders",
+    "url": "https://www.wowhead.com/classic/item=22008"
+  },
+  "Deathdealer's Spaulders": {
+    "icon": "inv_shoulder_03",
+    "id": 21361,
+    "matched": "Deathdealer's Spaulders",
+    "url": "https://www.wowhead.com/classic/item=21361"
+  },
+  "Defiler's Leather Shoulders": {
+    "icon": "inv_shoulder_24",
+    "id": 20194,
+    "matched": "Defiler's Leather Shoulders",
+    "url": "https://www.wowhead.com/classic/item=20194"
+  },
+  "Defiler's Lizardhide Shoulders": {
+    "icon": "inv_shoulder_24",
+    "id": 20175,
+    "matched": "Defiler's Lizardhide Shoulders",
+    "url": "https://www.wowhead.com/classic/item=20175"
+  },
+  "Dragonheart Necklace": {
+    "icon": "inv_jewelry_necklace_18",
+    "id": 20622,
+    "matched": "Dragonheart Necklace",
+    "url": "https://www.wowhead.com/classic/item=20622"
+  },
+  "Engineer's Hammer": {
+    "icon": "inv_hammer_20",
+    "id": 5324,
+    "matched": "Engineer's Hammer",
+    "url": "https://www.wowhead.com/classic/item=5324"
+  },
+  "Eskhandar's Collar": {
+    "icon": "inv_belt_12",
+    "id": 18205,
+    "matched": "Eskhandar's Collar",
+    "url": "https://www.wowhead.com/classic/item=18205"
+  },
+  "Field Marshal's Leather Epaulets": {
+    "icon": "inv_shoulder_23",
+    "id": 16457,
+    "matched": "Field Marshal's Leather Epaulets",
+    "url": "https://www.wowhead.com/classic/item=16457"
+  },
+  "Fireguard Shoulders": {
+    "icon": "inv_shoulder_23",
+    "id": 19139,
+    "matched": "Fireguard Shoulders",
+    "url": "https://www.wowhead.com/classic/item=19139"
+  },
+  "Flamescarred Shoulders": {
+    "icon": "inv_shoulder_24",
+    "id": 18374,
+    "matched": "Flamescarred Shoulders",
+    "url": "https://www.wowhead.com/classic/item=18374"
+  },
+  "Forest Stalker's Bracers (60)": {
+    "icon": "inv_bracer_12",
+    "id": 19587,
+    "matched": "Forest Stalker's Bracers",
+    "url": "https://www.wowhead.com/classic/item=19587"
+  },
+  "Highlander's Leather Shoulders": {
+    "icon": "inv_shoulder_24",
+    "id": 20059,
+    "matched": "Highlander's Leather Shoulders",
+    "url": "https://www.wowhead.com/classic/item=20059"
+  },
+  "Highlander's Lizardhide Shoulders": {
+    "icon": "inv_shoulder_24",
+    "id": 20060,
+    "matched": "Highlander's Lizardhide Shoulders",
+    "url": "https://www.wowhead.com/classic/item=20060"
+  },
+  "Knight-Lt. Leather Shoulders": {
+    "icon": "inv_shoulder_15",
+    "id": 220852,
+    "matched": "Knight-Lieutenant's Leather Shoulders",
+    "url": "https://www.wowhead.com/classic/item=220852"
+  },
+  "Lt. Comm. Leather Shoulders": {
+    "icon": "inv_shoulder_14",
+    "id": 23313,
+    "matched": "Lieutenant Commander's Leather Shoulders",
+    "url": "https://www.wowhead.com/classic/item=23313"
+  },
+  "Lt. Comm. Leather Spaulders": {
+    "icon": "inv_shoulder_25",
+    "id": 16420,
+    "matched": "Lieutenant Commander's Leather Spaulders",
+    "url": "https://www.wowhead.com/classic/item=16420"
+  },
+  "Mantle of Wicked Revenge": {
+    "icon": "inv_shoulder_30",
+    "id": 21665,
+    "matched": "Mantle of Wicked Revenge",
+    "url": "https://www.wowhead.com/classic/item=21665"
+  },
+  "Mark of C'Thun": {
+    "icon": "inv_jewelry_necklace_ahnqiraj_04",
+    "id": 22732,
+    "matched": "Mark of C'Thun",
+    "url": "https://www.wowhead.com/classic/item=22732"
+  },
+  "Marshal's Leather Leggings": {
+    "icon": "inv_pants_06",
+    "id": 16456,
+    "matched": "Marshal's Leather Leggings",
+    "url": "https://www.wowhead.com/classic/item=16456"
+  },
+  "Master Dragonslayer's Medallion": {
+    "icon": "inv_jewelry_necklace_18",
+    "id": 19383,
+    "matched": "Master Dragonslayer's Medallion",
+    "url": "https://www.wowhead.com/classic/item=19383"
+  },
+  "Medallion of the Dawn": {
+    "icon": "inv_jewelry_amulet_04",
+    "id": 22659,
+    "matched": "Medallion of the Dawn",
+    "url": "https://www.wowhead.com/classic/item=22659"
+  },
+  "Mighty Spaulders of the Monkey": {
+    "icon": "inv_shoulder_24",
+    "id": 10153,
+    "matched": "Mighty Spaulders",
+    "url": "https://www.wowhead.com/classic/item=10153"
+  },
+  "Nightslayer Shoulder Pads": {
+    "icon": "inv_shoulder_25",
+    "id": 16823,
+    "matched": "Nightslayer Shoulder Pads",
+    "url": "https://www.wowhead.com/classic/item=16823"
+  },
+  "Onyxia Tooth Pendant": {
+    "icon": "inv_jewelry_necklace_09",
+    "id": 18404,
+    "matched": "Onyxia Tooth Pendant",
+    "url": "https://www.wowhead.com/classic/item=18404"
+  },
+  "Paranoia Mantle": {
+    "icon": "inv_shoulder_18",
+    "id": 220747,
+    "matched": "Paranoia Mantle",
+    "url": "https://www.wowhead.com/classic/item=220747"
+  },
+  "Pendant of the Qiraji Guardian": {
+    "icon": "inv_jewelry_necklace_ahnqiraj_01",
+    "id": 21700,
+    "matched": "Pendant of the Qiraji Guardian",
+    "url": "https://www.wowhead.com/classic/item=21700"
+  },
+  "Pendant of the Shifting Sands": {
+    "icon": "inv_jewelry_necklace_ahnqiraj_03",
+    "id": 21506,
+    "matched": "Pendant of the Shifting Sands",
+    "url": "https://www.wowhead.com/classic/item=21506"
+  },
+  "Polar Shoulder Pads": {
+    "icon": "inv_shoulder_07",
+    "id": 22941,
+    "matched": "Polar Shoulder Pads",
+    "url": "https://www.wowhead.com/classic/item=22941"
+  },
+  "Prestor's Talisman of Connivery": {
+    "icon": "inv_jewelry_necklace_17",
+    "id": 19377,
+    "matched": "Prestor's Talisman of Connivery",
+    "url": "https://www.wowhead.com/classic/item=19377"
+  },
+  "Sadist's Collar": {
+    "icon": "inv_jewelry_necklace_29naxxramas",
+    "id": 23023,
+    "matched": "Sadist's Collar",
+    "url": "https://www.wowhead.com/classic/item=23023"
+  },
+  "Shadowcraft Spaulders": {
+    "icon": "inv_shoulder_07",
+    "id": 16708,
+    "matched": "Shadowcraft Spaulders",
+    "url": "https://www.wowhead.com/classic/item=16708"
+  },
+  "Solid Metal Club (Alliance)": {
+    "icon": "inv_mace_01",
+    "id": 1158,
+    "matched": "Solid Metal Club",
+    "url": "https://www.wowhead.com/classic/item=1158"
+  },
+  "Spaulders of the Unseen": {
+    "icon": "inv_shoulder_18",
+    "id": 13116,
+    "matched": "Spaulders of the Unseen",
+    "url": "https://www.wowhead.com/classic/item=13116"
+  },
+  "Stormrage's Talisman of Seething": {
+    "icon": "inv_jewelry_necklace_28naxxramas",
+    "id": 23053,
+    "matched": "Stormrage's Talisman of Seething",
+    "url": "https://www.wowhead.com/classic/item=23053"
+  },
+  "Supr. Shoulders of the Monkey": {
+    "icon": "inv_shoulder_08",
+    "id": 9807,
+    "matched": "Superior Shoulders",
+    "url": "https://www.wowhead.com/classic/item=9807"
+  },
+  "Taut Dragonhide Shoulderpads": {
+    "icon": "inv_shoulder_08",
+    "id": 19389,
+    "matched": "Taut Dragonhide Shoulderpads",
+    "url": "https://www.wowhead.com/classic/item=19389"
+  },
+  "The Eye of Hakkar": {
+    "icon": "inv_jewelry_necklace_22",
+    "id": 19856,
+    "matched": "The Eye of Hakkar",
+    "url": "https://www.wowhead.com/classic/item=19856"
+  },
+  "Unnatural Leather Spaulders": {
+    "icon": "inv_shoulder_29",
+    "id": 20633,
+    "matched": "Unnatural Leather Spaulders",
+    "url": "https://www.wowhead.com/classic/item=20633"
+  },
+  "Warlord's Leather Spaulders": {
+    "icon": "inv_shoulder_07",
+    "id": 16562,
+    "matched": "Warlord's Leather Spaulders",
+    "url": "https://www.wowhead.com/classic/item=16562"
+  },
+  "Will of the Martyr": {
+    "icon": "inv_jewelry_talisman_07",
+    "id": 17044,
+    "matched": "Will of the Martyr",
+    "url": "https://www.wowhead.com/classic/item=17044"
+  },
+  "Wyrmtongue Shoulders": {
+    "icon": "inv_shoulder_24",
+    "id": 13358,
+    "matched": "Wyrmtongue Shoulders",
+    "url": "https://www.wowhead.com/classic/item=13358"
+  },
+  "Zand. Shadow Mastery Talisman": {
+    "icon": "inv_jewelry_necklace_26",
+    "id": 19617,
+    "matched": "Zandalarian Shadow Mastery Talisman",
+    "url": "https://www.wowhead.com/classic/item=19617"
+  },
+  "Zandalar Madcap's Mantle": {
+    "icon": "inv_shoulder_29",
+    "id": 19835,
+    "matched": "Zandalar Madcap's Mantle",
+    "url": "https://www.wowhead.com/classic/item=19835"
+  },
+  "Zandalarian Shadow Talisman (3)": {
+    "icon": "inv_jewelry_necklace_23",
+    "id": 19614,
+    "matched": "Zandalarian Shadow Talisman",
+    "url": "https://www.wowhead.com/classic/item=19614"
+  }
+}

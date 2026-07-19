@@ -3846,8 +3846,8 @@
     },
     {
       "name": "Engineer's Hammer",
-      "itemId": null,
-      "wowheadUrl": "https://www.wowhead.com/classic/quest=902",
+      "itemId": 5324,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=5324",
       "rarityColor": "green",
       "AEP": 49.125,
       "MAEP": 47.145,
@@ -4218,8 +4218,8 @@
     },
     {
       "name": "Solid Metal Club (Alliance)",
-      "itemId": null,
-      "wowheadUrl": "https://www.wowhead.com/classic/quest=46",
+      "itemId": 1158,
+      "wowheadUrl": "https://www.wowhead.com/classic/item=1158",
       "rarityColor": null,
       "AEP": 28.444444444444443,
       "MAEP": 28.444444444444443,

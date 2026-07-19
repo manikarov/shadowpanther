@@ -23,3 +23,8 @@ export function rarityLabel(color: string | null | undefined): string {
 export const RARITY_LEGEND = [RARITY.orange, RARITY.purple, RARITY.blue, RARITY.green];
 
 export const PLACEHOLDER_ICON = asset("assets/icon-placeholder.jpg");
+
+// Enchant rows are effects, not items, so most have no item to take an icon
+// from. The Enchanting profession icon (ui_profession_enchanting) stands in
+// for all of them.
+export const ENCHANTING_ICON = asset("assets/icon-enchanting.jpg");
