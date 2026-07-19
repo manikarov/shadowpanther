@@ -3,7 +3,6 @@
 export const COLUMN_INFO: Record<string, string> = {
   AEP: "Agility Equivalence Points — converts an item's stats into a single Agility-point value so items can be compared directly. This PVP-oriented formula gives extra weight to Stamina and defensive stats.",
   MAEP: "Maximum DPS AEP — the same Agility-point idea, tuned for maximizing PVE raid DPS.",
-  TAEP: "Tank AEP — the Agility-point value tuned for avoidance tanking.",
   DPS: "Damage per second.",
   Min: "Minimum weapon damage.",
   Max: "Maximum weapon damage.",
@@ -40,7 +39,6 @@ export const COLUMN_INFO: Record<string, string> = {
   HP: "Health.",
   PVP: "PVP special value.",
   PVE: "PVE special value.",
-  Tank: "Tank special value.",
   Special: "Special abilities the item grants.",
   "Other Effect": "Any additional effect the enchantment provides.",
   COMPONENTS: "Materials required to craft the enchantment.",

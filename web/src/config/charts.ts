@@ -32,10 +32,10 @@ export interface ChartConfig {
   hideRarity?: boolean;
 }
 
-// The AEP/MAEP(/TAEP) headline metrics – kept narrow and grouped tightly, with a
+// The AEP/MAEP headline metrics – kept narrow and grouped tightly, with a
 // gap before the text column that follows them.
 const weaponMetrics = ["AEP", "MAEP"];
-const aepMetrics = ["AEP", "MAEP", "TAEP"];
+const aepMetrics = ["AEP", "MAEP"];
 
 // Shared by Weapons/Daggers/Fists/Maces/Swords - they're all the same parser schema.
 const weaponColumnGroups: ColumnGroups = {
@@ -51,25 +51,25 @@ const weaponColumnGroups: ColumnGroups = {
 };
 
 const armorColumnGroups: ColumnGroups = {
-  always: ["Source", "Lvl", "AEP", "MAEP", "TAEP"],
+  always: ["Source", "Lvl", "AEP", "MAEP"],
   groups: [
     { label: "Origin", columns: ["Loc", "P", "Info", "Set"] },
     { label: "Base Stats", columns: ["Arm", "B"] },
     { label: "Attributes", columns: ["Agi", "Sta", "Str", "AP"] },
     { label: "Hit Values", columns: ["Cri", "Hit", "Par", "Dod", "Def"] },
     { label: "Resistances", columns: ["Ar", "Fi", "Fr", "Na", "Sh"] },
-    { label: "Special Values", columns: ["H/5", "PVP", "PVE", "Tank", "Special"] },
+    { label: "Special Values", columns: ["H/5", "PVP", "PVE", "Special"] },
   ],
 };
 
 const enchantmentColumnGroups: ColumnGroups = {
-  always: ["AEP", "MAEP", "TAEP", "Other Effect"],
+  always: ["AEP", "MAEP", "Other Effect"],
   groups: [
     { label: "Crafting", columns: ["P", "COMPONENTS"] },
     { label: "Attributes", columns: ["Arm", "Agi", "Sta", "Str", "AP"] },
     { label: "Hit Values", columns: ["Cri", "Dod", "Def"] },
     { label: "Resistances", columns: ["Ar", "Fi", "Fr", "Na", "Sh"] },
-    { label: "Special Values", columns: ["HP", "PVP", "PVE", "Tank"] },
+    { label: "Special Values", columns: ["HP", "PVP", "PVE"] },
   ],
 };
 

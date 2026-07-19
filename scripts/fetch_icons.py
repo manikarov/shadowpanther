@@ -24,10 +24,14 @@ IMAGE_URL = "https://wow.zamimg.com/images/wow/icons/large/{}.jpg"
 HEADERS = {"User-Agent": "Mozilla/5.0 (ShadowPanther reskin icon fetch)"}
 
 
+# Lookup caches that live in data/ but aren't chart files.
+NOT_CHARTS = {"icons.json", "item-ids.json", "craft-ids.json"}
+
+
 def collect_item_ids() -> set[str]:
     ids: set[str] = set()
     for f in DATA.glob("*.json"):
-        if f.name == "icons.json":
+        if f.name in NOT_CHARTS:
             continue
         data = json.loads(f.read_text(encoding="utf-8"))
         if f.name.startswith("guide-"):
