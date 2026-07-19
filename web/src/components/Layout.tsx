@@ -1,8 +1,20 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { CHARTS_ORDERED } from "../config/charts";
+import { EXTRA_PAGES } from "../config/extras";
 import { GUIDES } from "../config/guides";
 import { TALENT_PAGES } from "../config/talents";
 import { asset } from "../lib/asset";
+import { NavMenu, type NavItem } from "./NavMenu";
+
+const pick = ({ path, label }: NavItem): NavItem => ({ path, label });
+
+// The nav is grouped into dropdowns; spelling all 13 links out made it wrap.
+const NAV_GROUPS: { label: string; items: NavItem[] }[] = [
+  { label: "Charts", items: CHARTS_ORDERED.map(pick) },
+  { label: "Professions", items: GUIDES.map(pick) },
+  { label: "Builds", items: TALENT_PAGES.map(pick) },
+  { label: "Extras", items: EXTRA_PAGES.map(pick) },
+];
 
 export function Layout() {
   return (
@@ -15,25 +27,9 @@ export function Layout() {
           </span>
         </NavLink>
         <nav className="site-nav">
-          {CHARTS_ORDERED.map((c) => (
-            <NavLink key={c.path} to={`/${c.path}`}>
-              {c.label}
-            </NavLink>
+          {NAV_GROUPS.map((group) => (
+            <NavMenu key={group.label} label={group.label} items={group.items} />
           ))}
-          <span className="nav-sep" aria-hidden="true" />
-          {GUIDES.map((g) => (
-            <NavLink key={g.path} to={`/${g.path}`}>
-              {g.label}
-            </NavLink>
-          ))}
-          <span className="nav-sep" aria-hidden="true" />
-          {TALENT_PAGES.map((t) => (
-            <NavLink key={t.path} to={`/${t.path}`}>
-              {t.label}
-            </NavLink>
-          ))}
-          <span className="nav-sep" aria-hidden="true" />
-          <NavLink to="/aep">AEP Explained</NavLink>
         </nav>
       </header>
       <main>

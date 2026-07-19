@@ -132,6 +132,82 @@ main {
   color: var(--gold);
 }
 
+/* --- nav dropdowns --- */
+
+.nav-menu {
+  position: relative;
+}
+
+/* Matches .site-nav a so triggers and plain links sit on the same baseline. */
+.nav-menu-trigger {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+}
+
+.nav-menu-trigger:hover,
+.nav-menu-trigger[aria-expanded="true"] {
+  color: var(--gold-bright);
+  background: rgba(201, 162, 39, 0.08);
+}
+
+.nav-menu-trigger[data-active] {
+  color: var(--gold);
+}
+
+.nav-menu-caret {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid currentColor;
+  opacity: 0.75;
+}
+
+.nav-menu-list {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 50;
+  min-width: 100%;
+  max-width: calc(100vw - 32px);
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--bg-panel);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+}
+
+.nav-menu-list a {
+  padding: 7px 14px;
+  border-radius: 4px;
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: color 0.15s, background 0.15s;
+}
+
+.nav-menu-list a:hover {
+  color: var(--gold-bright);
+  background: rgba(201, 162, 39, 0.08);
+}
+
+.nav-menu-list a.active {
+  color: var(--gold);
+}
+
 .hero {
   max-width: 820px;
   margin: 0 auto;
@@ -237,9 +313,17 @@ main {
   height: 100%;
 }
 
+/* The two guide lists sit side by side and are centred as a pair. */
+.guide-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px 72px;
+}
+
 .guides {
-  max-width: 400px;
-  margin: 0 auto;
+  min-width: 220px;
 }
 
 .guides h2 {
@@ -269,21 +353,7 @@ main {
   color: var(--text-dim);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
-
-.guide-item.soon {
-  opacity: 0.5;
-  cursor: default;
-}
-
-.guide-item.soon::after {
-  content: "soon";
-  font-family: var(--mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--accent);
+  justify-content: center;
 }
 
 .eyebrow {
@@ -739,13 +809,6 @@ h2 {
 }
 
 /* --- nav separator (charts | guides) --- */
-
-.nav-sep {
-  width: 1px;
-  align-self: stretch;
-  margin: 4px 6px;
-  background: var(--border);
-}
 
 /* --- guides list on the home page --- */
 
