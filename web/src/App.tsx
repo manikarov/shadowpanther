@@ -3,6 +3,7 @@ import { Layout } from "./components/Layout";
 import { CHARTS } from "./config/charts";
 import { GUIDES } from "./config/guides";
 import { IconProvider } from "./lib/icons";
+import { AepPage } from "./pages/AepPage";
 import { ChartPage } from "./pages/ChartPage";
 import { GuidePage } from "./pages/GuidePage";
 import { HomePage } from "./pages/HomePage";
@@ -24,6 +25,7 @@ function App() {
             {GUIDES.map((config) => (
               <Route key={config.path} path={config.path} element={<GuidePage config={config} />} />
             ))}
+            <Route path="aep" element={<AepPage />} />
           </Route>
         </Routes>
       </IconProvider>

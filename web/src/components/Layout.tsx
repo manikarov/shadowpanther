@@ -25,6 +25,8 @@ export function Layout() {
               {g.label}
             </NavLink>
           ))}
+          <span className="nav-sep" aria-hidden="true" />
+          <NavLink to="/aep">AEP Explained</NavLink>
         </nav>
       </header>
       <main>

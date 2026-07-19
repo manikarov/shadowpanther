@@ -900,24 +900,24 @@ h2 {
    table still fills 100% (min-width) and nothing scrolls. --- */
 @media (max-width: 1024px) {
   /* chart tables */
-  .data-table:not(.guide-table) {
+  .data-table:not(.guide-table):not(.aep-table):not(.calc-table) {
     table-layout: auto;
     width: max-content;
     min-width: 100%;
   }
-  .data-table:not(.guide-table) colgroup col {
+  .data-table:not(.guide-table):not(.aep-table):not(.calc-table) colgroup col {
     width: auto !important;
   }
-  .data-table:not(.guide-table) th,
-  .data-table:not(.guide-table) td {
+  .data-table:not(.guide-table):not(.aep-table):not(.calc-table) th,
+  .data-table:not(.guide-table):not(.aep-table):not(.calc-table) td {
     white-space: nowrap;
   }
-  .data-table:not(.guide-table) .col-wide {
+  .data-table:not(.guide-table):not(.aep-table):not(.calc-table) .col-wide {
     white-space: normal;
     max-width: 200px;
   }
-  .data-table:not(.guide-table) th:first-child,
-  .data-table:not(.guide-table) td:first-child {
+  .data-table:not(.guide-table):not(.aep-table):not(.calc-table) th:first-child,
+  .data-table:not(.guide-table):not(.aep-table):not(.calc-table) td:first-child {
     position: sticky;
     left: 0;
     z-index: 2;
@@ -927,7 +927,7 @@ h2 {
     white-space: normal;
     box-shadow: 1px 0 0 var(--border);
   }
-  .data-table:not(.guide-table) thead th:first-child {
+  .data-table:not(.guide-table):not(.aep-table):not(.calc-table) thead th:first-child {
     z-index: 3;
   }
 
@@ -962,8 +962,8 @@ h2 {
   .category-card {
     flex: 0 0 calc(25% - 10.5px);
   }
-  .data-table:not(.guide-table) th:first-child,
-  .data-table:not(.guide-table) td:first-child {
+  .data-table:not(.guide-table):not(.aep-table):not(.calc-table) th:first-child,
+  .data-table:not(.guide-table):not(.aep-table):not(.calc-table) td:first-child {
     min-width: 160px;
     max-width: 200px;
   }
@@ -1036,9 +1036,280 @@ h2 {
   }
 
   /* a touch narrower sticky column on the smallest screens */
-  .data-table:not(.guide-table) th:first-child,
-  .data-table:not(.guide-table) td:first-child {
+  .data-table:not(.guide-table):not(.aep-table):not(.calc-table) th:first-child,
+  .data-table:not(.guide-table):not(.aep-table):not(.calc-table) td:first-child {
     min-width: 152px;
     max-width: 188px;
+  }
+}
+
+/* ============================================================
+   AEP explainer page
+   ============================================================ */
+
+.aep-lead {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--text-dim);
+  max-width: 720px;
+  margin: 0 0 28px;
+}
+
+.aep-lead b {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.aep-subhead,
+.calc-block h3 {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  margin: 28px 0 12px;
+}
+
+.calc-block h3 a {
+  color: var(--epic);
+  text-decoration: none;
+}
+
+.calc-block h3 a:hover {
+  text-decoration: underline;
+}
+
+/* --- the headline formula --- */
+
+.formula-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 26px 20px;
+  margin: 0 0 16px;
+}
+
+.formula-main {
+  font-family: var(--mono);
+  font-size: 19px;
+  color: var(--gold-bright);
+  letter-spacing: 0.02em;
+}
+
+.formula-sub {
+  font-size: 12.5px;
+  color: var(--text-faint);
+}
+
+/* --- weight tables --- */
+
+.aep-caption {
+  caption-side: top;
+  text-align: left;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-faint);
+  padding: 0 0 8px;
+  max-width: 56ch;
+}
+
+/* The weight tables hold very little data (a label and two numbers), so they are
+   capped and tightened rather than stretched across the full content width. */
+.aep-table {
+  table-layout: auto;
+  width: auto;
+  min-width: 460px;
+  max-width: 720px;
+  /* Sized to its content, so it needs explicit centering in the content column. */
+  margin: 0 auto;
+}
+
+.aep-table td {
+  vertical-align: baseline;
+  padding: 9px 16px;
+  font-size: 14.5px;
+}
+
+.aep-table thead th {
+  padding: 0 16px 8px;
+  font-size: 11.5px;
+}
+
+.aep-table td.num {
+  font-family: var(--mono);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* Highlights the PVE weight when it deviates from the PVP one — the whole
+   point of having two columns. */
+.aep-table .aep-differs {
+  color: var(--gold-bright);
+}
+
+.aep-row-note {
+  display: block;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-faint);
+  margin-top: 3px;
+  max-width: 44ch;
+}
+
+/* --- main hand vs off hand --- */
+
+.hand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.hand-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 18px;
+}
+
+.hand-card h4 {
+  font-family: var(--serif);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  margin: 0 0 10px;
+}
+
+.hand-formula {
+  display: block;
+  font-family: var(--mono);
+  font-size: 13.5px;
+  color: var(--gold-bright);
+  background: var(--bg-panel-2);
+  border-radius: 4px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.hand-card p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-dim);
+  margin: 0;
+}
+
+/* --- worked examples --- */
+
+.calc-block {
+  margin-bottom: 34px;
+}
+
+.calc-subtitle {
+  font-size: 12.5px;
+  color: var(--text-faint);
+  margin: 0 0 14px;
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.calc-column h4 {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin: 0 0 8px;
+}
+
+.calc-table {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.calc-table td {
+  font-size: 13px;
+  padding: 7px 12px;
+}
+
+.calc-term {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+.calc-points {
+  font-family: var(--mono);
+  color: var(--text);
+}
+
+.calc-total td {
+  border-top: 1px solid var(--border);
+  font-weight: 600;
+  color: var(--gold-bright);
+}
+
+.calc-total td.num {
+  font-family: var(--mono);
+  font-size: 14px;
+}
+
+.calc-check {
+  font-size: 12px;
+  color: var(--text-faint);
+  margin: 8px 0 0;
+  padding-left: 12px;
+}
+
+/* --- caveats --- */
+
+.caveat-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 760px;
+}
+
+.caveat-list li {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--text-dim);
+  border-left: 2px solid var(--border);
+  padding: 2px 0 2px 14px;
+}
+
+.caveat-list b {
+  color: var(--text);
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .formula-main {
+    font-size: 15px;
+  }
+  .calc-term {
+    white-space: normal;
+  }
+  /* Let the weight tables shrink with the viewport instead of forcing a scroll. */
+  .aep-table {
+    min-width: 0;
+    width: 100%;
+  }
+  .aep-row-note {
+    max-width: none;
   }
 }

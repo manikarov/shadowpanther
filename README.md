@@ -22,6 +22,10 @@ credit belongs to the original site, go check it out.
 - **Wowhead links** and rarity colors per item.
 - **Powerleveling guides** for Blacksmithing, Leatherworking and Engineering,
   each as a materials list plus a step-by-step route.
+- **AEP explainer** (`/aep`) documenting the stat weights behind the AEP and
+  MAEP columns, with worked examples. The weights live in
+  `web/src/config/aep.ts` and were reverse-engineered from the original
+  spreadsheets; they reproduce every AEP/MAEP value in `data/` exactly.
 
 ## How it's built
 
