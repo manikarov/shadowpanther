@@ -38,10 +38,6 @@ HEADERS = {"User-Agent": "Mozilla/5.0 (ShadowPanther reskin item resolver)"}
 
 ITEM_TYPE = 3  # Wowhead's suggestion type for items.
 
-# Names the search can't match on its own -> the term to search for instead.
-# Two kinds: abbreviations the spreadsheet used to fit the column, and
-# random-suffix rolls ("... of the Monkey"), which are listed on Wowhead under
-# their base item - and share its icon, which is all we need here.
 # Rows the source linked to the wrong item -> the id it should carry. These are
 # overwritten even though the row already has an id.
 WRONG_IDS: dict[str, int] = {
@@ -50,6 +46,10 @@ WRONG_IDS: dict[str, int] = {
     "Copper Shortsword": 2847,
 }
 
+# Names the search can't match on its own -> the term to search for instead.
+# Two kinds: abbreviations the spreadsheet used to fit the column, and
+# random-suffix rolls ("... of the Monkey"), which are listed on Wowhead under
+# their base item - and share its icon, which is all we need here.
 SEARCH_ALIASES: dict[str, str] = {
     "Abyssal Leather Shoulders of Stri.": "Abyssal Leather Shoulders",
     "Advr's Shoulders of the Monkey": "Adventurer's Shoulders",

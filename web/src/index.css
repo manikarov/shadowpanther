@@ -326,6 +326,50 @@ main {
   min-width: 220px;
 }
 
+/* Closing note crediting the original site the data comes from. Panelled and
+   set apart rather than styled as another section, so it reads as an aside and
+   isn't mistaken for a third column of links. */
+.credits {
+  max-width: 680px;
+  margin: 64px auto 0;
+  padding: 22px 26px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-soft);
+  border-top: 1px solid var(--gold-dim);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.credits h2 {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 10px;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+}
+
+.credits p {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--text-dim);
+}
+
+.credits p:last-child {
+  margin-bottom: 0;
+}
+
+.credits strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.credits a {
+  color: var(--gold);
+}
+
 .guides h2 {
   text-align: center;
   border-bottom: none;

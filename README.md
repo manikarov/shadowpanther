@@ -70,6 +70,11 @@ removes that content between parsing and merging, so it stays gone after a repar
   can only tank in SoD, so the metric and the hand-set special value feeding it
   are dropped. `PVP` and `PVE` stay, because AEP and MAEP still use them.
 
+Items that SoD reworked keep their Classic version: where both existed, the SoD
+row was dropped, and three rows that existed *only* as SoD entries (Hakkari
+Breastplate, Mark of Hakkar, Splinthide Shoulders) were repointed to their Classic
+items with recomputed AEP/MAEP.
+
 ## Items the source never listed
 
 A handful of real, in-game items don't appear on any ShadowPanther chart page,
@@ -81,10 +86,12 @@ has no on-hit effect or other score a linear formula can't derive:
 - **Chanting Blade** (Ragefire Chasm, Horde) – in the general dagger chart and
   the main-hand progression page.
 
-Items that SoD reworked keep their Classic version: where both existed, the SoD
-row was dropped, and three rows that existed *only* as SoD entries (Hakkari
-Breastplate, Mark of Hakkar, Splinthide Shoulders) were repointed to their Classic
-items with recomputed AEP/MAEP.
+## Where the data departs from the source
+
+The charts here differ from the original spreadsheets in a number of places –
+wrong item links, rarity colors that read as "Common", faction-locked dungeon
+drops filed under the wrong side, duplicated rows. [DATA-ISSUES.md](DATA-ISSUES.md)
+lists every one of them, what was done about it, and what is still open.
 
 ## Running locally
 

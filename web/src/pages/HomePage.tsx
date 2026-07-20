@@ -63,6 +63,20 @@ export function HomePage() {
           </ul>
         </section>
       </div>
+
+      <aside className="credits">
+        <h2>Credits</h2>
+        <p>
+          Every chart, gear rating and levelling route on this site comes from{" "}
+          <strong>ShadowPanther</strong> and his site{" "}
+          <a href="https://shadowpanther.net/" target="_blank" rel="noreferrer">
+            shadowpanther.net
+          </a>
+          . Collecting all these weapons, armor pieces and enchantments — and keeping them
+          current for years — is entirely his work. Only the frontend was rebuilt here.
+        </p>
+        <p>If any of it helps you, the credit belongs to the original site. Go have a look.</p>
+      </aside>
     </div>
   );
 }
