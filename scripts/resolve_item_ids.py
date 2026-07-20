@@ -42,6 +42,14 @@ ITEM_TYPE = 3  # Wowhead's suggestion type for items.
 # Two kinds: abbreviations the spreadsheet used to fit the column, and
 # random-suffix rolls ("... of the Monkey"), which are listed on Wowhead under
 # their base item - and share its icon, which is all we need here.
+# Rows the source linked to the wrong item -> the id it should carry. These are
+# overwritten even though the row already has an id.
+WRONG_IDS: dict[str, int] = {
+    # The main-hand page gave it Copper Mace's id (2844), so both rows showed
+    # the same icon and tooltip.
+    "Copper Shortsword": 2847,
+}
+
 SEARCH_ALIASES: dict[str, str] = {
     "Abyssal Leather Shoulders of Stri.": "Abyssal Leather Shoulders",
     "Advr's Shoulders of the Monkey": "Adventurer's Shoulders",
@@ -114,11 +122,17 @@ def download_image(icon: str) -> None:
 
 
 def chart_files() -> list[Path]:
-    return sorted(
+    files = sorted(
         f for pattern in ("*-pvp.json", "*-pve.json")
         for f in DATA.glob(pattern)
         if "enchant" not in f.name
     )
+    # mainhand isn't PVP/PVE-split, but its quest-reward rows link to the quest
+    # rather than the item, so they need resolving too.
+    mainhand = DATA / "mainhand.json"
+    if mainhand.exists():
+        files.append(mainhand)
+    return files
 
 
 def main() -> None:
@@ -161,13 +175,21 @@ def main() -> None:
         time.sleep(0.1)
 
     # Apply cached ids back into the parsed chart files.
-    filled = 0
+    filled = corrected = 0
     for path, data in files.items():
         changed = False
         for section in data.values():
             for row in section:
                 key = normalize(row.get("name") or "")
-                if key and not row.get("itemId") and key in cache:
+                if not key:
+                    continue
+                fix = WRONG_IDS.get(key)
+                if fix and row.get("itemId") != fix:
+                    row["itemId"] = fix
+                    row["wowheadUrl"] = WOWHEAD_ITEM.format(fix)
+                    corrected += 1
+                    changed = True
+                elif not row.get("itemId") and key in cache:
                     row["itemId"] = cache[key]["id"]
                     row["wowheadUrl"] = cache[key]["url"]
                     filled += 1
@@ -183,7 +205,10 @@ def main() -> None:
 
     CACHE.write_text(json.dumps(cache, ensure_ascii=False, indent=2, sort_keys=True), encoding="utf-8")
     ICONS_MAP.write_text(json.dumps(icons, ensure_ascii=False, sort_keys=True, indent=0), encoding="utf-8")
-    print(f"filled {filled} rows; {len(cache)} cached ids; {len(unresolved)} unresolved")
+    print(
+        f"filled {filled} rows; corrected {corrected} wrong ids; "
+        f"{len(cache)} cached ids; {len(unresolved)} unresolved"
+    )
     if unresolved:
         print("unresolved:", ", ".join(unresolved))
 

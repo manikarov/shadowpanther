@@ -24,15 +24,28 @@ IMAGE_URL = "https://wow.zamimg.com/images/wow/icons/large/{}.jpg"
 HEADERS = {"User-Agent": "Mozilla/5.0 (ShadowPanther reskin icon fetch)"}
 
 
-# Lookup caches that live in data/ but aren't chart files.
-NOT_CHARTS = {"icons.json", "item-ids.json", "craft-ids.json"}
+def chart_rows(data: object) -> list[dict]:
+    """Rows of a chart file, which is {section: [row, ...]}.
+
+    data/ also holds lookup caches and the talent data, which are keyed by id or
+    nested differently. Recognising a chart by its shape beats listing the
+    exceptions - that list went stale twice as new caches were added.
+    """
+    if not isinstance(data, dict) or not data:
+        return []
+    rows: list[dict] = []
+    for section in data.values():
+        if not isinstance(section, list):
+            return []
+        if not all(isinstance(row, dict) for row in section):
+            return []
+        rows.extend(section)
+    return rows
 
 
 def collect_item_ids() -> set[str]:
     ids: set[str] = set()
     for f in DATA.glob("*.json"):
-        if f.name in NOT_CHARTS:
-            continue
         data = json.loads(f.read_text(encoding="utf-8"))
         if f.name.startswith("guide-"):
             # Guides: the crafted item of each step (for the recipe icon column).
@@ -41,10 +54,9 @@ def collect_item_ids() -> set[str]:
                     ids.add(str(step["craftId"]))
             continue
         # Chart files: one item per row.
-        for section in data.values():
-            for row in section:
-                if row.get("itemId"):
-                    ids.add(str(row["itemId"]))
+        for row in chart_rows(data):
+            if row.get("itemId"):
+                ids.add(str(row["itemId"]))
     return ids
 
 

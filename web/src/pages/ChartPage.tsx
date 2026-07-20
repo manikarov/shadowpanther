@@ -1,7 +1,9 @@
 import type { ColumnDef } from "@tanstack/react-table";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { DataTable } from "../components/DataTable";
 import { ItemName } from "../components/ItemName";
+import { LevelSectionNav } from "../components/LevelSectionNav";
+import { TableToolbar, useTableControls } from "../components/TableToolbar";
 import type { ChartConfig } from "../config/charts";
 import { COLUMN_INFO } from "../config/glossary";
 import { type ColumnWidth, formatCell, hasValueFilter, nullsLastSort } from "../lib/table";
@@ -99,16 +101,33 @@ const sectionId = (name: string) =>
     .replace(/^-|-$/g, "");
 
 // Section keys are abbreviated ("MH Swords"); spell out the slot so the split is
-// self-explanatory and the off-hand table isn't mistaken for a duplicate.
+// self-explanatory and the off-hand table isn't mistaken for a duplicate. The
+// faction prefix comes off instead - the toggle above already says which one.
 function sectionLabel(name: string): string {
-  return name.replace(/^MH /, "Main-Hand ").replace(/^OH /, "Off-Hand ");
+  return name
+    .replace(/^MH /, "Main-Hand ")
+    .replace(/^OH /, "Off-Hand ")
+    .replace(FACTION_PREFIX_RE, "");
 }
 
 const HAND_SPLIT_RE = /^(MH|OH) /;
 
+const FACTIONS = ["Alliance", "Horde"] as const;
+type Faction = (typeof FACTIONS)[number];
+const FACTION_PREFIX_RE = /^(Alliance|Horde) /;
+
 export function ChartPage({ config }: { config: ChartConfig }) {
   const [data, setData] = useState<ChartData | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [faction, setFaction] = useState<Faction>("Alliance");
+  // Charts split into many small tables drive them all from one toolbar; the
+  // per-table match counts come back from the tables so empty ones can go away.
+  const shared = config.levelSections;
+  const controls = useTableControls(config.defaultGroups);
+  const [counts, setCounts] = useState<Record<string, number>>({});
+  const reportCount = useCallback((key: string, count: number) => {
+    setCounts((prev) => (prev[key] === count ? prev : { ...prev, [key]: count }));
+  }, []);
 
   useEffect(() => {
     setData(null);
@@ -125,22 +144,57 @@ export function ChartPage({ config }: { config: ChartConfig }) {
   if (error) return <p className="error">Failed to load data: {error}</p>;
   if (!data) return <p className="loading">Loading…</p>;
 
-  const sections = Object.entries(data);
+  const allSections = Object.entries(data);
+  // One faction's tables at a time - both stacked would be a page twice as long
+  // with two of every section.
+  const sections = config.factionTabs
+    ? allSections.filter(([s]) => s.startsWith(`${faction} `))
+    : allSections;
   const hasHandSplit = sections.length > 1 && sections.some(([s]) => HAND_SPLIT_RE.test(s));
+  const valueFilters = config.specialColumn
+    ? [{ columnId: config.specialColumn, label: `Only with ${config.specialColumn}` }]
+    : undefined;
 
   return (
-    <div className="page">
+    <div className={shared ? "page page-shared-toolbar" : "page"}>
       <p className="eyebrow">ShadowPanther Classic</p>
       <h1>{config.label}</h1>
-      {sections.length > 1 && (
-        <nav className="section-nav" aria-label="Jump to a table">
-          {sections.map(([section, rows]) => (
-            <a key={section} href={`#${sectionId(section)}`} className="section-pill">
-              {sectionLabel(section)}
-              <span className="section-pill-count">{rows.length}</span>
-            </a>
+      {config.factionTabs && (
+        <div className="faction-tabs" role="tablist" aria-label="Faction">
+          {FACTIONS.map((name) => (
+            <button
+              key={name}
+              type="button"
+              role="tab"
+              aria-selected={faction === name}
+              className="faction-tab"
+              data-faction={name.toLowerCase()}
+              onClick={() => setFaction(name)}
+            >
+              {name}
+            </button>
           ))}
-        </nav>
+        </div>
+      )}
+      {config.levelSections ? (
+        <LevelSectionNav
+          sections={sections.map(([section, rows]) => ({
+            id: sectionId(section),
+            label: sectionLabel(section),
+            count: rows.length,
+          }))}
+        />
+      ) : (
+        sections.length > 1 && (
+          <nav className="section-nav" aria-label="Jump to a table">
+            {sections.map(([section, rows]) => (
+              <a key={section} href={`#${sectionId(section)}`} className="section-pill">
+                {sectionLabel(section)}
+                <span className="section-pill-count">{rows.length}</span>
+              </a>
+            ))}
+          </nav>
+        )
       )}
       {hasHandSplit && (
         <p className="section-note">
@@ -148,8 +202,23 @@ export function ChartPage({ config }: { config: ChartConfig }) {
           off-hand, so its AEP/MAEP differ between the tables below.
         </p>
       )}
+      {shared && (
+        <TableToolbar
+          controls={controls}
+          columnGroups={config.columnGroups.groups}
+          hasValueFilters={valueFilters}
+          rowCount={sections.reduce((sum, [s]) => sum + (counts[s] ?? 0), 0)}
+        />
+      )}
       {sections.map(([section, rows]) => (
-        <section key={section} id={sectionId(section)} className="chart-section">
+        <section
+          key={section}
+          id={sectionId(section)}
+          className="chart-section"
+          // A search across a dozen tables would otherwise leave a page of
+          // headings each reading "No matches".
+          hidden={shared && counts[section] === 0}
+        >
           <h2>{sectionLabel(section)}</h2>
           <DataTable
             data={rows}
@@ -163,11 +232,10 @@ export function ChartPage({ config }: { config: ChartConfig }) {
             gapBefore={config.gapBefore ? new Set(config.gapBefore) : undefined}
             descriptions={COLUMN_INFO}
             formatValue={displayValue}
-            hasValueFilters={
-              config.specialColumn
-                ? [{ columnId: config.specialColumn, label: `Only with ${config.specialColumn}` }]
-                : undefined
-            }
+            hasValueFilters={valueFilters}
+            controls={shared ? controls : undefined}
+            countKey={shared ? section : undefined}
+            onRowCount={reportCount}
           />
         </section>
       ))}

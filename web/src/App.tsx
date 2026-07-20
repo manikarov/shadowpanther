@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout";
-import { CHARTS } from "./config/charts";
+import { CHARTS, MAINHAND_CHART } from "./config/charts";
 import { GUIDES } from "./config/guides";
 import { TALENT_PAGES } from "./config/talents";
 import { IconProvider } from "./lib/icons";
@@ -31,6 +31,7 @@ function App() {
               <Route key={config.path} path={config.path} element={<TalentPage config={config} />} />
             ))}
             <Route path="aep" element={<AepPage />} />
+            <Route path="mainhand" element={<ChartPage config={MAINHAND_CHART} />} />
           </Route>
         </Routes>
       </IconProvider>

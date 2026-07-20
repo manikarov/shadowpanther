@@ -30,6 +30,10 @@ export interface ChartConfig {
   fallbackIcon?: string;
   /** Drop the rarity frame and label for charts whose rows aren't items. */
   hideRarity?: boolean;
+  /** Section names start with "Alliance "/"Horde "; show one faction at a time. */
+  factionTabs?: boolean;
+  /** Section names read "<level range> <category>"; group the jump links by category. */
+  levelSections?: boolean;
 }
 
 // The AEP/MAEP headline metrics – kept narrow and grouped tightly, with a
@@ -110,6 +114,17 @@ export const CHARTS: ChartConfig[] = [
     hideRarity: true,
   },
 ];
+
+// The levelling progression is a chart by shape, but it lives under Extras
+// rather than with the gear charts, so it isn't in CHARTS - App.tsx routes it.
+export const MAINHAND_CHART: ChartConfig = {
+  path: "mainhand",
+  label: "Main-Hand Progression",
+  dataUrl: asset("data/mainhand.json"),
+  ...weaponLayout,
+  factionTabs: true,
+  levelSections: true,
+};
 
 // Display order for the nav and home page (Swords promoted to second).
 const CHART_ORDER = ["weapons", "swords", "daggers", "fists", "maces", "armor", "enchantments"];

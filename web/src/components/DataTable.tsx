@@ -1,6 +1,5 @@
 import {
   type ColumnDef,
-  type ColumnFiltersState,
   type SortingState,
   type VisibilityState,
   flexRender,
@@ -9,11 +8,11 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { ColumnGroup } from "../config/charts";
 import { buildFieldMap, makeGlobalFilter } from "../lib/search";
 import type { ColumnWidth } from "../lib/table";
-import { FilterIcon, SearchIcon } from "./icons";
+import { type TableControls, TableToolbar, useTableControls } from "./TableToolbar";
 
 export interface HasValueFilter {
   columnId: string;
@@ -38,6 +37,12 @@ interface DataTableProps<T> {
   descriptions?: Record<string, string>;
   /** How a raw cell value reads on screen; used so text search matches the display. */
   formatValue?: (columnId: string, value: unknown) => string;
+  /** Search/filter state shared with sibling tables. Given one, the table drops
+   *  its own toolbar and follows the page-level one instead. */
+  controls?: TableControls;
+  /** Identifies this table when reporting its match count upward. */
+  countKey?: string;
+  onRowCount?: (key: string, count: number) => void;
 }
 
 // Metadata-ish columns that stay visually muted regardless of value.
@@ -56,13 +61,16 @@ export function DataTable<T>({
   gapBefore,
   descriptions,
   formatValue,
+  controls,
+  countKey,
+  onRowCount,
 }: DataTableProps<T>) {
   const [sorting, setSorting] = useState<SortingState>(initialSort ?? []);
-  const [globalFilter, setGlobalFilter] = useState("");
-  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
-  // Most groups start collapsed - "unnecessary" columns only appear once a chip
-  // is switched on; a chart may opt some groups (e.g. Damage) on from the start.
-  const [activeGroups, setActiveGroups] = useState<Set<string>>(new Set(defaultGroups));
+  // Sorting stays per-table either way - one table's sort order says nothing
+  // about the next. Only search and filters are worth sharing.
+  const ownControls = useTableControls(defaultGroups);
+  const { globalFilter, setGlobalFilter, columnFilters, setColumnFilters, activeGroups } =
+    controls ?? ownControls;
 
   const columnVisibility = useMemo<VisibilityState>(() => {
     const visibility: VisibilityState = {};
@@ -101,23 +109,12 @@ export function DataTable<T>({
     getFilteredRowModel: getFilteredRowModel(),
   });
 
-  function toggleHasValueFilter(columnId: string, checked: boolean) {
-    setColumnFilters((prev) => {
-      const rest = prev.filter((f) => f.id !== columnId);
-      return checked ? [...rest, { id: columnId, value: true }] : rest;
-    });
-  }
-
-  function toggleGroup(label: string) {
-    setActiveGroups((prev) => {
-      const next = new Set(prev);
-      if (next.has(label)) next.delete(label);
-      else next.add(label);
-      return next;
-    });
-  }
-
   const rowCount = table.getFilteredRowModel().rows.length;
+
+  // A shared toolbar can't know how many rows each table kept, so report it.
+  useEffect(() => {
+    if (countKey) onRowCount?.(countKey, rowCount);
+  }, [countKey, onRowCount, rowCount]);
 
   // Percentage widths that always sum to 100%, so the table can never
   // overflow horizontally no matter how many columns are switched on -
@@ -131,54 +128,14 @@ export function DataTable<T>({
 
   return (
     <div className="data-table-wrap">
-      <div className="toolbar">
-        <div className="search-row">
-          <div className="search-box">
-            <SearchIcon />
-            <input
-              type="text"
-              placeholder="Search… e.g. Lvl:>=40  Source:Naxx"
-              title="Search a column with field:value (e.g. Lvl:60, AEP:>400, Item:Cruel Barb). Plain text searches all columns."
-              value={globalFilter}
-              onChange={(e) => setGlobalFilter(e.target.value)}
-            />
-          </div>
-          <span className="count">{rowCount} items</span>
-        </div>
-        <div className="filters">
-          {columnGroups && columnGroups.length > 0 && <span className="flabel">Columns</span>}
-          {columnGroups?.map((group) => (
-            <button
-              key={group.label}
-              type="button"
-              className={`chip ${activeGroups.has(group.label) ? "on" : ""}`}
-              onClick={() => toggleGroup(group.label)}
-            >
-              {group.label}
-            </button>
-          ))}
-          {hasValueFilters && hasValueFilters.length > 0 && (
-            <>
-              <span className="filter-sep" aria-hidden="true" />
-              <span className="flabel">Rows</span>
-            </>
-          )}
-          {hasValueFilters?.map(({ columnId, label }) => (
-            <button
-              key={columnId}
-              type="button"
-              className={`chip chip-rows ${columnFilters.some((f) => f.id === columnId) ? "on" : ""}`}
-              title="Row filter: hides rows without this value (not just a column toggle)"
-              onClick={() =>
-                toggleHasValueFilter(columnId, !columnFilters.some((f) => f.id === columnId))
-              }
-            >
-              <FilterIcon />
-              {label}
-            </button>
-          ))}
-        </div>
-      </div>
+      {!controls && (
+        <TableToolbar
+          controls={ownControls}
+          columnGroups={columnGroups}
+          hasValueFilters={hasValueFilters}
+          rowCount={rowCount}
+        />
+      )}
       <div className="table-scroll">
         <table className="data-table">
           <colgroup>
